@@ -1,0 +1,8740 @@
+{
+ "members": [
+  {
+   "id": "mn14exzfwtni",
+   "name": "りゅうた",
+   "icon": "🐉"
+  },
+  {
+   "id": "mn14fcjkyhqg",
+   "name": "つぼうち",
+   "icon": "⚡"
+  },
+  {
+   "icon": "🌈",
+   "name": "むさし",
+   "id": "mn14flzgnzpr"
+  },
+  {
+   "name": "なおと",
+   "icon": "🎮",
+   "id": "mn14fr018ak4"
+  },
+  {
+   "name": "しゅんご",
+   "icon": "🚀",
+   "id": "mn14g3xua5px"
+  },
+  {
+   "icon": "🦅",
+   "name": "つじ",
+   "id": "mn14gn9sscq8"
+  }
+ ],
+ "sessions": [
+  {
+   "title": "2026-03-28 対局",
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:06:00.000Z",
+     "hanchan_id": "mn9owjqbcmew",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "point": 53,
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "point": 20,
+       "seat": 1
+      },
+      {
+       "point": -17,
+       "rank": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "rank": 4,
+       "point": -56,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 2
+      }
+     ],
+     "created_at": "2026-03-28T02:07:08.771Z"
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mn9owag0kevz",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-03-28T02:06:56.736Z"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:07:00.000Z",
+     "hanchan_id": "mn9oxg2yvk3s",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2,
+       "rank": 1,
+       "final_score": 0,
+       "point": 65
+      },
+      {
+       "point": 11,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14gn9sscq8",
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "point": -30,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "point": -46,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      }
+     ],
+     "created_at": "2026-03-28T02:07:50.698Z"
+    },
+    {
+     "hanchan_id": "mn9oxsnssa3q",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-03-28T02:07:00.000Z",
+     "created_at": "2026-03-28T02:08:07.000Z",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "point": 54,
+       "seat": 0
+      },
+      {
+       "player_id": "mn14gn9sscq8",
+       "final_score": 0,
+       "seat": 3,
+       "rank": 2,
+       "point": 14
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2,
+       "point": -16,
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "point": -52,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "hanchan_id": "mn9oy6hx0e1t",
+     "results": [
+      {
+       "seat": 3,
+       "point": 59,
+       "player_id": "mn14gn9sscq8",
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "point": 4,
+       "seat": 1
+      },
+      {
+       "seat": 0,
+       "point": -17,
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "final_score": 0
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "point": -46,
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-03-28T02:08:00.000Z",
+     "created_at": "2026-03-28T02:08:24.933Z"
+    },
+    {
+     "created_at": "2026-03-28T02:08:39.931Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-03-28T02:08:00.000Z",
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "final_score": 0,
+       "point": 77
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "point": 18,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "point": -32,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -63,
+       "rank": 4,
+       "player_id": "mn14gn9sscq8",
+       "seat": 3,
+       "final_score": 0
+      }
+     ],
+     "hanchan_id": "mn9oyi2j7bvw"
+    }
+   ],
+   "session_id": "mn9owzrdbs55",
+   "created_at": "2026-03-28T02:07:29.545Z",
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8"
+   ]
+  },
+  {
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:09:38.779Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14gn9sscq8"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mn9p012ecamq",
+     "results": [
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": 45,
+       "player_id": "mn14gn9sscq8",
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "point": 7,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "point": -17,
+       "rank": 3,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -35,
+       "seat": 0,
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-03-28T02:09:00.000Z",
+     "created_at": "2026-03-28T02:09:51.206Z"
+    }
+   ],
+   "session_id": "mn9ozrh7c40t"
+  },
+  {
+   "session_id": "mn9p0ekt91a5",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "hanchan_id": "mn9p0o1qj9n6",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "results": [
+      {
+       "rank": 1,
+       "point": 51,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": 14,
+       "player_id": "mn14fr018ak4",
+       "rank": 2
+      },
+      {
+       "point": -17,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14gn9sscq8",
+       "point": -48,
+       "seat": 3
+      }
+     ],
+     "played_at": "2026-03-28T02:10:00.000Z",
+     "created_at": "2026-03-28T02:10:20.990Z"
+    }
+   ],
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8"
+   ],
+   "created_at": "2026-03-28T02:10:08.717Z"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:10:58.030Z",
+     "played_at": "2026-03-28T02:10:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "point": 46,
+       "rank": 1
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "final_score": 0,
+       "point": 8
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "point": -21,
+       "final_score": 0
+      },
+      {
+       "seat": 2,
+       "point": -33,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "hanchan_id": "mn9p1gmmvk2d"
+    }
+   ],
+   "title": "2026-03-28 対局",
+   "session_id": "mn9p16r1c3ns",
+   "created_at": "2026-03-28T02:10:45.229Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   }
+  },
+  {
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:11:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "point": 65,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "rank": 2,
+       "final_score": 0,
+       "point": 2
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -25,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "rank": 4,
+       "point": -42,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "hanchan_id": "mn9p292qbb6d",
+     "created_at": "2026-03-28T02:11:34.898Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ]
+    }
+   ],
+   "created_at": "2026-03-28T02:11:21.383Z",
+   "session_id": "mn9p1ynbehxx",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "title": "2026-03-28 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mn9p2nxbdgpb",
+   "title": "2026-03-28 対局",
+   "hanchan": [
+    {
+     "hanchan_id": "mn9p2xla6dyw",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "point": 69,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2
+      },
+      {
+       "point": 7,
+       "player_id": "mn14g3xua5px",
+       "rank": 2,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "rank": 3,
+       "point": -22
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -54,
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-03-28T02:11:00.000Z",
+     "created_at": "2026-03-28T02:12:06.670Z"
+    }
+   ],
+   "created_at": "2026-03-28T02:11:54.143Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:12:49.577Z",
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 48,
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14exzfwtni",
+       "point": 19,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "point": -26,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      },
+      {
+       "point": -41,
+       "rank": 4,
+       "seat": 3,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0
+      }
+     ],
+     "hanchan_id": "mn9p3up5oicp",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "played_at": "2026-03-28T02:12:00.000Z"
+    }
+   ],
+   "created_at": "2026-03-28T02:12:31.923Z",
+   "session_id": "mn9p3h2r0o1z"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "session_id": "mn9p47rywm44",
+   "hanchan": [
+    {
+     "hanchan_id": "mn9p4q3b146d",
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "point": 47,
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fr018ak4",
+       "point": 10,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -14,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "final_score": 0,
+       "rank": 4,
+       "point": -43
+      }
+     ],
+     "played_at": "2026-03-28T02:13:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T02:13:30.263Z"
+    }
+   ],
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-03-28T02:13:06.526Z"
+  },
+  {
+   "created_at": "2026-03-28T02:13:59.301Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "title": "2026-03-28 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:13:00.000Z",
+     "hanchan_id": "mn9p5nhsggmx",
+     "created_at": "2026-03-28T02:14:13.552Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 62
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "point": 4,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "seat": 1,
+       "point": -26,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "point": -40,
+       "rank": 4
+      }
+     ]
+    }
+   ],
+   "session_id": "mn9p5chxviya"
+  },
+  {
+   "hanchan": [
+    {
+     "results": [
+      {
+       "final_score": 0,
+       "point": 55,
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "seat": 1
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "point": 4
+      },
+      {
+       "point": -22,
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2,
+       "point": -37,
+       "rank": 4,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-03-28T02:14:52.937Z",
+     "hanchan_id": "mn9p6hvtvao2",
+     "played_at": "2026-03-28T02:14:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T02:15:13.887Z",
+     "results": [
+      {
+       "rank": 1,
+       "point": 51,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "seat": 2,
+       "point": 21,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -22,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 1
+      },
+      {
+       "seat": 3,
+       "point": -50,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mn9p6y1rytil",
+     "played_at": "2026-03-28T02:14:00.000Z"
+    }
+   ],
+   "session_id": "mn9p68k940i6",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-03-28T02:14:40.858Z",
+   "title": "2026-03-28 対局"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:15:59.341Z",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "point": 53,
+       "seat": 0
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "point": 10
+      },
+      {
+       "point": -23,
+       "final_score": 0,
+       "rank": 3,
+       "seat": 3,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "point": -40,
+       "seat": 2
+      }
+     ],
+     "hanchan_id": "mn9p7x4d36ri",
+     "played_at": "2026-03-28T02:15:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ]
+    }
+   ],
+   "title": "2026-03-28 対局",
+   "session_id": "mn9p7oc0x8qm",
+   "created_at": "2026-03-28T02:15:47.952Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   }
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mn9p8czk7a32",
+   "title": "2026-03-28 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "results": [
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "point": 50
+      },
+      {
+       "rank": 2,
+       "point": 11,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "point": -17,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 4,
+       "final_score": 0,
+       "point": -44,
+       "seat": 2
+      }
+     ],
+     "created_at": "2026-03-28T02:16:31.409Z",
+     "hanchan_id": "mn9p8lv5w9bp",
+     "played_at": "2026-03-28T02:16:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ]
+    }
+   ],
+   "created_at": "2026-03-28T02:16:19.904Z"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "created_at": "2026-03-28T02:18:51.869Z",
+   "title": "2026-03-28 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "played_at": "2026-03-28T02:18:00.000Z",
+     "results": [
+      {
+       "point": 58,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 1,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "rank": 2,
+       "point": 24,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -32,
+       "rank": 3
+      },
+      {
+       "point": -50,
+       "final_score": 0,
+       "rank": 4,
+       "seat": 1,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "hanchan_id": "mn9pby5qw6mo",
+     "created_at": "2026-03-28T02:19:07.310Z"
+    }
+   ],
+   "session_id": "mn9pbm8t7jcn"
+  },
+  {
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:19:40.728Z",
+     "hanchan_id": "mn9pcny0ied5",
+     "played_at": "2026-03-28T02:19:00.000Z",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "point": 55,
+       "seat": 3
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "point": 21,
+       "seat": 0
+      },
+      {
+       "seat": 2,
+       "point": -29,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 4,
+       "seat": 1,
+       "point": -47,
+       "final_score": 0
+      }
+     ]
+    }
+   ],
+   "session_id": "mn9pcex2rgll",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-03-28T02:19:29.030Z"
+  },
+  {
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:21:11.381Z",
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "point": 61,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 13,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": -9,
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "point": -65,
+       "rank": 4,
+       "player_id": "mn14fr018ak4"
+      }
+     ],
+     "hanchan_id": "mn9pevktp8mh",
+     "played_at": "2026-03-28T02:21:00.000Z",
+     "created_at": "2026-03-28T02:21:23.933Z"
+    },
+    {
+     "hanchan_id": "mn9pfb7tlgbe",
+     "played_at": "2026-03-28T02:21:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0,
+       "rank": 1,
+       "point": 51
+      },
+      {
+       "point": 17,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14fcjkyhqg",
+       "point": -25,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "rank": 4,
+       "point": -43
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "created_at": "2026-03-28T02:21:44.201Z"
+    }
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "session_id": "mn9pelw57oth"
+  },
+  {
+   "session_id": "mn9pfluzdlat",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:21:00.000Z",
+     "created_at": "2026-03-28T02:22:11.723Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "point": 57,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fr018ak4",
+       "rank": 2,
+       "point": 10
+      },
+      {
+       "rank": 3,
+       "player_id": "mn14g3xua5px",
+       "point": -11,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": -56,
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "final_score": 0,
+       "seat": 0
+      }
+     ],
+     "hanchan_id": "mn9pfwgbmm4w"
+    },
+    {
+     "hanchan_id": "mn9pgjluf31o",
+     "results": [
+      {
+       "seat": 1,
+       "point": 53,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0,
+       "rank": 2,
+       "point": 16
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -7,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "rank": 4,
+       "point": -62
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T02:22:41.730Z",
+     "played_at": "2026-03-28T02:22:00.000Z"
+    },
+    {
+     "hanchan_id": "mn9pguaqsjdo",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-03-28T02:22:00.000Z",
+     "created_at": "2026-03-28T02:22:55.586Z",
+     "results": [
+      {
+       "point": 56,
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "rank": 2,
+       "point": 9,
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -22,
+       "final_score": 0
+      },
+      {
+       "point": -43,
+       "rank": 4,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0
+      }
+     ]
+    }
+   ],
+   "title": "2026-03-28 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-03-28T02:21:57.995Z"
+  },
+  {
+   "created_at": "2026-03-28T02:23:14.083Z",
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:23:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr",
+       "point": 47,
+       "seat": 1
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "point": 8,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "point": -15,
+       "seat": 3,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "point": -40,
+       "player_id": "mn14exzfwtni",
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mn9phh102j5n",
+     "created_at": "2026-03-28T02:23:25.044Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ]
+    },
+    {
+     "created_at": "2026-03-28T02:23:45.602Z",
+     "played_at": "2026-03-28T02:23:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "results": [
+      {
+       "point": 63,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": 13,
+       "rank": 2,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 3,
+       "point": -27
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "point": -49,
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mn9phww29oxl"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "created_at": "2026-03-28T02:24:20.485Z",
+     "results": [
+      {
+       "rank": 1,
+       "point": 45,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14flzgnzpr",
+       "point": 12,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "point": -22,
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "seat": 2
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "point": -35,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3
+      }
+     ],
+     "played_at": "2026-03-28T02:23:00.000Z",
+     "hanchan_id": "mn9pint136z9"
+    },
+    {
+     "played_at": "2026-03-28T02:24:00.000Z",
+     "results": [
+      {
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "point": 44,
+       "rank": 1
+      },
+      {
+       "point": 11,
+       "rank": 2,
+       "seat": 3,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -19,
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "rank": 4,
+       "point": -36
+      }
+     ],
+     "created_at": "2026-03-28T02:24:44.444Z",
+     "hanchan_id": "mn9pj6akdb3y",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ]
+    },
+    {
+     "hanchan_id": "mn9pjhprwmj0",
+     "created_at": "2026-03-28T02:24:59.248Z",
+     "results": [
+      {
+       "seat": 2,
+       "point": 62,
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 21
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3,
+       "point": -24
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "point": -59
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "played_at": "2026-03-28T02:24:00.000Z"
+    },
+    {
+     "hanchan_id": "mn9pjv2ndfh0",
+     "played_at": "2026-03-28T02:24:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "created_at": "2026-03-28T02:25:16.559Z",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": 53,
+       "seat": 3
+      },
+      {
+       "point": 10,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 2,
+       "rank": 3,
+       "point": -15
+      },
+      {
+       "rank": 4,
+       "point": -48,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      }
+     ]
+    }
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "session_id": "mn9ph8kj9nfd",
+   "title": "2026-03-28 対局"
+  },
+  {
+   "created_at": "2026-03-28T02:25:47.976Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "title": "2026-03-28 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "session_id": "mn9pkjbclbmk",
+   "hanchan": [
+    {
+     "results": [
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 1,
+       "point": 57,
+       "final_score": 0
+      },
+      {
+       "point": 14,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "point": -26
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "seat": 2,
+       "rank": 4,
+       "point": -45
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T02:26:04.943Z",
+     "hanchan_id": "mn9pkwenpket",
+     "played_at": "2026-03-28T02:25:00.000Z"
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 1,
+       "point": 49,
+       "seat": 2
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "seat": 3,
+       "point": 12,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -21,
+       "seat": 1
+      },
+      {
+       "rank": 4,
+       "point": -40,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "created_at": "2026-03-28T02:26:20.317Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mn9pl89p5f43",
+     "played_at": "2026-03-28T02:26:00.000Z"
+    },
+    {
+     "played_at": "2026-03-28T02:26:00.000Z",
+     "hanchan_id": "mn9pljutzsgy",
+     "results": [
+      {
+       "seat": 0,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "point": 51
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 10,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "rank": 3,
+       "point": -16
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "final_score": 0,
+       "point": -45
+      }
+     ],
+     "created_at": "2026-03-28T02:26:35.333Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ]
+    }
+   ]
+  },
+  {
+   "session_id": "mn9pm3b1e6gb",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg"
+   ],
+   "title": "2026-03-28 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-03-28T02:27:00.541Z",
+   "hanchan": [
+    {
+     "hanchan_id": "mn9pmgda4aot",
+     "results": [
+      {
+       "rank": 1,
+       "point": 51,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3,
+       "point": 10,
+       "rank": 2
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 3,
+       "point": -14
+      },
+      {
+       "seat": 2,
+       "rank": 4,
+       "final_score": 0,
+       "point": -47,
+       "player_id": "mn14fr018ak4"
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "played_at": "2026-03-28T02:27:00.000Z",
+     "created_at": "2026-03-28T02:27:17.470Z"
+    },
+    {
+     "created_at": "2026-03-28T02:27:35.821Z",
+     "played_at": "2026-03-28T02:27:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ],
+     "hanchan_id": "mn9pmuj1bc9a",
+     "results": [
+      {
+       "point": 54,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": 12,
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -16,
+       "rank": 3,
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "point": -50,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      }
+     ]
+    },
+    {
+     "played_at": "2026-03-28T02:27:00.000Z",
+     "hanchan_id": "mn9pnbwusx8z",
+     "created_at": "2026-03-28T02:27:58.350Z",
+     "results": [
+      {
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 56,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "point": 15,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "point": -29,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 4,
+       "point": -42
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg"
+     ]
+    }
+   ]
+  },
+  {
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-03-28T02:28:14.526Z",
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:28:26.070Z",
+     "played_at": "2026-03-28T02:28:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "final_score": 0,
+       "point": 61,
+       "seat": 2
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "point": 16,
+       "rank": 2,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr",
+       "point": -23
+      },
+      {
+       "rank": 4,
+       "point": -54,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mn9pnxaubq2r"
+    }
+   ],
+   "session_id": "mn9pnoe6eky7",
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "created_at": "2026-03-28T02:29:44.713Z",
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:29:00.000Z",
+     "seats": [
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mn9ppu49sm1i",
+     "created_at": "2026-03-28T02:29:55.257Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "point": 45,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 2,
+       "point": 8
+      },
+      {
+       "seat": 2,
+       "point": -20,
+       "player_id": "mn14gn9sscq8",
+       "rank": 3,
+       "final_score": 0
+      },
+      {
+       "rank": 4,
+       "seat": 0,
+       "point": -33,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4"
+      }
+     ]
+    }
+   ],
+   "seats": [
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8",
+    "mn14g3xua5px"
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-03-28 対局",
+   "session_id": "mn9pplzcwdkd"
+  },
+  {
+   "title": "2026-03-28 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-03-28T02:30:22.703Z",
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:30:35.101Z",
+     "played_at": "2026-03-28T02:30:00.000Z",
+     "results": [
+      {
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 1,
+       "point": 69
+      },
+      {
+       "rank": 2,
+       "point": 12,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "point": -27,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 4,
+       "point": -54
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mn9pqov1d1e5"
+    }
+   ],
+   "session_id": "mn9pqfanffya"
+  },
+  {
+   "session_id": "mn9pr1fn1n9j",
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T02:31:02.202Z",
+     "results": [
+      {
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "point": 67,
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "point": 23,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "point": -21,
+       "rank": 3,
+       "seat": 1,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "seat": 0,
+       "point": -69,
+       "final_score": 0
+      }
+     ],
+     "played_at": "2026-03-28T02:30:00.000Z",
+     "hanchan_id": "mn9pr9ruf7hw"
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:30:51.395Z"
+  },
+  {
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:31:50.743Z",
+     "played_at": "2026-03-28T02:31:00.000Z",
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 84,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 14,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 3,
+       "point": -37,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "point": -61,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 1
+      }
+     ],
+     "hanchan_id": "mn9psb87rtt1",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ]
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "title": "2026-03-28 対局",
+   "session_id": "mn9prx96wgie",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-03-28T02:31:32.634Z"
+  },
+  {
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:32:44.168Z",
+     "hanchan_id": "mn9ptgg8az9b",
+     "played_at": "2026-03-28T02:32:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 0,
+       "point": 56,
+       "player_id": "mn14exzfwtni",
+       "rank": 1
+      },
+      {
+       "point": 2,
+       "rank": 2,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "point": -23
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2,
+       "point": -35,
+       "final_score": 0,
+       "rank": 4
+      }
+     ]
+    }
+   ],
+   "session_id": "mn9pt94i6lwk",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-03-28T02:32:34.674Z",
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mn9ptwi02wmp",
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:33:04.968Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:33:16.373Z",
+     "played_at": "2026-03-28T02:33:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "final_score": 0,
+       "rank": 1,
+       "point": 48
+      },
+      {
+       "player_id": "mn14gn9sscq8",
+       "rank": 2,
+       "final_score": 0,
+       "point": 10,
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "point": -16,
+       "seat": 0
+      },
+      {
+       "seat": 3,
+       "rank": 4,
+       "final_score": 0,
+       "point": -42,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "hanchan_id": "mn9pu5at5uky",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "created_at": "2026-03-28T02:34:15.048Z",
+     "hanchan_id": "mn9pvekoncmu",
+     "results": [
+      {
+       "seat": 2,
+       "rank": 1,
+       "player_id": "mn14gn9sscq8",
+       "final_score": 0,
+       "point": 48
+      },
+      {
+       "point": 16,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "point": -24,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "seat": 1,
+       "point": -40,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      }
+     ],
+     "played_at": "2026-03-28T02:33:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8",
+      "mn14g3xua5px"
+     ]
+    }
+   ]
+  },
+  {
+   "session_id": "mn9pvrpgbvms",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:34:32.068Z",
+   "hanchan": [
+    {
+     "played_at": "2026-03-28T02:34:00.000Z",
+     "created_at": "2026-03-28T02:34:44.541Z",
+     "results": [
+      {
+       "final_score": 0,
+       "point": 44,
+       "rank": 1,
+       "player_id": "mn14gn9sscq8",
+       "seat": 3
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "final_score": 0,
+       "point": 12
+      },
+      {
+       "seat": 2,
+       "point": -23,
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "point": -33,
+       "rank": 4,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8"
+     ],
+     "hanchan_id": "mn9pw1bwtu9n"
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8"
+   ]
+  },
+  {
+   "title": "2026-03-28 対局",
+   "session_id": "mn9pwqsr9tlf",
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T02:35:30.037Z",
+     "played_at": "2026-03-28T02:35:00.000Z",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mn9px0fp8yu9",
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 1,
+       "point": 68
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 12,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -32,
+       "player_id": "mn14g3xua5px",
+       "rank": 3
+      },
+      {
+       "point": -48,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14gn9sscq8",
+       "seat": 2
+      }
+     ]
+    }
+   ],
+   "seats": [
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14gn9sscq8",
+    "mn14g3xua5px"
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-03-28T02:35:17.547Z"
+  },
+  {
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "session_id": "mn9pxhm3su71",
+   "title": "2026-03-28 対局",
+   "created_at": "2026-03-28T02:35:52.299Z",
+   "hanchan": [
+    {
+     "hanchan_id": "mn9pykm5cnr6",
+     "results": [
+      {
+       "point": 57,
+       "rank": 1,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "point": 17,
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "seat": 2,
+       "point": -15,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14flzgnzpr",
+       "point": -59,
+       "final_score": 0,
+       "seat": 1
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-03-28T02:35:00.000Z",
+     "created_at": "2026-03-28T02:36:42.845Z"
+    },
+    {
+     "created_at": "2026-03-28T02:37:01.202Z",
+     "hanchan_id": "mn9pyys2ff0c",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "point": 55,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "point": 23,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "point": -28
+      },
+      {
+       "point": -50,
+       "seat": 1,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "played_at": "2026-03-28T02:36:00.000Z"
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T04:25:05.245Z",
+     "results": [
+      {
+       "seat": 2,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "point": 51,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 3,
+       "rank": 2,
+       "point": 19
+      },
+      {
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "point": -21,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14g3xua5px",
+       "point": -49,
+       "final_score": 0,
+       "seat": 1
+      }
+     ],
+     "hanchan_id": "mn9ttxwdp5b2",
+     "played_at": "2026-03-28T04:24:00.000Z",
+     "seats": [
+      "mn14fr018ak4",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr"
+     ]
+    },
+    {
+     "seats": [
+      "mn14fr018ak4",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr"
+     ],
+     "created_at": "2026-03-28T04:25:17.002Z",
+     "hanchan_id": "mn9tu6yy4lst",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "point": 55
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 18,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 3,
+       "point": -28,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "point": -45,
+       "rank": 4,
+       "player_id": "mn14fr018ak4"
+      }
+     ],
+     "played_at": "2026-03-28T04:25:00.000Z"
+    },
+    {
+     "hanchan_id": "mn9tuzyn0zhf",
+     "played_at": "2026-03-28T04:25:00.000Z",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": 50,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 3,
+       "final_score": 0,
+       "point": 15,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "rank": 3,
+       "final_score": 0,
+       "point": -15,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 4,
+       "point": -50,
+       "seat": 0,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-03-28T04:25:54.575Z",
+     "seats": [
+      "mn14fr018ak4",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr"
+     ]
+    },
+    {
+     "created_at": "2026-03-28T04:26:12.753Z",
+     "results": [
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 1,
+       "final_score": 0,
+       "rank": 1,
+       "point": 39
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 2,
+       "point": 7
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "point": -14,
+       "seat": 2
+      },
+      {
+       "rank": 4,
+       "point": -32,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "played_at": "2026-03-28T04:25:00.000Z",
+     "hanchan_id": "mn9tvdzlvs7s",
+     "seats": [
+      "mn14fr018ak4",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr"
+     ]
+    },
+    {
+     "played_at": "2026-03-28T04:26:00.000Z",
+     "hanchan_id": "mn9tvn5v5zl1",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": 55,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "rank": 2,
+       "player_id": "mn14g3xua5px",
+       "point": 22
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14flzgnzpr",
+       "point": -9,
+       "rank": 3
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 0,
+       "point": -68,
+       "rank": 4
+      }
+     ],
+     "created_at": "2026-03-28T04:26:24.643Z",
+     "seats": [
+      "mn14fr018ak4",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr"
+     ]
+    }
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-03-28T04:24:46.853Z",
+   "session_id": "mn9ttjphkjrv",
+   "title": "2026-03-28 対局",
+   "seats": [
+    "mn14fr018ak4",
+    "mn14g3xua5px",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr"
+   ]
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-03-28T07:01:34.327Z",
+   "title": "2026-03-28 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "created_at": "2026-03-28T08:18:41.289Z",
+     "played_at": "2026-03-28T08:18:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "point": 66,
+       "rank": 1,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "rank": 2,
+       "point": 19,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -30,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 2
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 4,
+       "point": -55
+      }
+     ],
+     "hanchan_id": "mna26cqxwr8c"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-03-28T09:17:33.399Z",
+     "results": [
+      {
+       "point": 45,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "point": 14,
+       "seat": 2
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "point": -20
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": -39,
+       "rank": 4,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "hanchan_id": "mna4a253sfqc",
+     "played_at": "2026-03-28T09:16:00.000Z"
+    },
+    {
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "point": 55,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "point": 20,
+       "rank": 2,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": -13,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "point": -62,
+       "final_score": 0,
+       "rank": 4,
+       "seat": 2
+      }
+     ],
+     "hanchan_id": "mna7168xtlvc",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-03-28T09:50:00.000Z",
+     "created_at": "2026-03-28T10:34:37.665Z"
+    },
+    {
+     "played_at": "2026-03-28T12:53:00.000Z",
+     "hanchan_id": "mnac06k5pho3",
+     "created_at": "2026-03-28T12:53:49.493Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 62,
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "final_score": 0,
+       "point": 24,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "seat": 1
+      },
+      {
+       "seat": 0,
+       "point": -34,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "point": -52,
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "created_at": "2026-03-28T14:20:20.493Z",
+     "played_at": "2026-03-28T14:20:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": 49,
+       "player_id": "mn14fr018ak4",
+       "rank": 1
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": 15,
+       "rank": 2,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "seat": 0,
+       "point": -14,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "point": -50,
+       "rank": 4,
+       "final_score": 0
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mnaf3fyl3m7i"
+    }
+   ],
+   "session_id": "mn9zf6k706st"
+  },
+  {
+   "title": "2026-04-04 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14flzgnzpr",
+    "mn14gn9sscq8",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mnk9p6s4v101",
+     "played_at": "2026-04-04T11:46:00.000Z",
+     "created_at": "2026-04-04T11:46:59.092Z",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14gn9sscq8",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "rank": 1,
+       "player_id": "mn14gn9sscq8",
+       "point": 57,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "point": 7,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 0,
+       "point": -27,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -37,
+       "final_score": 0,
+       "rank": 4,
+       "seat": 2
+      }
+     ]
+    }
+   ],
+   "session_id": "mnk9ob72lcxm",
+   "created_at": "2026-04-04T11:46:18.158Z"
+  },
+  {
+   "hanchan": [
+    {
+     "hanchan_id": "mnkc5a7c8pof",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-04-04T12:54:00.000Z",
+     "results": [
+      {
+       "seat": 2,
+       "point": 57,
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": 19,
+       "player_id": "mn14g3xua5px",
+       "rank": 2
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 3,
+       "point": -31
+      },
+      {
+       "point": -45,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "seat": 0
+      }
+     ],
+     "created_at": "2026-04-04T12:55:29.256Z"
+    },
+    {
+     "played_at": "2026-04-04T14:20:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mnkf7t3kktey",
+     "created_at": "2026-04-04T14:21:25.904Z",
+     "results": [
+      {
+       "seat": 2,
+       "rank": 1,
+       "point": 109,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -11,
+       "seat": 1,
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "point": -32,
+       "rank": 3
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "point": -66,
+       "rank": 4,
+       "player_id": "mn14exzfwtni"
+      }
+     ]
+    },
+    {
+     "played_at": "2026-04-04T15:33:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "point": 50
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "rank": 2,
+       "point": 11,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3,
+       "point": -12
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -49,
+       "rank": 4,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "hanchan_id": "mnkhtfxgashn",
+     "created_at": "2026-04-04T15:34:14.500Z"
+    }
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "session_id": "mnkc4ktp0vb5",
+   "title": "2026-04-04 対局",
+   "created_at": "2026-04-04T12:54:56.365Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "hanchan": [],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-04-05T02:09:07.703Z",
+   "session_id": "mnl4hwtzf3qb",
+   "title": "2026-04-05 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ]
+  },
+  {
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [],
+   "created_at": "2026-04-05T02:25:32.288Z",
+   "session_id": "mnl530jkm5hw",
+   "title": "2026-04-05 対局",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ]
+  },
+  {
+   "hanchan": [],
+   "created_at": "2026-04-05T02:35:03.751Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mnl5f9hjo93u",
+   "title": "2026-04-05 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "title": "2026-04-17 対局",
+   "created_at": "2026-04-17T12:22:54.866Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-04-17T12:23:43.262Z",
+     "played_at": "2026-04-17T12:22:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "mo2vqi72z8jg",
+     "results": [
+      {
+       "seat": 3,
+       "final_score": 31500,
+       "point": 41.5,
+       "player_id": "mn14fr018ak4",
+       "rank": 1
+      },
+      {
+       "final_score": 28600,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 8.6
+      },
+      {
+       "final_score": 20000,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -20,
+       "rank": 3
+      },
+      {
+       "point": -30.1,
+       "rank": 4,
+       "final_score": 19900,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "seat": 0,
+       "final_score": 47700,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "point": 57.7
+      },
+      {
+       "final_score": 31400,
+       "rank": 2,
+       "point": 11.4,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "rank": 3,
+       "final_score": 17100,
+       "point": -22.9,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "point": -46.2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "final_score": 3800,
+       "seat": 2
+      }
+     ],
+     "created_at": "2026-04-17T13:33:45.003Z",
+     "hanchan_id": "mo2y8ka3oarv",
+     "played_at": "2026-04-17T13:33:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "hanchan_id": "mo30hlnktj0r",
+     "results": [
+      {
+       "point": 50.7,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "final_score": 40700,
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "point": 2.4,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "final_score": 22400
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -20.8,
+       "final_score": 19200
+      },
+      {
+       "seat": 1,
+       "final_score": 17700,
+       "point": -32.3,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-04-17T13:34:00.000Z",
+     "created_at": "2026-04-17T14:36:45.920Z"
+    }
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "session_id": "mo2vpguq5k4r"
+  },
+  {
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "hanchan_id": "moec54z5ipp5",
+     "played_at": "2026-04-25T12:46:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg"
+     ],
+     "created_at": "2026-04-25T12:48:27.761Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "point": 56.6,
+       "seat": 3,
+       "final_score": 46600
+      },
+      {
+       "seat": 2,
+       "final_score": 28000,
+       "player_id": "mn14g3xua5px",
+       "rank": 2,
+       "point": 8
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -25.3,
+       "final_score": 14700,
+       "rank": 3
+      },
+      {
+       "seat": 1,
+       "point": -39.3,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 10700,
+       "rank": 4
+      }
+     ]
+    },
+    {
+     "hanchan_id": "moef2klzyl43",
+     "results": [
+      {
+       "seat": 0,
+       "point": 56.7,
+       "rank": 1,
+       "final_score": 46700,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 27000,
+       "rank": 2,
+       "player_id": "mn14flzgnzpr",
+       "point": 7,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3,
+       "point": -26,
+       "final_score": 14000,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "final_score": 12300,
+       "rank": 4,
+       "point": -37.7
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg"
+     ],
+     "played_at": "2026-04-25T12:48:00.000Z",
+     "created_at": "2026-04-25T14:10:26.903Z"
+    }
+   ],
+   "session_id": "moec2b10ym5s",
+   "title": "2026-04-25 対局",
+   "created_at": "2026-04-25T12:46:15.636Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14g3xua5px",
+    "mn14fcjkyhqg"
+   ]
+  },
+  {
+   "session_id": "mojne62qvt01",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14fcjkyhqg",
+    "mn14exzfwtni",
+    "mn14gn9sscq8"
+   ],
+   "title": "2026-04-29 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "hanchan_id": "mojnf2o3du06",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-04-29T06:02:00.000Z",
+     "results": [
+      {
+       "final_score": 55400,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 65.4
+      },
+      {
+       "point": 3.6,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "final_score": 23600
+      },
+      {
+       "seat": 3,
+       "final_score": 11800,
+       "point": -28.2,
+       "rank": 3,
+       "player_id": "mn14gn9sscq8"
+      },
+      {
+       "final_score": 9200,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "point": -40.8,
+       "seat": 2
+      }
+     ],
+     "created_at": "2026-04-29T06:02:57.987Z"
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 51600,
+       "point": 61.6,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "final_score": 46500,
+       "rank": 2,
+       "point": 26.5,
+       "seat": 2
+      },
+      {
+       "final_score": 18600,
+       "point": -21.4,
+       "rank": 3,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": -16700,
+       "seat": 3,
+       "point": -66.7,
+       "player_id": "mn14gn9sscq8",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-04-29T07:03:00.000Z",
+     "hanchan_id": "mojpmj1e1lgz",
+     "created_at": "2026-04-29T07:04:45.026Z"
+    },
+    {
+     "created_at": "2026-04-29T08:06:29.899Z",
+     "played_at": "2026-04-29T08:05:00.000Z",
+     "seats": [
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14gn9sscq8"
+     ],
+     "hanchan_id": "mojrtxqjdtq5",
+     "results": [
+      {
+       "rank": 1,
+       "point": 63,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14gn9sscq8"
+      },
+      {
+       "point": 11,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "point": -13,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 0,
+       "final_score": 0,
+       "rank": 4,
+       "point": -61
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg",
+       "point": 55,
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2
+      },
+      {
+       "player_id": "mn14gn9sscq8",
+       "point": -22,
+       "rank": 3,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "rank": 4,
+       "point": -33,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 0
+      }
+     ],
+     "created_at": "2026-04-29T09:11:20.100Z",
+     "hanchan_id": "moju5bfo0qmi",
+     "seats": [
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14exzfwtni",
+      "mn14gn9sscq8"
+     ],
+     "played_at": "2026-04-29T09:10:00.000Z"
+    }
+   ],
+   "created_at": "2026-04-29T06:02:15.746Z"
+  },
+  {
+   "session_id": "mony2cgd2dab",
+   "hanchan": [
+    {
+     "hanchan_id": "moo0vh3byr7e",
+     "results": [
+      {
+       "point": 75,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "seat": 1,
+       "point": 36,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "point": -23,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "final_score": 0,
+       "point": -88,
+       "seat": 0
+      }
+     ],
+     "played_at": "2026-05-02T07:29:00.000Z",
+     "created_at": "2026-05-02T07:30:42.887Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-05-02T08:28:10.508Z",
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 36,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 2,
+       "point": 6,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "point": -16,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0,
+       "point": -26,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-05-02T06:12:00.000Z",
+     "hanchan_id": "moo2xdakcf6d"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-02T10:50:00.000Z",
+     "hanchan_id": "moo80k417nea",
+     "results": [
+      {
+       "seat": 2,
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr",
+       "point": 62
+      },
+      {
+       "final_score": 0,
+       "point": 19,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -30,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "point": -51,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-05-02T10:50:37.393Z"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-02T12:03:00.000Z",
+     "created_at": "2026-05-02T12:03:59.535Z",
+     "hanchan_id": "mooamwtrlbw7",
+     "results": [
+      {
+       "seat": 0,
+       "final_score": 0,
+       "rank": 1,
+       "point": 50,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "point": 7,
+       "rank": 2,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "rank": 3,
+       "point": -14,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "point": -43,
+       "rank": 4,
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "point": 52,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14flzgnzpr",
+       "point": 14,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "point": -12,
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": -54,
+       "seat": 1
+      }
+     ],
+     "created_at": "2026-05-02T13:29:06.649Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "moododi1yhjw",
+     "played_at": "2026-05-02T12:03:00.000Z"
+    },
+    {
+     "played_at": "2026-05-02T15:06:00.000Z",
+     "hanchan_id": "mooh601ujm94",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "point": 43,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "point": 8,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr",
+       "point": -18,
+       "seat": 2
+      },
+      {
+       "point": -33,
+       "final_score": 0,
+       "rank": 4,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "created_at": "2026-05-02T15:06:47.874Z"
+    }
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-05-02T06:12:04.621Z",
+   "title": "2026-05-02 対局"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-05-15T13:43:23.797Z",
+   "title": "2026-05-15 対局",
+   "hanchan": [
+    {
+     "hanchan_id": "mp6yxaxrytq8",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-15T13:43:00.000Z",
+     "created_at": "2026-05-15T13:43:46.335Z",
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0,
+       "point": 50,
+       "rank": 1
+      },
+      {
+       "point": 5,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "point": -14,
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "seat": 1,
+       "point": -41,
+       "player_id": "mn14fcjkyhqg"
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "seat": 1,
+       "point": 65,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0,
+       "point": 13,
+       "rank": 2
+      },
+      {
+       "point": -32,
+       "rank": 3,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "point": -46,
+       "seat": 0
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-05-15T15:25:06.107Z",
+     "hanchan_id": "mp72jm4b8nja",
+     "played_at": "2026-05-15T13:43:00.000Z"
+    }
+   ],
+   "session_id": "mp6ywtjpw65e",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "title": "2026-05-16 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "session_id": "mp82gx4nxcbi",
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14exzfwtni",
+    "mn14flzgnzpr"
+   ],
+   "hanchan": [
+    {
+     "played_at": "2026-05-16T08:10:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "final_score": 0,
+       "point": 67,
+       "rank": 1
+      },
+      {
+       "point": 14,
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "seat": 2,
+       "point": -22,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "point": -59,
+       "seat": 0
+      }
+     ],
+     "hanchan_id": "mp82hbx8ve7r",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-05-16T08:11:05.756Z"
+    },
+    {
+     "hanchan_id": "mp85r0a9vno2",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-16T09:42:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0,
+       "rank": 1,
+       "point": 71
+      },
+      {
+       "seat": 0,
+       "rank": 2,
+       "player_id": "mn14exzfwtni",
+       "point": 12,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "final_score": 0,
+       "point": -24,
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "point": -59,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      }
+     ],
+     "created_at": "2026-05-16T09:42:36.081Z"
+    },
+    {
+     "hanchan_id": "mp88fb5k8wqs",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-16T10:56:00.000Z",
+     "created_at": "2026-05-16T10:57:29.145Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 0,
+       "final_score": 0,
+       "point": 64,
+       "rank": 1
+      },
+      {
+       "seat": 1,
+       "point": 17,
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "point": -19,
+       "final_score": 0,
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "seat": 2
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "rank": 4,
+       "final_score": 0,
+       "point": -62
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "point": 47,
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "point": 16,
+       "rank": 2,
+       "seat": 2,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -24,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 0
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "point": -39,
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "created_at": "2026-05-16T13:51:52.622Z",
+     "hanchan_id": "mp8enktqdzuv",
+     "played_at": "2026-05-16T13:51:00.000Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14exzfwtni",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14exzfwtni",
+      "mn14flzgnzpr"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 2,
+       "point": 69,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 3,
+       "final_score": 0,
+       "rank": 2,
+       "point": 0
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "point": -24,
+       "seat": 1,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "point": -45,
+       "seat": 0,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "created_at": "2026-05-16T14:50:29.536Z",
+     "hanchan_id": "mp8gqyhs33f0",
+     "played_at": "2026-05-16T14:50:00.000Z"
+    }
+   ],
+   "created_at": "2026-05-16T08:10:46.583Z"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-05-22T13:47:56.851Z",
+   "hanchan": [
+    {
+     "hanchan_id": "mph0xiw8fdo3",
+     "played_at": "2026-05-22T13:47:00.000Z",
+     "results": [
+      {
+       "seat": 3,
+       "point": 67,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 1
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": 21,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2
+      },
+      {
+       "point": -36,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "point": -52,
+       "player_id": "mn14g3xua5px",
+       "rank": 4,
+       "final_score": 0,
+       "seat": 2
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-05-22T14:37:37.640Z"
+    },
+    {
+     "created_at": "2026-05-22T15:35:44.300Z",
+     "played_at": "2026-05-22T14:37:00.000Z",
+     "hanchan_id": "mph3097w540i",
+     "results": [
+      {
+       "point": 58,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "seat": 1,
+       "point": 17,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "rank": 3,
+       "point": -28
+      },
+      {
+       "rank": 4,
+       "point": -47,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ]
+    }
+   ],
+   "title": "2026-05-22 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "session_id": "mpgz5mwjm7l9"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "title": "2026-05-23 対局",
+   "session_id": "mpi08ia53kfa",
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "played_at": "2026-05-23T07:05:00.000Z",
+     "hanchan_id": "mpi17w334xiz",
+     "created_at": "2026-05-23T07:33:27.471Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "point": 68,
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      },
+      {
+       "point": 10,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": -23,
+       "player_id": "mn14g3xua5px",
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "point": -55,
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "final_score": 0,
+       "point": 47,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 8
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -15,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": -40,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-05-23T08:22:00.000Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mpi30lvt2ofx",
+     "created_at": "2026-05-23T08:23:46.889Z"
+    },
+    {
+     "hanchan_id": "mpi5vxcqg9ns",
+     "played_at": "2026-05-23T09:43:00.000Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "point": 49,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "point": 16,
+       "seat": 0
+      },
+      {
+       "point": -21,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "seat": 3,
+       "point": -44,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "created_at": "2026-05-23T09:44:07.322Z"
+    },
+    {
+     "hanchan_id": "mpi7anczpxor",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "point": 42,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 2,
+       "point": 11
+      },
+      {
+       "point": -13,
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0
+      },
+      {
+       "point": -40,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 4
+      }
+     ],
+     "created_at": "2026-05-23T10:23:33.827Z",
+     "played_at": "2026-05-23T10:22:00.000Z"
+    }
+   ],
+   "created_at": "2026-05-23T07:05:56.621Z"
+  },
+  {
+   "title": "2026-05-23 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "session_id": "mpi8uhvvg16t",
+   "hanchan": [],
+   "created_at": "2026-05-23T11:06:59.467Z"
+  },
+  {
+   "created_at": "2026-05-23T11:52:39.139Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [],
+   "session_id": "mpiah7tvzmii",
+   "title": "2026-05-23 対局",
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mpiahy993diu",
+     "results": [
+      {
+       "point": 48,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 11,
+       "seat": 3,
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "point": -15,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -44,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      }
+     ],
+     "played_at": "2026-05-23T11:52:00.000Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-05-23T11:53:13.389Z"
+    },
+    {
+     "hanchan_id": "mpicgzr39mzj",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": 44,
+       "player_id": "mn14fr018ak4",
+       "rank": 1
+      },
+      {
+       "point": 3,
+       "seat": 3,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -18,
+       "seat": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -29,
+       "seat": 1,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-23T12:47:00.000Z",
+     "created_at": "2026-05-23T12:48:27.903Z"
+    },
+    {
+     "created_at": "2026-05-23T13:52:14.242Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "point": 59,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "point": 9,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "point": -23,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "rank": 4,
+       "point": -45,
+       "final_score": 0,
+       "seat": 0
+      }
+     ],
+     "played_at": "2026-05-23T13:51:00.000Z",
+     "hanchan_id": "mpier06awxtt"
+    }
+   ],
+   "session_id": "mpiah8ctr3od",
+   "title": "2026-05-23 対局",
+   "created_at": "2026-05-23T11:52:39.821Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   }
+  },
+  {
+   "title": "2026-05-29 対局",
+   "created_at": "2026-05-29T12:18:16.959Z",
+   "hanchan": [
+    {
+     "created_at": "2026-05-29T12:18:40.838Z",
+     "played_at": "2026-05-29T12:18:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "point": 59,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "rank": 2,
+       "point": 14,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "point": -28,
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -45,
+       "player_id": "mn14g3xua5px",
+       "seat": 2
+      }
+     ],
+     "hanchan_id": "mpqw1sue57sq"
+    },
+    {
+     "created_at": "2026-05-29T14:23:17.055Z",
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "final_score": 0,
+       "rank": 1,
+       "point": 68
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": 22,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0,
+       "point": -18
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "point": -72,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-05-29T14:23:00.000Z",
+     "hanchan_id": "mpr0i1j32b23",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "created_at": "2026-05-29T16:15:18.927Z",
+     "played_at": "2026-05-29T16:14:00.000Z",
+     "hanchan_id": "mpr4i45rud09",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 0,
+       "point": 61,
+       "rank": 1,
+       "final_score": 0
+      },
+      {
+       "point": -1,
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "rank": 3,
+       "point": -25
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -35,
+       "rank": 4,
+       "seat": 1,
+       "final_score": 0
+      }
+     ],
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14exzfwtni",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ]
+    }
+   ],
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14exzfwtni",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "session_id": "mpqw1af3l3ya"
+  },
+  {
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-05-30 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mps3o4r8mn70",
+   "created_at": "2026-05-30T08:39:46.196Z",
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-30T08:39:00.000Z",
+     "hanchan_id": "mps3okk01llh",
+     "results": [
+      {
+       "rank": 1,
+       "point": 45,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14g3xua5px",
+       "point": 11,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 1,
+       "point": -14,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "rank": 4,
+       "point": -42,
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14flzgnzpr"
+      }
+     ],
+     "created_at": "2026-05-30T08:40:06.676Z"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-05-30T08:40:00.000Z",
+     "created_at": "2026-05-30T09:57:50.080Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "point": 44
+      },
+      {
+       "point": 4,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "point": -17,
+       "rank": 3,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "rank": 4,
+       "player_id": "mn14flzgnzpr",
+       "point": -31
+      }
+     ],
+     "hanchan_id": "mps6giv1eoc4"
+    },
+    {
+     "created_at": "2026-05-30T12:40:57.493Z",
+     "played_at": "2026-05-30T12:40:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 69
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 11,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "rank": 3,
+       "point": -21
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "seat": 3,
+       "point": -59,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "hanchan_id": "mpscaavp8f8z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "played_at": "2026-05-30T12:40:00.000Z",
+     "results": [
+      {
+       "point": 48,
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "point": 15,
+       "rank": 2
+      },
+      {
+       "seat": 0,
+       "point": -25,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 3
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": -38,
+       "seat": 1,
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mpsfbg5z6iir",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-05-30T14:05:49.847Z"
+    }
+   ]
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "session_id": "mq0ws32ettuw",
+   "hanchan": [
+    {
+     "results": [
+      {
+       "rank": 1,
+       "seat": 0,
+       "point": 48,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "point": 7
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0,
+       "point": -20
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "point": -35,
+       "rank": 4,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-06-05T12:37:18.598Z",
+     "hanchan_id": "mq0wspzadimd",
+     "played_at": "2026-06-05T12:36:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "point": 68,
+       "seat": 2
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 14,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "seat": 0,
+       "point": -13,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -69,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mq0zlfuwzre6",
+     "played_at": "2026-06-05T13:54:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-06-05T13:55:37.736Z"
+    },
+    {
+     "created_at": "2026-06-05T15:17:58.079Z",
+     "played_at": "2026-06-05T15:17:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "seat": 2,
+       "point": 54
+      },
+      {
+       "point": 4,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 3
+      },
+      {
+       "point": -19,
+       "rank": 3,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "point": -39,
+       "final_score": 0
+      }
+     ],
+     "hanchan_id": "mq12jbunfhil",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ]
+    }
+   ],
+   "title": "2026-06-05 対局",
+   "created_at": "2026-06-05T12:36:48.902Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   }
+  },
+  {
+   "session_id": "mq233patuic4",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14fr018ak4",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg"
+   ],
+   "title": "2026-06-06 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-06-06T08:21:34.805Z",
+   "hanchan": [
+    {
+     "played_at": "2026-06-06T08:21:00.000Z",
+     "created_at": "2026-06-06T08:21:51.098Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "rank": 1,
+       "point": 47,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": 16,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -16
+      },
+      {
+       "point": -47,
+       "player_id": "mn14g3xua5px",
+       "rank": 4,
+       "final_score": 0,
+       "seat": 3
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mq2341veowmq"
+    },
+    {
+     "played_at": "2026-06-06T09:10:00.000Z",
+     "hanchan_id": "mq24wfhzzp4n",
+     "results": [
+      {
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "final_score": 0,
+       "point": 46
+      },
+      {
+       "rank": 2,
+       "point": 8,
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "rank": 3,
+       "point": -14,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": -40,
+       "rank": 4,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-06-06T09:11:54.743Z"
+    },
+    {
+     "played_at": "2026-06-06T11:53:00.000Z",
+     "results": [
+      {
+       "seat": 1,
+       "point": 63,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "point": 25,
+       "seat": 2,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3,
+       "point": -36,
+       "seat": 0
+      },
+      {
+       "point": -52,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      }
+     ],
+     "hanchan_id": "mq2aqcfmky4q",
+     "created_at": "2026-06-06T11:55:08.530Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "created_at": "2026-06-06T12:44:15.188Z",
+     "hanchan_id": "mq2chi38pa9r",
+     "played_at": "2026-06-06T12:43:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fr018ak4",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg"
+     ],
+     "results": [
+      {
+       "point": 51,
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "rank": 2,
+       "point": 10,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": -25,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "point": -36,
+       "seat": 1,
+       "player_id": "mn14fr018ak4"
+      }
+     ]
+    },
+    {
+     "hanchan_id": "mq2esnajnff7",
+     "results": [
+      {
+       "seat": 1,
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "point": 45,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": 8,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -21,
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "seat": 0,
+       "point": -32,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "played_at": "2026-06-06T13:48:00.000Z",
+     "created_at": "2026-06-06T13:48:54.379Z",
+     "seats": [
+      "mn14g3xua5px",
+      "mn14fr018ak4",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg"
+     ]
+    }
+   ]
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-06-12T13:13:34.457Z",
+   "hanchan": [
+    {
+     "created_at": "2026-06-12T13:14:03.100Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mqay6xngavye",
+     "played_at": "2026-06-12T13:13:00.000Z",
+     "results": [
+      {
+       "point": 53,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 1,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "seat": 0,
+       "point": 16,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "player_id": "mn14g3xua5px",
+       "point": -27,
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "seat": 2,
+       "point": -42,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "rank": 4
+      }
+     ]
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-06-12T14:06:15.798Z",
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "rank": 1,
+       "point": 51,
+       "final_score": 0
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "final_score": 0,
+       "point": 11
+      },
+      {
+       "seat": 2,
+       "point": -10,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "final_score": 0
+      },
+      {
+       "rank": 4,
+       "final_score": 0,
+       "seat": 3,
+       "point": -52,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "played_at": "2026-06-12T13:14:00.000Z",
+     "hanchan_id": "mqb022uukwt7"
+    }
+   ],
+   "session_id": "mqay6bjtfjd6",
+   "title": "2026-06-12 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "title": "2026-06-13 対局",
+   "created_at": "2026-06-13T07:33:20.045Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14flzgnzpr"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-06-13T07:34:05.538Z",
+     "played_at": "2026-06-13T07:33:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14flzgnzpr"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "point": 59
+      },
+      {
+       "point": 15,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "point": -31,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "point": -43,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mqc1hlgi91tj"
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 3,
+       "point": 54,
+       "rank": 1,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 15,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "point": -10,
+       "rank": 3,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "rank": 4,
+       "point": -59,
+       "seat": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      }
+     ],
+     "created_at": "2026-06-13T09:11:37.561Z",
+     "hanchan_id": "mqc4z0wpceo9",
+     "played_at": "2026-06-13T09:11:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14flzgnzpr"
+     ]
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "point": 64,
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "point": 12,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 2
+      },
+      {
+       "seat": 3,
+       "point": -16,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -60,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "played_at": "2026-06-13T11:56:00.000Z",
+     "hanchan_id": "mqcb1yygjgw6",
+     "created_at": "2026-06-13T12:01:52.697Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14flzgnzpr"
+     ]
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14flzgnzpr"
+     ],
+     "created_at": "2026-06-13T13:11:05.404Z",
+     "played_at": "2026-06-13T13:10:00.000Z",
+     "hanchan_id": "mqcdiz7g1ea9",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "point": 57,
+       "seat": 3
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "final_score": 0,
+       "point": 10
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": -15,
+       "rank": 3,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "point": -52,
+       "final_score": 0,
+       "rank": 4
+      }
+     ]
+    }
+   ],
+   "session_id": "mqc1gmctuj8i"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "title": "2026-06-19 対局",
+   "created_at": "2026-06-19T12:37:20.703Z",
+   "hanchan": [
+    {
+     "played_at": "2026-06-19T12:37:00.000Z",
+     "hanchan_id": "mqkwz9bbh8lu",
+     "created_at": "2026-06-19T12:37:47.111Z",
+     "results": [
+      {
+       "seat": 0,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "point": 46,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0,
+       "point": 10,
+       "rank": 2
+      },
+      {
+       "point": -20,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 4,
+       "point": -36
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ]
+    },
+    {
+     "hanchan_id": "mqkzxnydm6zy",
+     "played_at": "2026-06-19T13:59:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "rank": 1,
+       "point": 50,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "point": 7,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "point": -23,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 3,
+       "seat": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "seat": 2,
+       "point": -34,
+       "final_score": 0
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-06-19T14:00:31.621Z"
+    }
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "session_id": "mqkwyoxraiq1"
+  },
+  {
+   "title": "2026-06-26 対局",
+   "session_id": "mquz3wmaeola",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-06-26T13:35:04.930Z"
+  },
+  {
+   "session_id": "mquz4ll3ue81",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-06-26T13:35:49.959Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "seat": 3,
+       "point": 47,
+       "final_score": 0,
+       "rank": 1,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "point": 7,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "point": -13,
+       "seat": 1
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 4,
+       "point": -41
+      }
+     ],
+     "played_at": "2026-06-26T13:35:00.000Z",
+     "hanchan_id": "mquz4vd3igku"
+    },
+    {
+     "created_at": "2026-06-26T14:52:08.988Z",
+     "played_at": "2026-06-26T13:36:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 2,
+       "point": 60,
+       "rank": 1
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "point": 23,
+       "player_id": "mn14exzfwtni",
+       "rank": 2
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "rank": 3,
+       "point": -26
+      },
+      {
+       "rank": 4,
+       "point": -57,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "seat": 1
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mqv1v0kbtc3r"
+    }
+   ],
+   "title": "2026-06-26 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-06-26T13:35:37.287Z"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-06-27T08:31:37.375Z",
+   "session_id": "mqw3pi8vrkt2",
+   "title": "2026-06-27 対局",
+   "hanchan": [
+    {
+     "created_at": "2026-06-27T08:32:04.200Z",
+     "played_at": "2026-06-27T08:31:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "rank": 1,
+       "point": 70,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": 19,
+       "rank": 2,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "seat": 0,
+       "point": -32,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 3
+      },
+      {
+       "rank": 4,
+       "point": -57,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0
+      }
+     ],
+     "hanchan_id": "mqw3q2y05mbq",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ]
+  },
+  {
+   "session_id": "mqw5jdnhp5qm",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14exzfwtni"
+   ],
+   "hanchan": [],
+   "title": "2026-06-27 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-06-27T09:22:50.717Z"
+  },
+  {
+   "created_at": "2026-06-27T09:22:54.115Z",
+   "hanchan": [],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14g3xua5px",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14exzfwtni"
+   ],
+   "session_id": "mqw5jg9vf9y3",
+   "title": "2026-06-27 対局"
+  },
+  {
+   "hanchan": [
+    {
+     "played_at": "2026-06-27T09:23:00.000Z",
+     "hanchan_id": "mqw5kbprgbt6",
+     "created_at": "2026-06-27T09:23:34.863Z",
+     "seats": [
+      "mn14g3xua5px",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14exzfwtni"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 0,
+       "point": 41,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 9,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "point": -20,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1
+      },
+      {
+       "point": -30,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "seat": 3,
+       "final_score": 0
+      }
+     ]
+    }
+   ],
+   "created_at": "2026-06-27T09:22:55.603Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "title": "2026-06-27 対局",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14exzfwtni"
+   ],
+   "session_id": "mqw5jhf7r6b3"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "created_at": "2026-06-27T12:10:17.760Z",
+   "title": "2026-06-27 対局",
+   "hanchan": [],
+   "session_id": "mqwbiq00hsi5",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   }
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mqwbkgur4u2m",
+   "hanchan": [
+    {
+     "played_at": "2026-06-27T12:11:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 1,
+       "point": 55
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 25,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "rank": 3,
+       "point": -34,
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "final_score": 0
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "point": -46,
+       "rank": 4
+      }
+     ],
+     "hanchan_id": "mqwblhz5g1nt",
+     "created_at": "2026-06-27T12:12:27.329Z"
+    }
+   ],
+   "title": "2026-06-27 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-06-27T12:11:39.219Z"
+  },
+  {
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "session_id": "mqwfjew2y5lh",
+   "hanchan": [
+    {
+     "results": [
+      {
+       "seat": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "point": 55,
+       "final_score": 0
+      },
+      {
+       "point": 16,
+       "rank": 2,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 3,
+       "point": -16
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14flzgnzpr",
+       "point": -55,
+       "rank": 4,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-06-27T14:03:39.006Z",
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "played_at": "2026-06-27T14:02:00.000Z",
+     "hanchan_id": "mqwfkhviw61h"
+    },
+    {
+     "seats": [
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-06-28T04:32:55.216Z",
+     "hanchan_id": "mqxamdv4l5eu",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 0,
+       "final_score": 0,
+       "rank": 1,
+       "point": 10
+      },
+      {
+       "rank": 2,
+       "point": 5,
+       "player_id": "mn14flzgnzpr",
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": -5,
+       "final_score": 0,
+       "rank": 3,
+       "seat": 3
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "final_score": 0,
+       "point": -10,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-06-28T04:32:00.000Z"
+    }
+   ],
+   "title": "2026-06-27 対局",
+   "created_at": "2026-06-27T14:02:48.482Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "session_id": "mrex8f3k8by1",
+   "title": "2026-07-10 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "rank": 1,
+       "final_score": 0,
+       "point": 64
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 2,
+       "point": 8
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -28,
+       "player_id": "mn14fr018ak4",
+       "rank": 3
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4,
+       "point": -44,
+       "final_score": 0
+      }
+     ],
+     "created_at": "2026-07-10T12:38:31.034Z",
+     "played_at": "2026-07-10T12:38:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "mrex937eng9l"
+    },
+    {
+     "hanchan_id": "mrez6i8n1lwz",
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 1,
+       "final_score": 0,
+       "point": 52,
+       "seat": 2
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 7,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "rank": 3,
+       "final_score": 0,
+       "point": -24,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -35,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-07-10T13:32:29.783Z",
+     "played_at": "2026-07-10T13:32:00.000Z"
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-07-10T14:19:24.761Z",
+     "hanchan_id": "mrf0uuahjdus",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1,
+       "point": 62
+      },
+      {
+       "point": 7,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "final_score": 0,
+       "rank": 3,
+       "point": -29
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "point": -40,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-07-10T14:18:00.000Z"
+    }
+   ],
+   "created_at": "2026-07-10T12:37:59.792Z"
+  },
+  {
+   "created_at": "2026-07-11T06:56:21.817Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mrg0h9ieiih9",
+     "played_at": "2026-07-11T06:56:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "point": 51,
+       "final_score": 0,
+       "rank": 1,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "point": 13,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "rank": 3,
+       "final_score": 0,
+       "point": -13
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "point": -51,
+       "rank": 4,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "created_at": "2026-07-11T06:56:37.478Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "results": [
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": 51,
+       "player_id": "mn14fr018ak4",
+       "rank": 1
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "rank": 2,
+       "final_score": 0,
+       "point": 12,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -24,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": -39,
+       "seat": 1,
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-07-11T08:08:27.484Z",
+     "hanchan_id": "mrg31n4sa4pq",
+     "played_at": "2026-07-11T08:07:00.000Z"
+    },
+    {
+     "hanchan_id": "mrgckjmsglcx",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14gn9sscq8",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "point": 54,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "rank": 2,
+       "point": 17,
+       "player_id": "mn14fr018ak4",
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -10,
+       "seat": 2,
+       "player_id": "mn14gn9sscq8"
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 4,
+       "point": -61
+      }
+     ],
+     "played_at": "2026-07-11T12:34:00.000Z",
+     "created_at": "2026-07-11T12:35:05.956Z"
+    },
+    {
+     "results": [
+      {
+       "point": 55,
+       "rank": 1,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "point": 7,
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "rank": 3,
+       "point": -23,
+       "seat": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -39,
+       "final_score": 0,
+       "rank": 4,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "hanchan_id": "mrgec90hznd8",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-07-11T13:24:00.000Z",
+     "created_at": "2026-07-11T13:24:38.177Z"
+    }
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-07-11 対局",
+   "session_id": "mrg0gxfdhbyg"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "created_at": "2026-07-18T11:42:55.655Z",
+   "title": "2026-07-18 対局",
+   "session_id": "mrqasexzu5rl",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "hanchan_id": "mrqaso46u3my",
+     "played_at": "2026-07-18T11:42:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-07-18T11:43:07.542Z",
+     "results": [
+      {
+       "seat": 0,
+       "point": 55,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 9,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "point": -13,
+       "seat": 2,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": -51,
+       "rank": 4,
+       "seat": 3,
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mrqcrvepcjqq",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": 40,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 1
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "point": 10,
+       "seat": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 3,
+       "final_score": 0,
+       "point": -16,
+       "seat": 2
+      },
+      {
+       "point": -34,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "seat": 0
+      }
+     ],
+     "played_at": "2026-07-18T12:38:00.000Z",
+     "created_at": "2026-07-18T12:38:29.569Z"
+    }
+   ]
+  },
+  {
+   "session_id": "msixex14iuiq",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-08-07T12:34:22.614Z",
+     "played_at": "2026-08-07T12:33:00.000Z",
+     "results": [
+      {
+       "point": 85,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "point": 15,
+       "rank": 2
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 3,
+       "point": -7
+      },
+      {
+       "rank": 4,
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "point": -93
+      }
+     ],
+     "hanchan_id": "msixfm6u4wdq"
+    },
+    {
+     "played_at": "2026-08-07T13:50:00.000Z",
+     "hanchan_id": "msj06fwpzpvp",
+     "created_at": "2026-08-07T13:51:13.417Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "point": 56,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 2,
+       "point": 18
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -21,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "seat": 1,
+       "rank": 4,
+       "point": -53
+      }
+     ]
+    },
+    {
+     "created_at": "2026-08-07T15:01:08.517Z",
+     "results": [
+      {
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "point": 54,
+       "rank": 1,
+       "final_score": 0
+      },
+      {
+       "rank": 2,
+       "final_score": 0,
+       "point": 9,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 3,
+       "point": -14,
+       "seat": 2
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "point": -49,
+       "final_score": 0,
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-08-07T15:00:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "msj2ocv9aklo"
+    }
+   ],
+   "title": "2026-08-07 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-08-07T12:33:50.008Z"
+  },
+  {
+   "session_id": "mslg1lvjtyrw",
+   "hanchan": [
+    {
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 3,
+       "point": 73
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": 3,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2
+      },
+      {
+       "rank": 3,
+       "point": -26,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 2,
+       "rank": 4,
+       "point": -50
+      }
+     ],
+     "hanchan_id": "mslg1xd206w2",
+     "created_at": "2026-08-09T06:51:08.966Z",
+     "played_at": "2026-08-09T06:50:00.000Z"
+    },
+    {
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "seat": 3,
+       "point": 44,
+       "rank": 1
+      },
+      {
+       "rank": 2,
+       "point": 8,
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -16,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "point": -36,
+       "rank": 4,
+       "final_score": 0,
+       "seat": 2
+      }
+     ],
+     "hanchan_id": "mslj12o6caqd",
+     "played_at": "2026-08-09T08:13:00.000Z",
+     "created_at": "2026-08-09T08:14:28.038Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "played_at": "2026-08-09T09:11:00.000Z",
+     "created_at": "2026-08-09T09:12:11.890Z",
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "seat": 3,
+       "final_score": 0,
+       "point": 54,
+       "rank": 1
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "point": 16
+      },
+      {
+       "seat": 2,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "point": -9,
+       "final_score": 0
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": -61,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "msll3beay1i7"
+    }
+   ],
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "title": "2026-08-09 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-08-09T06:50:54.079Z"
+  },
+  {
+   "created_at": "2026-08-10T13:19:31.759Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14flzgnzpr"
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "hanchan": [
+    {
+     "created_at": "2026-08-10T13:20:19.779Z",
+     "played_at": "2026-08-10T13:20:00.000Z",
+     "hanchan_id": "msn9e9mr38x4",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14flzgnzpr"
+     ],
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "rank": 1,
+       "point": 66,
+       "seat": 0
+      },
+      {
+       "seat": 2,
+       "point": 28,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "point": -40,
+       "rank": 3,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 3,
+       "point": -54,
+       "final_score": 0,
+       "rank": 4
+      }
+     ]
+    },
+    {
+     "created_at": "2026-08-10T14:50:34.290Z",
+     "played_at": "2026-08-10T14:49:00.000Z",
+     "results": [
+      {
+       "seat": 0,
+       "point": 59,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 1
+      },
+      {
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "point": 24,
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": -31,
+       "rank": 3,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "final_score": 0,
+       "rank": 4,
+       "point": -52
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14flzgnzpr"
+     ],
+     "hanchan_id": "msncmbhux5qy"
+    }
+   ],
+   "title": "2026-08-10 対局",
+   "session_id": "msn9d8kvfc9k"
+  },
+  {
+   "session_id": "mssxvkkwpxz1",
+   "seats": [
+    "mn14g3xua5px",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mssxwkhv0q8t",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-08-14T12:44:00.000Z",
+     "created_at": "2026-08-14T12:45:15.331Z",
+     "results": [
+      {
+       "point": 51,
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "seat": 2,
+       "point": 10,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "point": -14,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "point": -47,
+       "seat": 0
+      }
+     ]
+    },
+    {
+     "hanchan_id": "mst05pvj67tr",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "rank": 1,
+       "final_score": 0,
+       "point": 63
+      },
+      {
+       "final_score": 0,
+       "point": 7,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "seat": 1
+      },
+      {
+       "point": -25,
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "seat": 2
+      },
+      {
+       "final_score": 0,
+       "point": -45,
+       "rank": 4,
+       "player_id": "mn14fr018ak4",
+       "seat": 3
+      }
+     ],
+     "played_at": "2026-08-14T13:47:00.000Z",
+     "created_at": "2026-08-14T13:48:21.439Z"
+    },
+    {
+     "played_at": "2026-08-15T05:43:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "mstyajlpn1b0",
+     "created_at": "2026-08-15T05:43:53.533Z",
+     "results": [
+      {
+       "point": 77,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "seat": 2,
+       "point": -5,
+       "final_score": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -26,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "point": -46
+      }
+     ]
+    },
+    {
+     "created_at": "2026-08-15T07:47:35.975Z",
+     "results": [
+      {
+       "point": 96,
+       "rank": 1,
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -5,
+       "rank": 2,
+       "player_id": "mn14g3xua5px",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "point": -30,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": -61,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-08-15T07:47:00.000Z",
+     "hanchan_id": "msu2pmsnrk63"
+    }
+   ],
+   "title": "2026-08-14 対局",
+   "created_at": "2026-08-14T12:44:28.784Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   }
+  },
+  {
+   "session_id": "msuczuuxnmhv",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14g3xua5px",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "title": "2026-08-15 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "hanchan_id": "msud0789h7eb",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14g3xua5px",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "point": 60,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "point": 25,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 2
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 3,
+       "point": -31,
+       "seat": 1
+      },
+      {
+       "point": -54,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      }
+     ],
+     "played_at": "2026-08-15T12:35:00.000Z",
+     "created_at": "2026-08-15T12:35:45.177Z"
+    },
+    {
+     "hanchan_id": "msuf51o7e4g4",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14g3xua5px",
+       "rank": 1,
+       "point": 51
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "rank": 2,
+       "point": 4,
+       "player_id": "mn14flzgnzpr"
+      },
+      {
+       "point": -17,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": -38,
+       "rank": 4,
+       "player_id": "mn14fr018ak4"
+      }
+     ],
+     "played_at": "2026-08-15T13:35:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14g3xua5px",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-08-15T13:35:30.487Z"
+    },
+    {
+     "created_at": "2026-08-15T14:35:05.918Z",
+     "hanchan_id": "msuh9ohq76j5",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14g3xua5px",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-08-15T14:34:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "final_score": 0,
+       "point": 47,
+       "seat": 3
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14g3xua5px",
+       "point": 10
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -23,
+       "rank": 3,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "rank": 4,
+       "player_id": "mn14flzgnzpr",
+       "point": -34
+      }
+     ]
+    }
+   ],
+   "created_at": "2026-08-15T12:35:29.145Z"
+  },
+  {
+   "created_at": "2026-08-22T07:03:40.596Z",
+   "hanchan": [
+    {
+     "hanchan_id": "mt418gtcw5bk",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "rank": 1,
+       "final_score": 0,
+       "point": 74,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "seat": 0,
+       "rank": 2,
+       "player_id": "mn14exzfwtni",
+       "point": 29,
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "point": -41,
+       "player_id": "mn14fr018ak4",
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "point": -62,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14g3xua5px"
+      }
+     ],
+     "played_at": "2026-08-22T07:03:00.000Z",
+     "created_at": "2026-08-22T07:03:57.216Z"
+    },
+    {
+     "hanchan_id": "mt43vlviw24q",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-08-22T07:03:00.000Z",
+     "results": [
+      {
+       "point": 53,
+       "rank": 1,
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni"
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "point": 17,
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 3,
+       "point": -6,
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -64,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      }
+     ],
+     "created_at": "2026-08-22T08:17:56.094Z"
+    },
+    {
+     "created_at": "2026-08-22T10:15:30.894Z",
+     "hanchan_id": "mt482te6iy1k",
+     "results": [
+      {
+       "point": 53,
+       "rank": 1,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 11
+      },
+      {
+       "seat": 3,
+       "rank": 3,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "point": -22
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14g3xua5px",
+       "point": -42,
+       "final_score": 0,
+       "seat": 2
+      }
+     ],
+     "played_at": "2026-08-22T10:14:00.000Z",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "created_at": "2026-08-22T12:46:06.556Z",
+     "played_at": "2026-08-22T12:45:00.000Z",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14exzfwtni"
+     ],
+     "results": [
+      {
+       "point": 56,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "seat": 1,
+       "point": 25,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "rank": 3,
+       "point": -29
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0,
+       "point": -52,
+       "seat": 0
+      }
+     ],
+     "hanchan_id": "mt4dghcs6j3z"
+    },
+    {
+     "hanchan_id": "mt4g02hx905t",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 2,
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "point": 56
+      },
+      {
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg",
+       "point": 8,
+       "rank": 2
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14fr018ak4",
+       "point": -23,
+       "rank": 3
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "point": -41
+      }
+     ],
+     "seats": [
+      "mn14fr018ak4",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14exzfwtni"
+     ],
+     "played_at": "2026-08-22T13:57:00.000Z",
+     "created_at": "2026-08-22T13:57:19.653Z"
+    }
+   ],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "title": "2026-08-22 対局",
+   "seats": [
+    "mn14fr018ak4",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14exzfwtni"
+   ],
+   "session_id": "mt4183zo38sn"
+  },
+  {
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "session_id": "mte1zbl5n8cd",
+   "title": "2026-08-29 対局",
+   "created_at": "2026-08-29T07:22:31.913Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "created_at": "2026-08-29T07:23:08.804Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 3,
+       "point": 51,
+       "rank": 1,
+       "player_id": "mn14gn9sscq8"
+      },
+      {
+       "seat": 2,
+       "point": 15,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 2
+      },
+      {
+       "seat": 1,
+       "point": -9,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 3
+      },
+      {
+       "final_score": 0,
+       "rank": 4,
+       "point": -57,
+       "seat": 0,
+       "player_id": "mn14exzfwtni"
+      }
+     ],
+     "played_at": "2026-08-29T07:22:00.000Z",
+     "hanchan_id": "mte2041w8x7a",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14gn9sscq8"
+     ]
+    },
+    {
+     "created_at": "2026-08-29T08:17:58.742Z",
+     "results": [
+      {
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fr018ak4",
+       "rank": 1,
+       "point": 50
+      },
+      {
+       "final_score": 0,
+       "seat": 2,
+       "point": 12,
+       "rank": 2,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "seat": 0,
+       "player_id": "mn14flzgnzpr",
+       "rank": 3,
+       "final_score": 0,
+       "point": -12
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14fcjkyhqg",
+       "point": -50,
+       "seat": 1,
+       "final_score": 0
+      }
+     ],
+     "hanchan_id": "mte3yml2wyq3",
+     "seats": [
+      "mn14flzgnzpr",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-08-29T08:17:00.000Z"
+    },
+    {
+     "played_at": "2026-08-29T09:17:00.000Z",
+     "results": [
+      {
+       "point": 62,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "point": 10
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": -30,
+       "player_id": "mn14gn9sscq8",
+       "rank": 3
+      },
+      {
+       "point": -42,
+       "player_id": "mn14g3xua5px",
+       "final_score": 0,
+       "rank": 4,
+       "seat": 2
+      }
+     ],
+     "created_at": "2026-08-29T09:17:41.513Z",
+     "hanchan_id": "mte63f2hwwql",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14gn9sscq8"
+     ]
+    },
+    {
+     "played_at": "2026-08-29T12:21:00.000Z",
+     "created_at": "2026-08-29T12:21:58.396Z",
+     "results": [
+      {
+       "rank": 1,
+       "final_score": 0,
+       "point": 55,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "seat": 2,
+       "rank": 2,
+       "point": 16,
+       "player_id": "mn14flzgnzpr",
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 3,
+       "point": -13,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "final_score": 0,
+       "seat": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 4,
+       "point": -58
+      }
+     ],
+     "hanchan_id": "mtecoem491gu",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ]
+    },
+    {
+     "played_at": "2026-08-29T13:54:00.000Z",
+     "hanchan_id": "mteg0978ein9",
+     "created_at": "2026-08-29T13:55:10.100Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "final_score": 0,
+       "point": 69,
+       "rank": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "point": 22,
+       "final_score": 0,
+       "seat": 0
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "rank": 3,
+       "point": -29
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "rank": 4,
+       "point": -62,
+       "seat": 3,
+       "final_score": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "session_id": "mtyb6p8nk6e8",
+   "created_at": "2026-09-12T11:35:36.263Z",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "hanchan": [
+    {
+     "results": [
+      {
+       "point": 50,
+       "rank": 1,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "seat": 1,
+       "point": 14,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "seat": 3,
+       "rank": 3,
+       "point": -25,
+       "player_id": "mn14fr018ak4"
+      },
+      {
+       "player_id": "mn14flzgnzpr",
+       "seat": 2,
+       "final_score": 0,
+       "rank": 4,
+       "point": -39
+      }
+     ],
+     "played_at": "2026-09-12T11:35:00.000Z",
+     "hanchan_id": "mtyb75zu0wip",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "created_at": "2026-09-12T11:35:57.978Z"
+    },
+    {
+     "played_at": "2026-09-12T12:46:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "mtydqgtu8crl",
+     "created_at": "2026-09-12T12:46:57.714Z",
+     "results": [
+      {
+       "point": 49,
+       "player_id": "mn14flzgnzpr",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "seat": 0,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "rank": 2,
+       "point": 9
+      },
+      {
+       "rank": 3,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "point": -22,
+       "seat": 1
+      },
+      {
+       "rank": 4,
+       "point": -36,
+       "final_score": 0,
+       "seat": 3,
+       "player_id": "mn14fr018ak4"
+      }
+     ]
+    }
+   ],
+   "title": "2026-09-12 対局"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "created_at": "2026-09-18T12:32:10.071Z",
+   "title": "2026-09-18 対局",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "played_at": "2026-09-18T12:32:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mu6xux47fee9",
+     "created_at": "2026-09-18T12:32:27.175Z",
+     "results": [
+      {
+       "final_score": 0,
+       "point": 64,
+       "rank": 1,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "seat": 1,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 2,
+       "point": 28
+      },
+      {
+       "seat": 3,
+       "final_score": 0,
+       "point": -36,
+       "player_id": "mn14g3xua5px",
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "point": -56,
+       "seat": 2,
+       "rank": 4,
+       "final_score": 0
+      }
+     ]
+    },
+    {
+     "results": [
+      {
+       "rank": 1,
+       "point": 71,
+       "final_score": 0,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "seat": 2,
+       "point": 1,
+       "player_id": "mn14fr018ak4",
+       "rank": 2,
+       "final_score": 0
+      },
+      {
+       "rank": 3,
+       "point": -22,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "seat": 3,
+       "final_score": 0,
+       "rank": 4,
+       "point": -50
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "created_at": "2026-09-18T13:35:50.920Z",
+     "hanchan_id": "mu704g3szesr",
+     "played_at": "2026-09-18T12:32:00.000Z"
+    }
+   ],
+   "session_id": "mu6xujx346f2"
+  },
+  {
+   "session_id": "musflb8qln76",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "title": "2026-10-03 対局",
+   "hanchan": [],
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "created_at": "2026-10-03T13:32:01.706Z"
+  },
+  {
+   "created_at": "2026-10-03T13:32:02.156Z",
+   "title": "2026-10-03 対局",
+   "rule": {
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ],
+    "initial_score": 25000
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "session_id": "musflbl8801j",
+   "hanchan": []
+  },
+  {
+   "session_id": "musflc1tczbd",
+   "title": "2026-10-03 対局",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14g3xua5px",
+    "mn14fr018ak4"
+   ],
+   "hanchan": [
+    {
+     "created_at": "2026-10-03T13:32:25.672Z",
+     "played_at": "2026-10-03T13:32:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "hanchan_id": "musfltqg72y6",
+     "results": [
+      {
+       "point": 73,
+       "player_id": "mn14fcjkyhqg",
+       "rank": 1,
+       "seat": 1,
+       "final_score": 0
+      },
+      {
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14fr018ak4",
+       "point": 13,
+       "seat": 3
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0,
+       "rank": 3,
+       "point": -33
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14g3xua5px",
+       "seat": 2,
+       "point": -53,
+       "rank": 4
+      }
+     ]
+    },
+    {
+     "hanchan_id": "musiiwijn58r",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "played_at": "2026-10-03T13:32:00.000Z",
+     "results": [
+      {
+       "final_score": 0,
+       "rank": 1,
+       "point": 65,
+       "seat": 1,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": 10,
+       "player_id": "mn14fr018ak4",
+       "final_score": 0,
+       "rank": 2,
+       "seat": 3
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "point": -26,
+       "rank": 3,
+       "player_id": "mn14g3xua5px"
+      },
+      {
+       "point": -49,
+       "rank": 4,
+       "final_score": 0,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      }
+     ],
+     "created_at": "2026-10-03T14:54:08.155Z"
+    }
+   ],
+   "created_at": "2026-10-03T13:32:02.754Z"
+  },
+  {
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "hanchan": [
+    {
+     "results": [
+      {
+       "point": 55,
+       "player_id": "mn14flzgnzpr",
+       "rank": 1,
+       "final_score": 0,
+       "seat": 2
+      },
+      {
+       "seat": 1,
+       "point": 15,
+       "rank": 2,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "final_score": 0,
+       "point": -13,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0
+      },
+      {
+       "point": -57,
+       "final_score": 0,
+       "rank": 4,
+       "player_id": "mn14g3xua5px",
+       "seat": 3
+      }
+     ],
+     "created_at": "2026-10-11T07:32:39.241Z",
+     "played_at": "2026-10-11T07:31:00.000Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mv3i9yvdbf5h"
+    },
+    {
+     "created_at": "2026-10-11T08:34:12.989Z",
+     "hanchan_id": "mv3kh4zh4ta1",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "seat": 1,
+       "point": 45,
+       "player_id": "mn14fcjkyhqg",
+       "final_score": 0,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 11,
+       "rank": 2,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "point": -21,
+       "rank": 3,
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0
+      },
+      {
+       "seat": 2,
+       "final_score": 0,
+       "point": -35,
+       "player_id": "mn14flzgnzpr",
+       "rank": 4
+      }
+     ],
+     "played_at": "2026-10-11T07:32:00.000Z"
+    },
+    {
+     "created_at": "2026-10-11T12:14:09.170Z",
+     "played_at": "2026-10-11T12:13:00.000Z",
+     "results": [
+      {
+       "player_id": "mn14exzfwtni",
+       "seat": 0,
+       "final_score": 0,
+       "rank": 1,
+       "point": 46
+      },
+      {
+       "point": 9,
+       "seat": 1,
+       "final_score": 0,
+       "rank": 2,
+       "player_id": "mn14fcjkyhqg"
+      },
+      {
+       "point": -19,
+       "player_id": "mn14g3xua5px",
+       "rank": 3,
+       "seat": 3,
+       "final_score": 0
+      },
+      {
+       "seat": 2,
+       "point": -36,
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "rank": 4
+      }
+     ],
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "hanchan_id": "mv3sbz82gmo0"
+    },
+    {
+     "results": [
+      {
+       "rank": 1,
+       "player_id": "mn14g3xua5px",
+       "point": 46,
+       "final_score": 0,
+       "seat": 3
+      },
+      {
+       "final_score": 0,
+       "player_id": "mn14fr018ak4",
+       "seat": 2,
+       "point": 12,
+       "rank": 2
+      },
+      {
+       "rank": 3,
+       "point": -17,
+       "final_score": 0,
+       "player_id": "mn14fcjkyhqg",
+       "seat": 1
+      },
+      {
+       "rank": 4,
+       "player_id": "mn14exzfwtni",
+       "point": -41,
+       "seat": 0,
+       "final_score": 0
+      }
+     ],
+     "played_at": "2026-10-11T13:13:00.000Z",
+     "hanchan_id": "mv3uh7h5wi99",
+     "created_at": "2026-10-11T13:14:12.377Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ]
+    }
+   ],
+   "session_id": "mv3i8z658yuz",
+   "title": "2026-10-11 対局",
+   "created_at": "2026-10-11T07:31:52.973Z",
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ]
+  },
+  {
+   "session_id": "mvayr4y8oly0",
+   "title": "2026-10-16 対局",
+   "created_at": "2026-10-16T12:48:17.360Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "hanchan": [
+    {
+     "hanchan_id": "mvayrfk2y4ej",
+     "played_at": "2026-10-16T12:48:00.000Z",
+     "created_at": "2026-10-16T12:48:31.106Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "point": 47,
+       "final_score": 0,
+       "seat": 2,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": 8,
+       "final_score": 0,
+       "seat": 0,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -19,
+       "final_score": 0,
+       "seat": 1,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": -36,
+       "final_score": 0,
+       "seat": 3,
+       "rank": 4
+      }
+     ]
+    },
+    {
+     "hanchan_id": "mvb095e7ztbw",
+     "played_at": "2026-10-16T13:29:00.000Z",
+     "created_at": "2026-10-16T13:30:17.359Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14fr018ak4",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 49,
+       "final_score": 0,
+       "seat": 3,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": 17,
+       "final_score": 0,
+       "seat": 0,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -8,
+       "final_score": 0,
+       "seat": 1,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fr018ak4",
+       "point": -58,
+       "final_score": 0,
+       "seat": 2,
+       "rank": 4
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "active_session": "mvayr4y8oly0",
+ "settings": {
+  "ranking_start": "2026-07-01"
+ }
+}
