@@ -1,0 +1,2631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0e1117">
+<title>雀録 JANROKU</title>
+<link rel="manifest" href="data:application/json,{%22name%22:%22雀録%22,%22short_name%22:%22JANROKU%22,%22display%22:%22standalone%22,%22background_color%22:%22%230e1117%22,%22theme_color%22:%22%230e1117%22}">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg: #0e1117;
+  --bg2: #151821;
+  --bg3: #1c2130;
+  --surface: #1e2535;
+  --surface2: #252d40;
+  --border: #2a3349;
+  --border2: #3a4560;
+  --gold: #c9a84c;
+  --gold2: #e8c96a;
+  --gold3: #f0d88a;
+  --red: #d94f5c;
+  --red2: #f06470;
+  --green: #4caf7d;
+  --green2: #66c994;
+  --blue: #5b8af0;
+  --blue2: #7aa3f5;
+  --text: #e8eaf0;
+  --text2: #9ba3bb;
+  --text3: #6b7490;
+  --radius: 12px;
+  --radius2: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.5);
+  --shadow2: 0 2px 12px rgba(0,0,0,0.3);
+  --tab-h: 64px;
+  --header-h: 56px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  overflow: hidden;
+}
+
+/* ====== LAYOUT ====== */
+#app { height: 100dvh; display: flex; flex-direction: column; }
+
+.page { display: none; flex: 1; overflow-y: auto; padding-bottom: calc(var(--tab-h) + 16px); }
+.page.active { display: block; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* ====== HEADER ====== */
+.page-header {
+  position: sticky; top: 0; z-index: 10;
+  height: var(--header-h);
+  display: flex; align-items: center; padding: 0 16px;
+  background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+  gap: 12px;
+}
+.page-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.1em;
+  flex: 1;
+}
+.header-btn {
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--text2); font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.header-btn:active { background: var(--surface2); transform: scale(0.92); }
+
+/* ====== TAB BAR ====== */
+#tabbar {
+  height: var(--tab-h);
+  display: flex; align-items: center;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 0 4px;
+  padding-bottom: env(safe-area-inset-bottom);
+  flex-shrink: 0;
+  position: relative; z-index: 100;
+}
+.tab-btn {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  padding: 8px 4px;
+  border: none; background: none;
+  color: var(--text3); cursor: pointer;
+  transition: all 0.2s; border-radius: 10px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.tab-btn .tab-icon { font-size: 20px; transition: transform 0.2s; }
+.tab-btn .tab-label { font-size: 10px; letter-spacing: 0.05em; font-weight: 500; }
+.tab-btn.active { color: var(--gold2); }
+.tab-btn.active .tab-icon { transform: translateY(-2px); }
+.tab-btn:active { opacity: 0.7; }
+
+/* ====== COMMON COMPONENTS ====== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 0 16px 12px;
+}
+.card-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13px; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.card-title::before {
+  content: ''; width: 3px; height: 14px;
+  background: var(--gold); border-radius: 2px;
+}
+
+.btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 12px 20px;
+  border-radius: var(--radius2); border: none;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: all 0.2s; letter-spacing: 0.05em;
+}
+.btn:active { transform: scale(0.96); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
+  color: #1a1500;
+}
+.btn-danger {
+  background: rgba(217,79,92,0.15);
+  border: 1px solid var(--red);
+  color: var(--red2);
+}
+.btn-ghost {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+}
+.btn-full { width: 100%; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 700;
+}
+.badge-gold { background: rgba(201,168,76,0.2); color: var(--gold2); border: 1px solid rgba(201,168,76,0.3); }
+.badge-green { background: rgba(76,175,125,0.15); color: var(--green2); border: 1px solid rgba(76,175,125,0.25); }
+.badge-red { background: rgba(217,79,92,0.15); color: var(--red2); border: 1px solid rgba(217,79,92,0.25); }
+.badge-blue { background: rgba(91,138,240,0.15); color: var(--blue2); border: 1px solid rgba(91,138,240,0.25); }
+
+.pt-positive { color: var(--green2); }
+.pt-negative { color: var(--red2); }
+.pt-zero { color: var(--text2); }
+
+.divider { height: 1px; background: var(--border); margin: 12px 0; }
+
+input, select {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  color: var(--text);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 15px; padding: 10px 12px;
+  width: 100%; outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+input:focus, select:focus { border-color: var(--gold); }
+input[type=number] { font-family: 'Share Tech Mono', monospace; font-size: 18px; text-align: right; }
+.score-input-field input { font-family: 'Share Tech Mono', monospace; font-size: 20px; text-align: center; }
+label { font-size: 12px; color: var(--text2); margin-bottom: 6px; display: block; letter-spacing: 0.05em; }
+
+.form-group { margin-bottom: 14px; }
+
+/* ====== MODAL ====== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  width: 100%; max-width: 480px; max-height: 92dvh;
+  background: var(--bg2);
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid var(--border2);
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.32,0.72,0,1);
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-handle {
+  width: 36px; height: 4px; border-radius: 2px;
+  background: var(--border2); margin: 12px auto 0;
+}
+.modal-header {
+  padding: 14px 20px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px; font-weight: 700; color: var(--gold2);
+  letter-spacing: 0.1em;
+}
+.modal-close {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--surface2); border: none;
+  color: var(--text2); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-body { padding: 0 20px 20px; overflow-y: auto; max-height: calc(92dvh - 80px); }
+
+/* ====== HOME PAGE ====== */
+.home-hero {
+  padding: 8px 16px 0;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.home-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px; font-weight: 700;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold3) 60%, var(--gold) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: 0.05em;
+}
+.home-logo span { font-size: 13px; display: block; -webkit-text-fill-color: var(--text3); margin-top: -2px; letter-spacing: 0.2em; }
+
+.ranking-list { display: flex; flex-direction: column; gap: 8px; }
+.rank-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: var(--radius2);
+  background: var(--bg3); border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.rank-item:active { background: var(--surface); }
+.rank-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif JP', serif; font-size: 13px; font-weight: 700;
+  flex-shrink: 0;
+}
+.rank-1 { background: linear-gradient(135deg,#c9a84c,#f0d88a); color: #1a1500; }
+.rank-2 { background: linear-gradient(135deg,#7a8ba0,#aab8c8); color: #0e1117; }
+.rank-3 { background: linear-gradient(135deg,#a06040,#c88060); color: #f0e8e0; }
+.rank-other { background: var(--surface2); color: var(--text3); font-size: 12px; }
+.rank-icon { font-size: 22px; }
+.rank-name { flex: 1; font-size: 15px; font-weight: 500; }
+.rank-pt { font-family: 'Share Tech Mono', monospace; font-size: 18px; font-weight: 700; }
+.rank-sub { font-size: 11px; color: var(--text3); margin-top: 1px; }
+
+.recent-item {
+  padding: 12px;
+  border-radius: var(--radius2);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.recent-item-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.recent-title { font-size: 14px; font-weight: 500; }
+.recent-date { font-size: 11px; color: var(--text3); }
+.recent-scores { display: flex; gap: 6px; flex-wrap: wrap; }
+.recent-score-chip {
+  display: flex; align-items: center; gap: 5px;
+  padding: 3px 8px; border-radius: 20px;
+  background: var(--surface); font-size: 12px;
+}
+.chip-rank { font-size: 10px; color: var(--text3); }
+.chip-name { color: var(--text2); }
+.chip-pt { font-family: 'Share Tech Mono', monospace; font-size: 12px; }
+
+/* ====== RECORD PAGE (点数入力) ====== */
+.step-indicator {
+  display: flex; align-items: center; gap: 0;
+  padding: 16px 20px 8px;
+}
+.step-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  border: 2px solid var(--border2);
+  color: var(--text3); background: var(--bg);
+  flex-shrink: 0; transition: all 0.3s;
+  position: relative; z-index: 1;
+}
+.step-dot.active { border-color: var(--gold); color: var(--gold2); }
+.step-dot.done { background: var(--gold); border-color: var(--gold); color: #1a1500; }
+.step-line { flex: 1; height: 2px; background: var(--border); margin: 0 -1px; }
+.step-line.done { background: var(--gold); }
+
+.session-list { display: flex; flex-direction: column; gap: 8px; }
+.session-item {
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer; transition: all 0.2s;
+}
+.session-item:active { background: var(--surface2); }
+.session-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+.session-item-title { font-size: 15px; font-weight: 600; }
+.session-item-count { font-size: 12px; color: var(--text3); }
+.session-item-rule { font-size: 12px; color: var(--text2); }
+
+/* 席順・設定 */
+.seat-setup { display: flex; flex-direction: column; gap: 10px; }
+.seat-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius2);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+}
+.seat-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--surface2); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--text3); flex-shrink: 0;
+}
+.seat-icon { font-size: 24px; }
+.seat-name { flex: 1; font-size: 15px; font-weight: 500; }
+.seat-select { flex: 1; }
+.seat-select select { padding: 8px 10px; font-size: 14px; }
+
+/* 点数入力 */
+.score-input-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.score-input-card {
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--bg3);
+  border: 2px solid var(--border);
+  transition: border-color 0.2s;
+}
+.score-input-card.filled { border-color: var(--border2); }
+.score-input-card.valid { border-color: var(--green); }
+.score-player {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+}
+.score-player-icon { font-size: 20px; }
+.score-player-name { font-size: 13px; font-weight: 600; }
+.score-player-seat { font-size: 10px; color: var(--text3); }
+.score-input-field {
+  display: flex; align-items: center; gap: 6px;
+}
+.score-input-field input {
+  background: var(--bg2);
+  font-size: 20px; text-align: center;
+  padding: 8px; flex: 1;
+  transition: border-color 0.2s, color 0.2s;
+}
+.score-input-field input.is-negative {
+  border-color: rgba(217,79,92,0.5);
+  color: var(--red2);
+}
+.sign-toggle {
+  width: 40px; height: 44px; flex-shrink: 0;
+  border-radius: var(--radius2);
+  border: 2px solid var(--border2);
+  background: var(--surface2);
+  color: var(--text2); font-size: 20px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; line-height: 1;
+  font-family: 'Share Tech Mono', monospace;
+}
+.sign-toggle.negative {
+  border-color: var(--red);
+  background: rgba(217,79,92,0.15);
+  color: var(--red2);
+}
+.sign-toggle:active { transform: scale(0.9); }
+
+.sum-check {
+  padding: 10px 14px; border-radius: var(--radius2);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px;
+}
+.sum-ok { background: rgba(76,175,125,0.1); border: 1px solid rgba(76,175,125,0.25); color: var(--green2); }
+.sum-ng { background: rgba(217,79,92,0.1); border: 1px solid rgba(217,79,92,0.25); color: var(--red2); }
+
+/* ====== HISTORY PAGE ====== */
+.session-block { margin: 0 16px 16px; }
+.session-block-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0 10px;
+}
+.session-block-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 700; color: var(--gold);
+}
+.hanchan-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 8px;
+}
+.hanchan-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.hanchan-num { font-size: 12px; color: var(--text3); }
+.hanchan-date { font-size: 11px; color: var(--text3); }
+.hanchan-results { display: flex; flex-direction: column; gap: 6px; }
+.hanchan-result-row {
+  display: flex; align-items: center; gap: 8px;
+}
+.result-rank-badge {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0;
+}
+.r1 { background: rgba(201,168,76,0.3); color: var(--gold2); }
+.r2 { background: rgba(122,139,160,0.3); color: #c0d0e0; }
+.r3 { background: rgba(160,96,64,0.3); color: #d0a090; }
+.r4 { background: rgba(100,100,100,0.2); color: var(--text3); }
+.result-icon { font-size: 16px; }
+.result-name { flex: 1; font-size: 13px; }
+.result-score { font-family: 'Share Tech Mono', monospace; font-size: 13px; color: var(--text2); }
+.result-pt { font-family: 'Share Tech Mono', monospace; font-size: 14px; font-weight: 700; min-width: 60px; text-align: right; }
+
+/* ====== STATS PAGE ====== */
+.stats-ranking { display: flex; flex-direction: column; gap: 8px; }
+.stats-rank-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.stats-detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px; margin-top: 10px;
+}
+.stats-mini-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius2); padding: 10px 8px;
+  text-align: center;
+}
+.stats-mini-label { font-size: 10px; color: var(--text3); margin-bottom: 4px; letter-spacing: 0.05em; }
+.stats-mini-val { font-family: 'Share Tech Mono', monospace; font-size: 16px; font-weight: 700; }
+
+/* chart */
+.chart-wrap { position: relative; width: 100%; height: 360px; padding: 8px 0; }
+canvas { display: block; }
+
+/* graph member filter */
+.graph-filter {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 12px;
+}
+.graph-filter-btn {
+  display: flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 20px;
+  border: 2px solid transparent;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all 0.18s; font-family: 'Zen Kaku Gothic New', sans-serif;
+  opacity: 0.38;
+}
+.graph-filter-btn.active { opacity: 1; }
+.graph-filter-btn:active { transform: scale(0.92); }
+.graph-filter-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.graph-all-toggle {
+  padding: 5px 12px; border-radius: 20px;
+  border: 1px solid var(--border2); background: var(--surface2);
+  color: var(--text2); font-size: 11px; font-weight: 600;
+  cursor: pointer; transition: all 0.18s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.graph-all-toggle:active { transform: scale(0.92); }
+
+/* period selector */
+.period-presets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.preset-btn {
+  padding: 6px 12px; border-radius: 20px;
+  border: 1px solid var(--border2); background: var(--surface);
+  color: var(--text2); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.preset-btn.active { background: rgba(201,168,76,0.2); border-color: var(--gold); color: var(--gold2); }
+.preset-btn:active { transform: scale(0.94); }
+
+.date-range { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.date-range input[type=date] {
+  flex: 1; font-size: 13px; padding: 8px 10px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.date-range span { font-size: 13px; color: var(--text3); flex-shrink: 0; }
+
+.period-summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.period-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px;
+}
+.period-card-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; letter-spacing: 0.05em; }
+.period-card-val { font-family: 'Share Tech Mono', monospace; font-size: 22px; font-weight: 700; }
+.period-card-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* ====== MEMBER PAGE ====== */
+.member-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; padding: 0 16px;
+}
+.member-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer; transition: all 0.2s;
+  position: relative; overflow: hidden;
+}
+.member-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+}
+.member-card:active { background: var(--surface2); }
+.member-card-icon { font-size: 36px; margin-bottom: 8px; }
+.member-card-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.member-card-stats { font-size: 11px; color: var(--text3); }
+.member-add-btn {
+  background: var(--bg3);
+  border: 2px dashed var(--border2);
+  color: var(--text3);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; min-height: 120px; border-radius: var(--radius);
+  cursor: pointer; transition: all 0.2s;
+  font-size: 13px;
+}
+.member-add-btn:active { border-color: var(--gold); color: var(--gold2); }
+.member-add-icon { font-size: 24px; }
+
+/* emoji picker */
+.emoji-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 6px; margin-top: 8px;
+}
+.emoji-opt {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; cursor: pointer;
+  background: var(--bg3); border: 2px solid transparent;
+  transition: all 0.15s;
+}
+.emoji-opt.selected { border-color: var(--gold); background: rgba(201,168,76,0.15); }
+.emoji-opt:active { transform: scale(0.9); }
+
+/* toast */
+.toast {
+  position: fixed; bottom: calc(var(--tab-h) + 16px); left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface2); border: 1px solid var(--border2);
+  color: var(--text); padding: 10px 20px; border-radius: 30px;
+  font-size: 13px; white-space: nowrap;
+  opacity: 0; transition: all 0.3s; z-index: 9999;
+  box-shadow: var(--shadow);
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* delete btn */
+.icon-btn {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: none; background: rgba(217,79,92,0.1);
+  color: var(--red); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; transition: all 0.2s;
+}
+.icon-btn:active { background: rgba(217,79,92,0.2); transform: scale(0.9); }
+.icon-btn.edit { background: rgba(91,138,240,0.1); color: var(--blue2); }
+
+.empty-state {
+  text-align: center; padding: 40px 20px;
+  color: var(--text3);
+}
+.empty-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.5; }
+.empty-text { font-size: 14px; line-height: 1.6; }
+
+/* tabs within page */
+.inner-tabs {
+  display: flex; gap: 4px;
+  padding: 0 16px 12px;
+}
+.inner-tab {
+  flex: 1; padding: 8px 4px; border-radius: var(--radius2);
+  border: 1px solid var(--border); background: var(--bg3);
+  color: var(--text3); font-size: 12px; font-weight: 600;
+  cursor: pointer; text-align: center; transition: all 0.2s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.inner-tab.active { background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold2); }
+
+.section-label {
+  font-size: 11px; color: var(--text3); letter-spacing: 0.1em;
+  padding: 0 16px; margin-bottom: 8px; margin-top: 4px;
+}
+
+/* confirm dialog */
+.confirm-dialog {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+.confirm-dialog.open { opacity: 1; pointer-events: all; }
+.confirm-box {
+  width: calc(100% - 40px); max-width: 320px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 24px;
+  transform: scale(0.9); transition: transform 0.2s;
+}
+.confirm-dialog.open .confirm-box { transform: scale(1); }
+.confirm-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.confirm-msg { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 20px; }
+.confirm-btns { display: flex; gap: 10px; }
+.confirm-btns .btn { flex: 1; }
+
+/* shimmer for empty chart */
+@keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+
+/* ====== PIN PAD ====== */
+.pinpad-overlay {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0,0,0,0.85);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+.pinpad-overlay.open { opacity: 1; pointer-events: all; }
+.pinpad-box {
+  width: calc(100% - 40px); max-width: 300px;
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 24px; padding: 28px 24px 24px;
+  transform: scale(0.9); transition: transform 0.2s;
+  text-align: center;
+}
+.pinpad-overlay.open .pinpad-box { transform: scale(1); }
+.pinpad-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px; font-weight: 700; color: var(--text);
+  margin-bottom: 6px;
+}
+.pinpad-subtitle {
+  font-size: 12px; color: var(--text3); margin-bottom: 20px;
+}
+.pinpad-dots {
+  display: flex; justify-content: center; gap: 14px; margin-bottom: 24px;
+}
+.pinpad-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--border2);
+  background: transparent;
+  transition: all 0.15s;
+}
+.pinpad-dot.filled { background: var(--gold); border-color: var(--gold); }
+.pinpad-dot.error { background: var(--red); border-color: var(--red); }
+@keyframes pinShake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-6px); }
+  40%,80% { transform: translateX(6px); }
+}
+.pinpad-dots.shake { animation: pinShake 0.35s ease; }
+.pinpad-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px; margin-bottom: 0;
+}
+.pin-key {
+  height: 58px; border-radius: 14px;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--text); font-size: 22px; font-weight: 600;
+  font-family: 'Share Tech Mono', monospace;
+  cursor: pointer; transition: all 0.12s;
+  display: flex; align-items: center; justify-content: center;
+  user-select: none;
+}
+.pin-key:active { background: var(--surface2); transform: scale(0.92); border-color: var(--gold); }
+.pin-key.wide { grid-column: span 2; font-size: 14px; font-family: 'Zen Kaku Gothic New', sans-serif; color: var(--text3); }
+.pin-key.del { font-size: 18px; }
+.pinpad-error-msg {
+  font-size: 12px; color: var(--red2); margin-top: 14px; min-height: 18px;
+  transition: opacity 0.2s;
+}
+
+/* session select for hanchan entry */
+.active-session-banner {
+  margin: 0 16px 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.asb-label { font-size: 11px; color: var(--gold); margin-bottom: 3px; letter-spacing: 0.1em; }
+.asb-name { font-size: 14px; font-weight: 600; }
+.asb-change { font-size: 12px; color: var(--gold); cursor: pointer; }
+
+.record-sub-tabs {
+  display: flex; gap: 0;
+  margin: 0 16px 12px;
+  border-radius: var(--radius2); overflow: hidden;
+  border: 1px solid var(--border2);
+}
+.record-sub-tab {
+  flex: 1; padding: 10px; text-align: center;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  background: var(--bg3); color: var(--text3);
+  border: none; transition: all 0.2s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.record-sub-tab.active { background: var(--gold); color: #1a1500; }
+
+/* result preview */
+.result-preview {
+  padding: 14px; border-radius: var(--radius);
+  background: var(--bg3); border: 1px solid var(--border);
+  margin: 12px 0;
+}
+.result-preview-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 0; border-bottom: 1px solid var(--border);
+}
+.result-preview-row:last-child { border-bottom: none; }
+.rp-rank { width: 24px; text-align: center; font-size: 12px; color: var(--text3); }
+.rp-icon { font-size: 18px; }
+.rp-name { flex: 1; font-size: 14px; font-weight: 500; }
+.rp-score { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--text2); }
+.rp-pt { font-family: 'Share Tech Mono', monospace; font-size: 16px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="page-home" class="page active">
+    <div class="page-header">
+      <div class="home-logo">雀録<span>JANROKU</span></div>
+    </div>
+    <div id="home-content"></div>
+  </div>
+  <div id="page-record" class="page">
+    <div class="page-header">
+      <div class="page-title">記録</div>
+    </div>
+    <div id="record-content"></div>
+  </div>
+  <div id="page-history" class="page">
+    <div class="page-header">
+      <div class="page-title">履歴</div>
+    </div>
+    <div id="history-content"></div>
+  </div>
+  <div id="page-stats" class="page">
+    <div class="page-header">
+      <div class="page-title">統計</div>
+    </div>
+    <div id="stats-content"></div>
+  </div>
+  <div id="page-members" class="page">
+    <div class="page-header">
+      <div class="page-title">メンバー</div>
+      <button class="header-btn" id="token-btn" title="保存用のトークン">🔑</button>
+      <button class="header-btn" id="add-member-btn" title="メンバー追加">＋</button>
+    </div>
+    <div id="members-content"></div>
+  </div>
+
+  <nav id="tabbar">
+    <button class="tab-btn active" data-tab="home">
+      <span class="tab-icon">🏠</span><span class="tab-label">ホーム</span>
+    </button>
+    <button class="tab-btn" data-tab="record">
+      <span class="tab-icon">➕</span><span class="tab-label">記録</span>
+    </button>
+    <button class="tab-btn" data-tab="history">
+      <span class="tab-icon">📋</span><span class="tab-label">履歴</span>
+    </button>
+    <button class="tab-btn" data-tab="stats">
+      <span class="tab-icon">📊</span><span class="tab-label">統計</span>
+    </button>
+    <button class="tab-btn" data-tab="members">
+      <span class="tab-icon">👥</span><span class="tab-label">メンバー</span>
+    </button>
+  </nav>
+</div>
+
+<!-- modals container -->
+<div id="modals"></div>
+<div id="toast" class="toast"></div>
+<div id="confirm-dialog" class="confirm-dialog">
+  <div class="confirm-box">
+    <div class="confirm-title" id="confirm-title">確認</div>
+    <div class="confirm-msg" id="confirm-msg"></div>
+    <div class="confirm-btns">
+      <button class="btn btn-ghost" id="confirm-cancel">キャンセル</button>
+      <button class="btn btn-danger" id="confirm-ok">削除</button>
+    </div>
+  </div>
+</div>
+
+<!-- PIN PAD -->
+<div id="pinpad-overlay" class="pinpad-overlay">
+  <div class="pinpad-box">
+    <div class="pinpad-title" id="pinpad-title">🔐 パスワードを入力</div>
+    <div class="pinpad-subtitle" id="pinpad-subtitle">4桁のPINを入力してください</div>
+    <div class="pinpad-dots" id="pinpad-dots">
+      <div class="pinpad-dot" id="pd0"></div>
+      <div class="pinpad-dot" id="pd1"></div>
+      <div class="pinpad-dot" id="pd2"></div>
+      <div class="pinpad-dot" id="pd3"></div>
+    </div>
+    <div class="pinpad-grid">
+      <div class="pin-key" onclick="pinInput('1')">1</div>
+      <div class="pin-key" onclick="pinInput('2')">2</div>
+      <div class="pin-key" onclick="pinInput('3')">3</div>
+      <div class="pin-key" onclick="pinInput('4')">4</div>
+      <div class="pin-key" onclick="pinInput('5')">5</div>
+      <div class="pin-key" onclick="pinInput('6')">6</div>
+      <div class="pin-key" onclick="pinInput('7')">7</div>
+      <div class="pin-key" onclick="pinInput('8')">8</div>
+      <div class="pin-key" onclick="pinInput('9')">9</div>
+      <div class="pin-key wide" onclick="pinCancel()">キャンセル</div>
+      <div class="pin-key" onclick="pinInput('0')">0</div>
+      <div class="pin-key del" onclick="pinDelete()">⌫</div>
+    </div>
+    <div class="pinpad-error-msg" id="pinpad-error"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script type="module">
+// ==================== DATA LAYER (GitHub) ====================
+// データはこのリポジトリの data ブランチにある data.json に保存する。
+// 読み込みは誰でもできる。保存には GitHub のトークン（端末ごとに localStorage に保存）が必要。
+const GH = { owner: 'amatsumugishion', repo: 'janroku', branch: 'data', path: 'data.json' };
+const API_URL = `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.path}`;
+const RAW_URL = `https://raw.githubusercontent.com/${GH.owner}/${GH.repo}/${GH.branch}/${GH.path}`;
+const TOKEN_KEY = 'janroku_github_token';
+const POLL_MS = 30000; // ほかの端末の記録を取り込む間隔
+
+// インメモリキャッシュ
+let _members = [];
+let _sessions = [];
+let _activeSession = null;
+let _rankingStart = null; // ホーム総合ランキングの集計開始日（null = 全期間）
+
+let _sha = null;     // 最後に読み込んだ／保存した data.json の sha（保存時の衝突検出に使う）
+let _etag = null;    // 変化がないときの読み込みを 304 で済ませる
+let _remote = null;  // 最後に確定したデータ（保存できなかったときはこれに戻す）
+let _busy = 0;       // 保存待ち・保存中の件数（この間は定期読み込みの結果を反映しない）
+
+function getToken() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } }
+function setToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch {} }
+
+function snapshot() {
+  return { members: _members, sessions: _sessions, active_session: _activeSession, settings: { ranking_start: _rankingStart } };
+}
+function applyData(d) {
+  _members = d.members || [];
+  _sessions = d.sessions || [];
+  _activeSession = d.active_session || null;
+  _rankingStart = d.settings?.ranking_start || null;
+  _remote = JSON.parse(JSON.stringify(snapshot()));
+}
+function revert() {
+  applyData(_remote);
+  renderPage(currentTab);
+}
+
+function b64ToText(b64) {
+  const bin = atob(b64.replace(/\n/g, ''));
+  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+}
+function textToB64(text) {
+  const bytes = new TextEncoder().encode(text);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+
+function apiHeaders(extra = {}, useToken = true) {
+  const h = { Accept: 'application/vnd.github+json', ...extra };
+  const t = useToken && getToken();
+  if (t) h.Authorization = `Bearer ${t}`;
+  return h;
+}
+
+// data.json を読む。変化がなければ null、あれば { data, sha, etag }
+async function loadRemote(force = false) {
+  const cond = (!force && _etag) ? { 'If-None-Match': _etag } : {};
+  let res = await fetch(`${API_URL}?ref=${GH.branch}`, { headers: apiHeaders(cond), cache: 'no-store' });
+  if (res.status === 401 && getToken()) {
+    showToast('トークンが無効です。🔑 から設定し直してください');
+    res = await fetch(`${API_URL}?ref=${GH.branch}`, { headers: apiHeaders(cond, false), cache: 'no-store' });
+  }
+  if (res.status === 304) return null;
+  if (!res.ok) {
+    // API の回数制限などで読めないときは raw から読む（数分遅れることがある。sha は分からない）
+    const raw = await fetch(RAW_URL, { cache: 'no-store' });
+    if (!raw.ok) throw new Error(`読み込みに失敗しました (${res.status})`);
+    return { data: await raw.json(), sha: null, etag: null };
+  }
+  const j = await res.json();
+  if (!force && j.sha === _sha) return null;
+  let text;
+  if (j.content) {
+    text = b64ToText(j.content);
+  } else {
+    // 1MB を超えると content が空になるので、中身だけ取り直す
+    const r = await fetch(`${API_URL}?ref=${GH.branch}`, { headers: apiHeaders({ Accept: 'application/vnd.github.raw+json' }), cache: 'no-store' });
+    text = await r.text();
+  }
+  return { data: JSON.parse(text), sha: j.sha, etag: res.headers.get('ETag') };
+}
+
+function useRemote(r) {
+  applyData(r.data);
+  _sha = r.sha;
+  _etag = r.etag;
+}
+
+// ほかの端末で先に保存されていたとき：最新を読み直して、入力し直してもらう
+async function onConflict() {
+  try { useRemote(await loadRemote(true)); } catch { applyData(_remote); }
+  renderPage(currentTab);
+  failToast('ほかの端末で更新されていたので最新を読み込みました。もう一度入力してください');
+}
+
+// 保存の後に呼び出し側が出す「〜しました」より後に出して、上書きされないようにする
+function failToast(msg) { setTimeout(() => showToast(msg), 50); }
+
+let _askDeclinedAt = 0;
+async function commitNow() {
+  let token = getToken();
+  if (!token) {
+    // 1回の操作で続けて保存されるときに、キャンセル後もう一度聞かないようにする
+    if (Date.now() - _askDeclinedAt > 1000) token = await askToken();
+    if (!token) { _askDeclinedAt = Date.now(); revert(); failToast('トークンがないので保存しませんでした'); return; }
+  }
+  if (!_sha) {
+    const r = await loadRemote(true).catch(() => null);
+    if (!r?.sha) { revert(); failToast('保存先に接続できませんでした'); return; }
+    if (JSON.stringify(r.data) !== JSON.stringify(_remote)) { await onConflict(); return; }
+    _sha = r.sha;
+  }
+  const text = JSON.stringify(snapshot(), null, 1) + '\n';
+  let res;
+  try {
+    res = await fetch(API_URL, {
+      method: 'PUT',
+      headers: apiHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({
+        message: `記録を更新 ${new Date().toLocaleString('ja-JP')}`,
+        content: textToB64(text),
+        sha: _sha,
+        branch: GH.branch,
+      }),
+    });
+  } catch {
+    revert(); failToast('通信できなかったので保存しませんでした'); return;
+  }
+  if (res.ok) {
+    const j = await res.json();
+    _sha = j.content.sha;
+    _etag = null;
+    _remote = JSON.parse(text);
+    return;
+  }
+  if (res.status === 409 || res.status === 422) { await onConflict(); return; }
+  if (res.status === 401 || res.status === 403 || res.status === 404) {
+    setToken('');
+    revert(); failToast('トークンが無効か権限がありません。🔑 から設定し直してください'); return;
+  }
+  revert(); failToast(`保存に失敗しました (${res.status})`);
+}
+
+// 続けて呼ばれた保存は、まだ始まっていない1回にまとめて順番に実行する
+let _queued = null;
+let _chain = Promise.resolve();
+function persist() {
+  if (_queued) return _queued;
+  _busy++;
+  const p = _chain.then(() => { _queued = null; return commitNow(); }).finally(() => { _busy--; });
+  _queued = p;
+  _chain = p.catch(() => {});
+  return p;
+}
+
+function askToken() {
+  return new Promise(res => {
+    const has = !!getToken();
+    createModal('token-modal', '🔑 保存用のトークン', `
+      <div style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:12px">
+        記録を保存するには GitHub のトークンが必要です（この端末にだけ保存されます）。<br>
+        見るだけならトークンは要りません。
+      </div>
+      <div class="form-group">
+        <label>トークン${has ? '（設定済み）' : ''}</label>
+        <input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off">
+      </div>
+      <button class="btn btn-primary btn-full" id="token-save">保存する</button>
+      ${has ? '<button class="btn btn-ghost btn-full" id="token-clear" style="margin-top:8px">この端末から削除</button>' : ''}
+    `);
+    const el = document.getElementById('token-modal');
+    document.getElementById('modals').appendChild(el); // ほかのモーダルより手前に出す
+    let done = false;
+    const finish = v => {
+      if (done) return;
+      done = true; obs.disconnect();
+      closeModal('token-modal');
+      res(v);
+    };
+    // ✕ や外側のタップで閉じられたらキャンセル扱い
+    const obs = new MutationObserver(() => { if (!el.classList.contains('open')) finish(null); });
+    obs.observe(el, { attributes: true, attributeFilter: ['class'] });
+    document.getElementById('token-save').onclick = () => {
+      const t = document.getElementById('token-input').value.trim();
+      if (!t) return;
+      setToken(t);
+      showToast('トークンを保存しました');
+      finish(t);
+    };
+    const clear = document.getElementById('token-clear');
+    if (clear) clear.onclick = () => { setToken(''); showToast('トークンを削除しました'); finish(null); };
+    openModal('token-modal');
+    setTimeout(() => document.getElementById('token-input')?.focus(), 100);
+  });
+}
+
+const DB = {
+  getMembers() { return _members; },
+  async setMembers(v) {
+    _members = v;
+    await persist();
+  },
+  getSessions() { return _sessions; },
+  async setSessions(v) {
+    _sessions = v;
+    await persist();
+  },
+  getActiveSession() { return _activeSession; },
+  async setActiveSession(v) {
+    _activeSession = v;
+    await persist();
+  },
+  getRankingStart() { return _rankingStart; },
+  async setRankingStart(v) {
+    _rankingStart = v;
+    await persist();
+  },
+};
+
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+
+function fmt(n) {
+  if (n === undefined || n === null || isNaN(n)) return '−';
+  const s = Math.abs(n).toFixed(1);
+  return (n >= 0 ? '+' : '−') + s;
+}
+function fmtPt(n) {
+  if (n === undefined || n === null || isNaN(n)) return '−';
+  return (n >= 0 ? '+' : '') + n.toFixed(1);
+}
+function ptClass(n) {
+  if (n > 0) return 'pt-positive';
+  if (n < 0) return 'pt-negative';
+  return 'pt-zero';
+}
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  const M = d.getMonth()+1, D = d.getDate();
+  const h = d.getHours().toString().padStart(2,'0');
+  const m = d.getMinutes().toString().padStart(2,'0');
+  return `${M}/${D} ${h}:${m}`;
+}
+function toJSTString(date, len) {
+  // JST = UTC+9
+  const jst = new Date(date.getTime() + 9 * 60 * 60 * 1000);
+  return jst.toISOString().replace('Z', '').slice(0, len);
+}
+function todayISO() { return toJSTString(new Date(), 10); }
+function nowISO() { return toJSTString(new Date(), 16); }
+
+// Rank calculation
+// oka: 返し30000 / オカ+20（1位総取り）
+// 各プレイヤーの持ち点ポイント = (持ち点 - 30000) / 1000
+// オカ = 全員の (初期持ち点 - 返し点) の合計 → 1位が受け取る
+function calcResults(seats, finalScores, uma, initialScore) {
+  const KAESHI = 30000;
+  const players = seats.map((id, idx) => ({ id, score: Number(finalScores[id] || 0), seat: idx }));
+  // sort: score desc, same score => lower seat idx wins
+  players.sort((a, b) => b.score !== a.score ? b.score - a.score : a.seat - b.seat);
+  // オカ = 人数 × (返し点 - 初期持ち点) / 1000  ※初期25000・返し30000なら +20
+  const okaPt = seats.length * (KAESHI - (initialScore || 25000)) / 1000;
+  return players.map((p, i) => {
+    const rank = i + 1;
+    const scorePt = (p.score - KAESHI) / 1000;
+    const umaPt = uma[i] || 0;
+    const oka = rank === 1 ? okaPt : 0;
+    return { player_id: p.id, final_score: p.score, rank, point: Math.round((scorePt + umaPt + oka) * 10) / 10, seat: p.seat };
+  });
+}
+
+// Member stats
+function getMemberStats(memberId) {
+  const sessions = DB.getSessions();
+  let total = 0, count = 0, rank1 = 0, rankSum = 0;
+  for (const s of sessions) {
+    for (const h of (s.hanchan || [])) {
+      const r = (h.results || []).find(r => r.player_id === memberId);
+      if (r) { total += r.point; count++; rank1 += r.rank === 1 ? 1 : 0; rankSum += r.rank; }
+    }
+  }
+  return { total, count, rank1, avgRank: count ? rankSum/count : 0, top1Rate: count ? rank1/count : 0 };
+}
+
+function getAllMemberTotals() {
+  const members = DB.getMembers();
+  return members.map(m => ({ ...m, ...getMemberStats(m.id) }))
+    .sort((a, b) => b.total - a.total);
+}
+
+// 開始日以降のみ集計（ホーム総合ランキング用）。startISO が null/空なら全期間。
+function getMemberStatsFrom(memberId, startISO) {
+  const sessions = DB.getSessions();
+  const startDate = startISO ? new Date(startISO + 'T00:00:00') : null;
+  let total = 0, count = 0, rank1 = 0, rankSum = 0;
+  for (const s of sessions) {
+    for (const h of (s.hanchan || [])) {
+      if (startDate && new Date(h.played_at) < startDate) continue;
+      const r = (h.results || []).find(r => r.player_id === memberId);
+      if (r) { total += r.point; count++; rank1 += r.rank === 1 ? 1 : 0; rankSum += r.rank; }
+    }
+  }
+  return { total, count, rank1, avgRank: count ? rankSum/count : 0, top1Rate: count ? rank1/count : 0 };
+}
+
+function getAllMemberTotalsFrom(startISO) {
+  const members = DB.getMembers();
+  return members.map(m => ({ ...m, ...getMemberStatsFrom(m.id, startISO) }))
+    .sort((a, b) => b.total - a.total);
+}
+
+// ==================== UI HELPERS ====================
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+let confirmCb;
+function showConfirm(title, msg, label='削除') {
+  return new Promise(res => {
+    document.getElementById('confirm-title').textContent = title;
+    document.getElementById('confirm-msg').textContent = msg;
+    document.getElementById('confirm-ok').textContent = label;
+    confirmCb = res;
+    document.getElementById('confirm-dialog').classList.add('open');
+  });
+}
+document.getElementById('confirm-cancel').onclick = () => {
+  document.getElementById('confirm-dialog').classList.remove('open');
+  if (confirmCb) confirmCb(false);
+};
+document.getElementById('confirm-ok').onclick = () => {
+  document.getElementById('confirm-dialog').classList.remove('open');
+  if (confirmCb) confirmCb(true);
+};
+
+// ==================== PIN PAD ====================
+const DELETE_PIN = '0122'; // ← パスワードをここで変更
+let _pinBuffer = '';
+let _pinCb = null;
+
+function showPinPad(title, subtitle) {
+  return new Promise(res => {
+    _pinCb = res;
+    _pinBuffer = '';
+    _updatePinDots();
+    document.getElementById('pinpad-title').textContent = title || '🔐 パスワードを入力';
+    document.getElementById('pinpad-subtitle').textContent = subtitle || '削除するには4桁のPINを入力してください';
+    document.getElementById('pinpad-error').textContent = '';
+    document.getElementById('pinpad-overlay').classList.add('open');
+  });
+}
+
+function pinInput(digit) {
+  if (_pinBuffer.length >= 4) return;
+  _pinBuffer += digit;
+  _updatePinDots();
+  if (_pinBuffer.length === 4) {
+    setTimeout(_checkPin, 120);
+  }
+}
+
+function pinDelete() {
+  if (_pinBuffer.length === 0) return;
+  _pinBuffer = _pinBuffer.slice(0, -1);
+  _updatePinDots();
+}
+
+function pinCancel() {
+  document.getElementById('pinpad-overlay').classList.remove('open');
+  _pinBuffer = '';
+  if (_pinCb) { _pinCb(false); _pinCb = null; }
+}
+
+function _checkPin() {
+  if (_pinBuffer === DELETE_PIN) {
+    document.getElementById('pinpad-overlay').classList.remove('open');
+    _pinBuffer = '';
+    if (_pinCb) { _pinCb(true); _pinCb = null; }
+  } else {
+    // 失敗：シェイク＆エラー表示
+    const dots = document.getElementById('pinpad-dots');
+    document.querySelectorAll('.pinpad-dot').forEach(d => d.classList.add('error'));
+    dots.classList.add('shake');
+    document.getElementById('pinpad-error').textContent = '❌ PINが違います';
+    setTimeout(() => {
+      dots.classList.remove('shake');
+      document.querySelectorAll('.pinpad-dot').forEach(d => d.classList.remove('error'));
+      _pinBuffer = '';
+      _updatePinDots();
+      document.getElementById('pinpad-error').textContent = '';
+    }, 800);
+  }
+}
+
+function _updatePinDots() {
+  for (let i = 0; i < 4; i++) {
+    const dot = document.getElementById(`pd${i}`);
+    dot.classList.toggle('filled', i < _pinBuffer.length);
+    dot.classList.remove('error');
+  }
+}
+
+// 削除専用confirm：確認ダイアログ → PINパッド → 実行
+async function showDeleteConfirm(title, msg, label='削除') {
+  // step1: 確認ダイアログ
+  const confirmed = await showConfirm(title, msg, label);
+  if (!confirmed) return false;
+  // step2: PIN入力
+  const passed = await showPinPad('🔐 パスワードを入力', '削除するには4桁のPINを入力してください');
+  return passed;
+}
+
+window.pinInput = pinInput;
+window.pinDelete = pinDelete;
+window.pinCancel = pinCancel;
+
+function openModal(id) { document.getElementById(id)?.classList.add('open'); }
+function closeModal(id) { document.getElementById(id)?.classList.remove('open'); }
+
+function createModal(id, title, bodyHTML) {
+  let el = document.getElementById(id);
+  if (!el) {
+    el = document.createElement('div');
+    el.className = 'modal-overlay'; el.id = id;
+    el.innerHTML = `<div class="modal"><div class="modal-handle"></div><div class="modal-header"><span class="modal-title">${title}</span><button class="modal-close" onclick="closeModal('${id}')">✕</button></div><div class="modal-body" id="${id}-body"></div></div>`;
+    document.getElementById('modals').appendChild(el);
+    el.addEventListener('click', e => { if (e.target === el) closeModal(id); });
+  } else {
+    el.querySelector('.modal-title').textContent = title;
+  }
+  document.getElementById(`${id}-body`).innerHTML = bodyHTML;
+  return el;
+}
+
+// ==================== TAB ROUTING ====================
+const TABS = ['home','record','history','stats','members'];
+let currentTab = 'home';
+let chartInstance = null;
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`page-${tab}`).classList.add('active');
+  document.querySelector(`.tab-btn[data-tab="${tab}"]`).classList.add('active');
+  renderPage(tab);
+}
+
+document.querySelectorAll('.tab-btn').forEach(b => {
+  b.addEventListener('click', () => switchTab(b.dataset.tab));
+});
+
+function renderPage(tab) {
+  if (tab === 'home') renderHome();
+  else if (tab === 'record') renderRecord();
+  else if (tab === 'history') renderHistory();
+  else if (tab === 'stats') renderStats();
+  else if (tab === 'members') renderMembers();
+}
+
+// ==================== HOME PAGE ====================
+function renderHome() {
+  const el = document.getElementById('home-content');
+  const rankingStart = DB.getRankingStart();
+  const totals = getAllMemberTotalsFrom(rankingStart);
+  const sessions = DB.getSessions();
+
+  // recent hanchan
+  let recent = [];
+  for (const s of [...sessions].reverse()) {
+    for (const h of [...(s.hanchan || [])].reverse()) {
+      recent.push({ session: s, hanchan: h });
+      if (recent.length >= 3) break;
+    }
+    if (recent.length >= 3) break;
+  }
+
+  const rankItems = totals.length ? totals.map((m, i) => {
+    const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-other';
+    const ptCls = ptClass(m.total);
+    return `<div class="rank-item">
+      <div class="rank-num ${rankClass}">${i+1}</div>
+      <div class="rank-icon">${m.icon}</div>
+      <div style="flex:1">
+        <div class="rank-name">${esc(m.name)}</div>
+        <div class="rank-sub">${m.count}戦 / 平均${m.avgRank.toFixed(2)}位</div>
+      </div>
+      <div class="rank-pt ${ptCls}">${fmtPt(m.total)}</div>
+    </div>`;
+  }).join('') : '<div class="empty-state"><div class="empty-icon">🀄</div><div class="empty-text">メンバーを登録して<br>対局を始めましょう</div></div>';
+
+  const recentItems = recent.length ? recent.map(({session: s, hanchan: h}) => {
+    const members = DB.getMembers();
+    const chips = [...(h.results || [])].sort((a,b)=>a.rank-b.rank).map(r => {
+      const m = members.find(m=>m.id===r.player_id);
+      const ptCls = ptClass(r.point);
+      return `<div class="recent-score-chip"><span class="chip-rank">${r.rank}位</span><span class="chip-name">${m?.icon||'👤'}</span><span class="chip-pt ${ptCls}">${fmtPt(r.point)}</span></div>`;
+    }).join('');
+    return `<div class="recent-item"><div class="recent-item-header"><span class="recent-title">${esc(s.title)}</span><span class="recent-date">${fmtDate(h.played_at)}</span></div><div class="recent-scores">${chips}</div></div>`;
+  }).join('') : '<div style="color:var(--text3);font-size:13px;padding:8px 0">まだ対局記録がありません</div>';
+
+  const rankingLabel = rankingStart
+    ? `総合ランキング（${rankingStart.replace(/-/g,'/')}〜）`
+    : '総合ランキング（全期間）';
+
+  el.innerHTML = `
+    <div class="card" style="margin-top:8px">
+      <div class="card-title">${rankingLabel}</div>
+      <div class="ranking-list">${rankItems}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">直近の対局</div>
+      ${recentItems}
+    </div>
+    <div class="card">
+      <div class="card-title">ランキング集計開始日</div>
+      <div style="font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:12px">
+        この日付以降の成績だけを上の総合ランキングに集計します。<br>
+        履歴・統計・推移グラフの全データは変わらず、いつでも見返せます。
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input type="date" id="ranking-start-input" style="flex:1;font-size:14px;padding:9px 10px;font-family:'Zen Kaku Gothic New',sans-serif" value="${rankingStart || ''}" onchange="updateRankingStart()">
+        <button class="btn btn-ghost" style="padding:9px 14px;font-size:12px;flex-shrink:0" onclick="clearRankingStart()">全期間</button>
+      </div>
+      ${rankingStart ? `<div style="font-size:11px;color:var(--gold);margin-top:10px">📅 現在 ${rankingStart.replace(/-/g,'/')} 以降で集計中</div>` : `<div style="font-size:11px;color:var(--text3);margin-top:10px">📅 現在 全期間で集計中</div>`}
+    </div>
+    <div style="height:8px"></div>
+  `;
+}
+
+async function updateRankingStart() {
+  const v = document.getElementById('ranking-start-input')?.value || null;
+  await DB.setRankingStart(v);
+  showToast(v ? `📅 ${v.replace(/-/g,'/')}以降の集計に変更` : '📅 全期間の集計に変更');
+  renderHome();
+}
+
+async function clearRankingStart() {
+  await DB.setRankingStart(null);
+  showToast('📅 全期間の集計に変更');
+  renderHome();
+}
+
+// ==================== RECORD PAGE ====================
+let recordStep = 'session-select'; // session-select | session-new | hanchan
+let recordSessionId = null;
+let recordSeats = [null,null,null,null];
+let recordScores = {};
+let inputMode = 'point'; // 'score' | 'point'
+
+function renderRecord() {
+  const el = document.getElementById('record-content');
+  const active = DB.getActiveSession();
+  const sessions = DB.getSessions();
+
+  el.innerHTML = `
+    <div class="record-sub-tabs">
+      <button class="record-sub-tab ${!active ? 'active' : ''}" id="rst-newsession">対局を作成</button>
+      <button class="record-sub-tab ${active ? 'active' : ''}" id="rst-entry">半荘を入力</button>
+    </div>
+    <div id="record-main"></div>
+  `;
+  document.getElementById('rst-newsession').onclick = () => {
+    document.querySelectorAll('.record-sub-tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('rst-newsession').classList.add('active');
+    renderNewSession();
+  };
+  document.getElementById('rst-entry').onclick = () => {
+    document.querySelectorAll('.record-sub-tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('rst-entry').classList.add('active');
+    renderHanchanEntry();
+  };
+
+  if (active) { renderHanchanEntry(); }
+  else { renderNewSession(); }
+}
+
+function renderNewSession() {
+  const main = document.getElementById('record-main');
+  if (!main) return;
+  const members = DB.getMembers();
+  const memberOpts = members.map(m => `<option value="${m.id}">${m.icon} ${esc(m.name)}</option>`).join('');
+  const defaultUma = [20,10,-10,-20];
+
+  main.innerHTML = `
+    <div class="card">
+      <div class="card-title">対局情報</div>
+      <div class="form-group">
+        <label>タイトル（例：2026/03/20 対局）</label>
+        <input type="text" id="session-title" placeholder="${todayISO()} 対局" value="${todayISO()} 対局">
+      </div>
+      <div class="form-group">
+        <label>初期持ち点</label>
+        <input type="number" id="session-initial" value="25000" min="1000" step="1000">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">ウマ設定</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px">返し：30,000点 ／ オカ：あり（+20、1位総取り）</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px">
+        <div><label>1位</label><input type="number" id="uma-1" value="20" step="5"></div>
+        <div><label>2位</label><input type="number" id="uma-2" value="10" step="5"></div>
+        <div><label>3位</label><input type="number" id="uma-3" value="-10" step="5"></div>
+        <div><label>4位</label><input type="number" id="uma-4" value="-20" step="5"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">プレイヤー設定</div>
+      <div class="seat-setup" id="seats-setup">
+        ${[0,1,2,3].map(i=>`
+        <div class="seat-row">
+          <div class="seat-num">${['P1','P2','P3','P4'][i]}</div>
+          <div class="seat-select" style="flex:1">
+            <select id="seat-${i}">
+              <option value="">選択してください</option>
+              ${memberOpts}
+            </select>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div style="padding:0 16px 16px">
+      <button class="btn btn-primary btn-full" id="create-session-btn" onclick="createSession()">対局を開始する</button>
+    </div>
+  `;
+}
+
+async function createSession() {
+  const title = document.getElementById('session-title')?.value.trim() || `${todayISO()} 対局`;
+  const initial = parseInt(document.getElementById('session-initial')?.value || '25000');
+  const uma = [
+    parseFloat(document.getElementById('uma-1')?.value || 20),
+    parseFloat(document.getElementById('uma-2')?.value || 10),
+    parseFloat(document.getElementById('uma-3')?.value || -10),
+    parseFloat(document.getElementById('uma-4')?.value || -20),
+  ];
+  const seats = [0,1,2,3].map(i => document.getElementById(`seat-${i}`)?.value).filter(Boolean);
+  if (seats.length !== 4 || new Set(seats).size !== 4) {
+    showToast('⚠️ 4人の席順を設定してください'); return;
+  }
+
+  const session = {
+    session_id: uid(),
+    title,
+    created_at: new Date().toISOString(),
+    rule: { initial_score: initial, uma },
+    seats,
+    hanchan: []
+  };
+  const sessions = DB.getSessions();
+  sessions.push(session);
+  await DB.setSessions(sessions);
+  await DB.setActiveSession(session.session_id);
+  showToast('✅ 対局を作成しました');
+  renderRecord();
+}
+
+async function renderHanchanEntry() {
+  const main = document.getElementById('record-main');
+  if (!main) return;
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+
+  if (!activeId) {
+    main.innerHTML = `
+      <div class="card">
+        <div style="text-align:center;padding:20px 0;color:var(--text3)">
+          <div style="font-size:32px;margin-bottom:12px">📋</div>
+          <div style="font-size:14px">まず「対局を作成」タブから<br>対局を開始してください</div>
+        </div>
+      </div>`;
+    return;
+  }
+
+  const session = sessions.find(s => s.session_id === activeId);
+  if (!session) { await DB.setActiveSession(null); renderRecord(); return; }
+
+  const members = DB.getMembers();
+  const seats = session.seats || [];
+  const hanchanNo = (session.hanchan || []).length + 1;
+
+  const isPointMode = inputMode === 'point';
+  const placeholder = isPointMode ? '0.0' : '25000';
+
+  // score inputs
+  const scoreCards = seats.map((mid, idx) => {
+    const m = members.find(m=>m.id===mid);
+    if (!m) return '';
+    const seatName = ['プレイヤー1','プレイヤー2','プレイヤー3','プレイヤー4'][idx];
+    return `
+      <div class="score-input-card" id="sic-${mid}">
+        <div class="score-player">
+          <span class="score-player-icon">${m.icon}</span>
+          <div><div class="score-player-name">${esc(m.name)}</div><div class="score-player-seat">${seatName}</div></div>
+        </div>
+        <div class="score-input-field">
+          <button class="sign-toggle" id="sign-${mid}" onclick="toggleSign('${mid}')" type="button">＋</button>
+          <input type="text" id="score-${mid}" placeholder="${placeholder}"
+            oninput="onScoreInput('${mid}')" inputmode="decimal" autocomplete="off">
+        </div>
+      </div>`;
+  }).join('');
+
+  const modeBtn = (mode, label) => {
+    const active = inputMode === mode;
+    return `<button style="padding:4px 12px;border-radius:6px;background:${active ? 'var(--gold)' : 'transparent'};color:${active ? '#1a1500' : 'var(--text2)'};font-size:11px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:all 0.2s" onclick="switchInputMode('${mode}')">${label}</button>`;
+  };
+
+  main.innerHTML = `
+    <div class="active-session-banner">
+      <div>
+        <div class="asb-label">対局中</div>
+        <div class="asb-name">${esc(session.title)} — 第${hanchanNo}半荘</div>
+      </div>
+      <span class="asb-change" onclick="openEndSessionModal()">対局終了</span>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div class="card-title" style="margin-bottom:0">${isPointMode ? '合計得点入力' : '最終持ち点入力'}</div>
+        <div style="display:flex;background:var(--bg3);padding:3px;border-radius:8px;border:1px solid var(--border);gap:2px">
+          ${modeBtn('point','合計得点')}${modeBtn('score','持ち点')}
+        </div>
+      </div>
+      ${isPointMode ? '<div style="font-size:11px;color:var(--text3);margin-bottom:10px">ウマ・オカ込みの合計得点を直接入力</div>' : ''}
+      <div class="score-input-grid">${scoreCards}</div>
+      <div style="margin-top:12px" id="sum-check-area"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">対局日時</div>
+      <input type="datetime-local" id="played-at" value="${nowISO()}">
+    </div>
+    <div id="result-preview-area"></div>
+    <div style="padding:0 16px 16px">
+      <button class="btn btn-primary btn-full" id="confirm-hanchan-btn" disabled onclick="confirmHanchan()">確定</button>
+    </div>
+  `;
+  updateSumCheck(session);
+}
+
+// 入力モード切替
+function switchInputMode(mode) {
+  inputMode = mode;
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const session = sessions.find(s=>s.session_id===activeId);
+  if (session) renderHanchanEntry();
+}
+
+// 符号切り替え
+function toggleSign(mid) {
+  const btn = document.getElementById(`sign-${mid}`);
+  const inp = document.getElementById(`score-${mid}`);
+  const isNeg = btn.classList.contains('negative');
+  if (isNeg) {
+    btn.classList.remove('negative'); btn.textContent = '＋';
+    inp.classList.remove('is-negative');
+  } else {
+    btn.classList.add('negative'); btn.textContent = '－';
+    inp.classList.add('is-negative');
+  }
+  onScoreInput(mid);
+}
+
+// 符号込みの数値を返す（未入力はNaN）
+function getScoreValue(mid) {
+  const raw = document.getElementById(`score-${mid}`)?.value.trim();
+  if (raw === '' || raw === null || raw === undefined) return NaN;
+  const num = Number(raw.replace(/[^0-9.]/g, ''));
+  if (isNaN(num)) return NaN;
+  const isNeg = document.getElementById(`sign-${mid}`)?.classList.contains('negative');
+  return isNeg ? -num : num;
+}
+
+function onScoreInput(mid) {
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const session = sessions.find(s=>s.session_id===activeId);
+  if (!session) return;
+
+  const raw = document.getElementById(`score-${mid}`)?.value.trim();
+  if (raw) { document.getElementById(`sic-${mid}`)?.classList.add('filled'); }
+
+  updateSumCheck(session);
+  updateResultPreview(session);
+}
+
+function updateSumCheck(session) {
+  const seats = session.seats || [];
+  const area = document.getElementById('sum-check-area');
+  const confirmBtn = document.getElementById('confirm-hanchan-btn');
+  if (!area) return;
+
+  let filled = 0;
+  seats.forEach(mid => { if (!isNaN(getScoreValue(mid))) filled++; });
+
+  if (inputMode === 'point') {
+    if (filled === 4) {
+      let total = 0;
+      seats.forEach(mid => { const v = getScoreValue(mid); if (!isNaN(v)) total += v; });
+      const ok = Math.round(total * 10) === 0;
+      area.innerHTML = `<div class="sum-check ${ok?'sum-ok':'sum-ng'}">
+        <span>${ok ? '✅ 合計得点一致' : '⚠️ 合計得点不一致'}</span>
+        <span>合計: ${total >= 0 ? '+' : ''}${total.toFixed(1)} / 期待: 0.0</span>
+      </div>`;
+      if (confirmBtn) confirmBtn.disabled = false;
+    } else {
+      area.innerHTML = `<div style="font-size:12px;color:var(--text3);text-align:center">4人全員の得点を入力してください (${filled}/4)</div>`;
+      if (confirmBtn) confirmBtn.disabled = true;
+    }
+    return;
+  }
+
+  // 持ち点モード
+  const initialTotal = (session.rule?.initial_score || 25000) * 4;
+  let total = 0;
+  seats.forEach(mid => { const v = getScoreValue(mid); if (!isNaN(v)) total += v; });
+
+  if (filled === 4) {
+    const ok = total === initialTotal;
+    area.innerHTML = `<div class="sum-check ${ok?'sum-ok':'sum-ng'}">
+      <span>${ok ? '✅ 合計点一致' : '⚠️ 合計点不一致'}</span>
+      <span>合計: ${total.toLocaleString()} / 期待: ${initialTotal.toLocaleString()}</span>
+    </div>`;
+    if (confirmBtn) confirmBtn.disabled = false;
+  } else {
+    area.innerHTML = `<div style="font-size:12px;color:var(--text3);text-align:center">4人全員の点数を入力してください (${filled}/4)</div>`;
+    if (confirmBtn) confirmBtn.disabled = true;
+  }
+}
+
+function updateResultPreview(session) {
+  const seats = session.seats || [];
+  let allFilled = true;
+  const scores = {};
+  seats.forEach(mid => {
+    const v = getScoreValue(mid);
+    if (isNaN(v)) { allFilled = false; } else { scores[mid] = v; }
+  });
+  const area = document.getElementById('result-preview-area');
+  if (!area) return;
+  if (!allFilled) { area.innerHTML = ''; return; }
+
+  const members = DB.getMembers();
+  let results;
+  if (inputMode === 'point') {
+    const players = seats.map((mid, seatIdx) => ({
+      player_id: mid, point: scores[mid] || 0, final_score: 0, seat: seatIdx
+    }));
+    players.sort((a, b) => b.point !== a.point ? b.point - a.point : a.seat - b.seat);
+    results = players.map((p, i) => ({ ...p, rank: i + 1 }));
+  } else {
+    results = calcResults(seats, scores, session.rule?.uma || [20,10,-10,-20], session.rule?.initial_score || 25000);
+  }
+  const rows = results.map(r => {
+    const m = members.find(m=>m.id===r.player_id);
+    const ptCls = ptClass(r.point);
+    return `<div class="result-preview-row">
+      <div class="rp-rank">${r.rank}位</div>
+      <div class="rp-icon">${m?.icon||'👤'}</div>
+      <div class="rp-name">${esc(m?.name||'?')}</div>
+      ${inputMode === 'point' ? '' : `<div class="rp-score">${r.final_score.toLocaleString()}点</div>`}
+      <div class="rp-pt ${ptCls}">${fmtPt(r.point)}</div>
+    </div>`;
+  }).join('');
+  area.innerHTML = `<div class="card"><div class="card-title">集計プレビュー</div><div class="result-preview">${rows}</div></div>`;
+}
+
+let _savingHanchan = false;
+async function confirmHanchan() {
+  // 連打・多重送信ガード
+  if (_savingHanchan) return;
+  const btn = document.getElementById('confirm-hanchan-btn');
+  if (btn && btn.disabled) return; // 既に無効化済みなら無視
+
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const idx = sessions.findIndex(s=>s.session_id===activeId);
+  if (idx < 0) return;
+  const session = sessions[idx];
+  const seats = session.seats || [];
+  const playedAt = document.getElementById('played-at')?.value || nowISO();
+
+  // ここでロック開始：ボタンを無効化＋表示変更
+  _savingHanchan = true;
+  if (btn) { btn.disabled = true; btn.textContent = '記録中…'; }
+
+  let results;
+  if (inputMode === 'point') {
+    // 合計得点モード: 入力値をそのままpointとして使用、順位は得点順に決定
+    const players = seats.map((mid, seatIdx) => ({
+      player_id: mid,
+      point: getScoreValue(mid) || 0,
+      final_score: 0,
+      seat: seatIdx
+    }));
+    players.sort((a, b) => b.point !== a.point ? b.point - a.point : a.seat - b.seat);
+    results = players.map((p, i) => ({ ...p, rank: i + 1 }));
+  } else {
+    const scores = {};
+    seats.forEach(mid => { const v = getScoreValue(mid); scores[mid] = isNaN(v) ? 0 : v; });
+    results = calcResults(seats, scores, session.rule?.uma || [20,10,-10,-20], session.rule?.initial_score || 25000);
+  }
+
+  sessions[idx].hanchan = sessions[idx].hanchan || [];
+  sessions[idx].hanchan.push({
+    hanchan_id: uid(),
+    played_at: new Date(playedAt).toISOString(),
+    created_at: new Date().toISOString(),
+    seats,
+    results
+  });
+
+  try {
+    await DB.setSessions(sessions);
+    showToast('✅ 半荘を記録しました');
+    renderRecord(); // 画面が再描画されボタンも作り直される
+  } catch (e) {
+    // 失敗時：記録を取り消してボタンを元に戻し、再入力できるように
+    sessions[idx].hanchan.pop();
+    showToast('⚠️ 記録に失敗しました。もう一度お試しください');
+    if (btn) { btn.disabled = false; btn.textContent = '確定'; }
+  } finally {
+    _savingHanchan = false;
+  }
+}
+
+async function openEndSessionModal() {
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const session = sessions.find(s => s.session_id === activeId);
+  if (!session) return;
+
+  const members = DB.getMembers();
+  const seats = session.seats || [];
+  const id = 'end-session-modal';
+
+  // 現在の4人表示
+  const currentPlayers = seats.map((mid, idx) => {
+    const m = members.find(m => m.id === mid);
+    return `<div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:var(--radius2);background:var(--bg3);border:1px solid var(--border)">
+      <div style="font-size:11px;color:var(--text3);min-width:32px">P${idx+1}</div>
+      <div style="font-size:20px">${m?.icon||'👤'}</div>
+      <div style="flex:1;font-size:14px;font-weight:600">${esc(m?.name||'?')}</div>
+    </div>`;
+  }).join('');
+
+  const body = `
+    <div style="margin-bottom:16px">
+      <div style="font-size:12px;color:var(--text3);margin-bottom:10px;letter-spacing:0.05em">現在のメンバー</div>
+      <div style="display:flex;flex-direction:column;gap:6px">${currentPlayers}</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn btn-primary btn-full" onclick="openChangeMemberModal()">👥 メンバーを変更して続ける</button>
+      <button class="btn btn-danger btn-full" onclick="endSession()">🏁 そのまま終了</button>
+    </div>
+  `;
+  createModal(id, '対局メニュー', body);
+  openModal(id);
+}
+
+function openChangeMemberModal() {
+  closeModal('end-session-modal');
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const session = sessions.find(s => s.session_id === activeId);
+  if (!session) return;
+
+  const members = DB.getMembers();
+  const seats = session.seats || [];
+  const id = 'change-member-modal';
+
+  // 入れ替え元（現在の4人）のセレクト
+  const outOpts = seats.map((mid, idx) => {
+    const m = members.find(m => m.id === mid);
+    return `<option value="${idx}">P${idx+1}: ${m?.icon||'👤'} ${esc(m?.name||'?')}</option>`;
+  }).join('');
+
+  // 入れ替え先（現在の4人以外）のセレクト
+  const currentIds = new Set(seats);
+  const inOpts = members.filter(m => !currentIds.has(m.id))
+    .map(m => `<option value="${m.id}">${m.icon} ${esc(m.name)}</option>`).join('');
+
+  const body = `
+    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">
+      抜けるプレイヤーと入るプレイヤーを選んでください。
+    </div>
+    <div class="form-group">
+      <label>抜けるプレイヤー</label>
+      <select id="cm-out">${outOpts}</select>
+    </div>
+    <div class="form-group">
+      <label>入るプレイヤー</label>
+      ${inOpts ? `<select id="cm-in">${inOpts}</select>` : `<div style="color:var(--red2);font-size:13px;padding:10px;background:var(--bg3);border-radius:var(--radius2)">⚠️ 交代可能なメンバーがいません。<br>メンバーページから追加してください。</div>`}
+    </div>
+    ${inOpts ? `<button class="btn btn-primary btn-full" onclick="applyMemberChange()">変更して続ける</button>` : ''}
+    <div style="margin-top:8px">
+      <button class="btn btn-ghost btn-full" onclick="closeModal('change-member-modal');openEndSessionModal()">戻る</button>
+    </div>
+  `;
+  createModal(id, 'メンバー変更', body);
+  openModal(id);
+}
+
+async function applyMemberChange() {
+  const outIdx = parseInt(document.getElementById('cm-out')?.value);
+  const inId = document.getElementById('cm-in')?.value;
+  if (isNaN(outIdx) || !inId) { showToast('⚠️ 選択してください'); return; }
+
+  const activeId = DB.getActiveSession();
+  const sessions = DB.getSessions();
+  const idx = sessions.findIndex(s => s.session_id === activeId);
+  if (idx < 0) return;
+
+  sessions[idx].seats[outIdx] = inId;
+  await DB.setSessions(sessions);
+  closeModal('change-member-modal');
+  showToast('✅ メンバーを変更しました');
+  renderRecord();
+}
+
+async function endSession() {
+  closeModal('end-session-modal');
+  showConfirm('対局終了', 'この対局を終了しますか？', '終了').then(async ok => {
+    if (ok) { await DB.setActiveSession(null); showToast('対局を終了しました'); renderRecord(); }
+  });
+}
+
+// ==================== HISTORY PAGE ====================
+function renderHistory() {
+  const el = document.getElementById('history-content');
+  const sessions = DB.getSessions();
+  if (!sessions.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">対局記録がありません</div></div>`;
+    return;
+  }
+  const members = DB.getMembers();
+  const blocks = [...sessions].reverse().map(s => {
+    const hanchanItems = [...(s.hanchan||[])].reverse().map((h, ri) => {
+      const num = (s.hanchan||[]).length - ri;
+      const rows = [...(h.results||[])].sort((a,b)=>a.rank-b.rank).map(r => {
+        const m = members.find(m=>m.id===r.player_id);
+        const ptCls = ptClass(r.point);
+        return `<div class="hanchan-result-row">
+          <div class="result-rank-badge r${r.rank}">${r.rank}</div>
+          <div class="result-icon">${m?.icon||'👤'}</div>
+          <div class="result-name">${esc(m?.name||'?')}</div>
+          <div class="result-score">${r.final_score.toLocaleString()}</div>
+          <div class="result-pt ${ptCls}">${fmtPt(r.point)}</div>
+        </div>`;
+      }).join('');
+      return `<div class="hanchan-item">
+        <div class="hanchan-header">
+          <span class="hanchan-num">第${num}半荘</span>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="hanchan-date">${fmtDate(h.played_at)}</span>
+            <button class="icon-btn" onclick="deleteHanchan('${s.session_id}','${h.hanchan_id}')">🗑</button>
+          </div>
+        </div>
+        <div class="hanchan-results">${rows}</div>
+      </div>`;
+    }).join('');
+    if (!hanchanItems) return ''; // 半荘なしの対局は非表示
+    return `<div class="session-block">
+      <div class="session-block-header">
+        <span class="session-block-title">${esc(s.title)}</span>
+        <button class="icon-btn" onclick="deleteSession('${s.session_id}')" title="この対局を削除">🗑</button>
+      </div>
+      ${hanchanItems}
+    </div>`;
+  }).join('');
+  const totalHanchan = DB.getSessions().reduce((s,se)=>s+(se.hanchan||[]).length,0);
+  el.innerHTML = blocks + `
+    <div style="margin:8px 16px 24px;padding:16px;border-radius:var(--radius);border:1px dashed rgba(217,79,92,0.3);background:rgba(217,79,92,0.05)">
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px;letter-spacing:0.05em">⚠️ 危険ゾーン</div>
+      <button class="btn btn-danger btn-full" style="font-size:13px;padding:10px" onclick="deleteAllSessions()">
+        全履歴を完全削除（${DB.getSessions().length}対局 / ${totalHanchan}半荘）
+      </button>
+    </div>
+  `;
+}
+
+async function deleteAllSessions() {
+  const sessions = DB.getSessions();
+  const totalH = sessions.reduce((s,se)=>s+(se.hanchan||[]).length,0);
+  const ok = await showDeleteConfirm(
+    '⚠️ 全履歴削除',
+    sessions.length + '対局・' + totalH + '半荘の記録をすべて削除します。この操作は取り消せません。',
+    '削除する'
+  );
+  if (!ok) return;
+  await DB.setSessions([]);
+  await DB.setActiveSession(null);
+  showToast('🗑 全履歴を削除しました');
+  renderHistory();
+}
+
+async function deleteHanchan(sessionId, hanchanId) {
+  const ok = await showDeleteConfirm('半荘削除', 'この半荘を削除しますか？');
+  if (!ok) return;
+  const sessions = DB.getSessions();
+  const s = sessions.find(s=>s.session_id===sessionId);
+  if (s) s.hanchan = (s.hanchan||[]).filter(h=>h.hanchan_id!==hanchanId);
+  await DB.setSessions(sessions);
+  showToast('削除しました'); renderHistory();
+}
+
+async function deleteSession(sessionId) {
+  const ok = await showDeleteConfirm('対局削除', 'この対局と全半荘を削除しますか？');
+  if (!ok) return;
+  await DB.setSessions(DB.getSessions().filter(s=>s.session_id!==sessionId));
+  if (DB.getActiveSession() === sessionId) await DB.setActiveSession(null);
+  showToast('対局を削除しました'); renderHistory();
+}
+
+// ==================== STATS PAGE ====================
+let statsTab = 'ranking';
+let statsPeriodStart = null, statsPeriodEnd = null;
+
+function renderStats() {
+  const el = document.getElementById('stats-content');
+  el.innerHTML = `
+    <div class="inner-tabs">
+      <div class="inner-tab ${statsTab==='ranking'?'active':''}" onclick="switchStatsTab('ranking')">ランキング</div>
+      <div class="inner-tab ${statsTab==='graph'?'active':''}" onclick="switchStatsTab('graph')">推移</div>
+      <div class="inner-tab ${statsTab==='period'?'active':''}" onclick="switchStatsTab('period')">期間集計</div>
+      <div class="inner-tab ${statsTab==='personal'?'active':''}" onclick="switchStatsTab('personal')">個人成績</div>
+    </div>
+    <div id="stats-body"></div>
+  `;
+  renderStatsBody();
+}
+
+function switchStatsTab(tab) {
+  statsTab = tab;
+  if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+  if (tab !== 'graph') graphFilterIds = null;
+  document.querySelectorAll('.inner-tab').forEach((t,i) => t.classList.toggle('active', ['ranking','graph','period','personal'][i]===tab));
+  renderStatsBody();
+}
+
+function renderStatsBody() {
+  const el = document.getElementById('stats-body');
+  if (!el) return;
+  if (statsTab === 'ranking') renderStatsRanking(el);
+  else if (statsTab === 'graph') renderStatsGraph(el);
+  else if (statsTab === 'period') renderStatsPeriod(el);
+  else renderStatsPersonal(el);
+}
+
+function renderStatsRanking(el) {
+  const totals = getAllMemberTotals();
+  if (!totals.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📊</div><div class="empty-text">データがありません</div></div>`;
+    return;
+  }
+  const rows = totals.map((m, i) => {
+    const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+    const ptCls = ptClass(m.total);
+    return `<div class="stats-rank-row">
+      <div class="rank-num ${rankClass}">${i+1}</div>
+      <div style="font-size:24px">${m.icon}</div>
+      <div style="flex:1">
+        <div style="font-size:15px;font-weight:600;margin-bottom:4px">${esc(m.name)}</div>
+        <div class="stats-detail-grid">
+          <div class="stats-mini-card"><div class="stats-mini-label">半荘数</div><div class="stats-mini-val" style="font-size:14px">${m.count}</div></div>
+          <div class="stats-mini-card"><div class="stats-mini-label">平均順位</div><div class="stats-mini-val" style="font-size:14px">${m.count?m.avgRank.toFixed(2):'−'}</div></div>
+          <div class="stats-mini-card"><div class="stats-mini-label">1位率</div><div class="stats-mini-val" style="font-size:14px">${m.count?Math.round(m.top1Rate*100)+'%':'−'}</div></div>
+        </div>
+      </div>
+      <div class="rank-pt ${ptCls}" style="font-size:20px">${fmtPt(m.total)}</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div style="padding:0 16px;display:flex;flex-direction:column;gap:10px">${rows}</div>`;
+}
+
+// グラフ用メンバーフィルター状態
+let graphFilterIds = null; // null = 全員表示
+
+function renderStatsGraph(el) {
+  const members = DB.getMembers();
+  const sessions = DB.getSessions();
+  if (!members.length || !sessions.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📈</div><div class="empty-text">データがありません</div></div>`;
+    return;
+  }
+
+  // 初期化：全員ON
+  if (graphFilterIds === null) {
+    graphFilterIds = new Set(members.map(m => m.id));
+  }
+
+  // build cumulative data per member
+  const allHanchan = [];
+  for (const s of sessions) for (const h of (s.hanchan||[])) allHanchan.push({ ...h, sessionTitle: s.title });
+  allHanchan.sort((a,b) => new Date(a.played_at) - new Date(b.played_at));
+
+  const cumulative = {};
+  members.forEach(m => cumulative[m.id] = [0]); // 開始点0を追加
+  const labels = ['開始'];
+  const tooltipDates = [''];
+  allHanchan.forEach((h, i) => {
+    labels.push(`${i+1}局`);
+    tooltipDates.push(fmtDate(h.played_at));
+    const prev = {};
+    members.forEach(m => { prev[m.id] = cumulative[m.id].at(-1) || 0; });
+    members.forEach(m => {
+      const r = (h.results||[]).find(r=>r.player_id===m.id);
+      cumulative[m.id].push((prev[m.id]||0) + (r ? r.point : 0));
+    });
+  });
+
+  const colors = ['#c9a84c','#5b8af0','#4caf7d','#d94f5c','#a06fdb','#e07030'];
+  const memberColors = {};
+  members.forEach((m, i) => { memberColors[m.id] = colors[i % colors.length]; });
+
+  // フィルターボタンHTML
+  const filterBtns = members.map((m, i) => {
+    const color = memberColors[m.id];
+    const active = graphFilterIds.has(m.id);
+    return `<button class="graph-filter-btn ${active?'active':''}"
+      style="border-color:${active?color:'transparent'};background:${active?color+'22':'var(--surface)'};color:${active?color:'var(--text3)'}"
+      data-id="${m.id}" onclick="toggleGraphFilter('${m.id}')">
+      <span class="graph-filter-dot" style="background:${color}"></span>
+      ${m.icon} ${esc(m.name)}
+    </button>`;
+  }).join('');
+
+  const allActive = members.every(m => graphFilterIds.has(m.id));
+  const noneActive = graphFilterIds.size === 0;
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="card-title">累計ポイント推移</div>
+      <div class="graph-filter" id="graph-filter-wrap">
+        <button class="graph-all-toggle" onclick="toggleGraphAll()">${allActive ? '全解除' : noneActive ? '全員表示' : '全員表示'}</button>
+        ${filterBtns}
+      </div>
+      <div class="chart-wrap"><canvas id="stats-chart"></canvas></div>
+    </div>
+  `;
+
+  if (!allHanchan.length) {
+    document.querySelector('.chart-wrap').innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text3);font-size:14px">半荘を記録すると推移グラフが表示されます</div>`;
+    return;
+  }
+
+  const datasets = members.map((m, i) => {
+    const color = memberColors[m.id];
+    const hidden = !graphFilterIds.has(m.id);
+    return {
+      label: `${m.icon} ${m.name}`,
+      data: cumulative[m.id],
+      borderColor: color,
+      backgroundColor: color + '18',
+      borderWidth: 2.5,
+      pointRadius: allHanchan.length <= 30 ? 4 : 2,
+      pointHoverRadius: 6,
+      pointBackgroundColor: color,
+      pointBorderColor: '#0e1117',
+      pointBorderWidth: 2,
+      tension: 0.35,
+      fill: false,
+      hidden,
+    };
+  });
+
+  const ctx = document.getElementById('stats-chart').getContext('2d');
+  if (chartInstance) chartInstance.destroy();
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false }, // フィルターボタンで代替
+        tooltip: {
+          backgroundColor: '#1c2130',
+          borderColor: '#3a4560',
+          borderWidth: 1,
+          titleColor: '#e8eaf0',
+          bodyColor: '#9ba3bb',
+          padding: 12,
+          titleFont: { size: 12 },
+          bodyFont: { size: 12, family: 'Share Tech Mono' },
+          callbacks: {
+            title: items => {
+              const i = items[0].dataIndex;
+              return i === 0 ? '開始' : `第${i}局  ${tooltipDates[i]}`;
+            },
+            label: ctx => {
+              if (ctx.dataset.hidden) return null;
+              const v = ctx.parsed.y;
+              return `  ${ctx.dataset.label}  ${fmtPt(v)}`;
+            },
+            afterBody: items => {
+              const i = items[0].dataIndex;
+              if (i === 0) return [];
+              // このラウンドの差分を表示
+              const diffs = items.map(item => {
+                if (item.dataset.hidden) return null;
+                const cur = item.parsed.y;
+                const prev = item.dataset.data[i-1];
+                const diff = cur - prev;
+                return diff !== 0 ? `  └ 今局 ${diff > 0 ? '+' : ''}${diff.toFixed(1)}` : null;
+              }).filter(Boolean);
+              return diffs.length ? ['', ...diffs] : [];
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#6b7490', font: { size: 10 },
+            maxTicksLimit: 15,
+            callback: (v, i) => i === 0 ? '' : `${i}局`,
+          },
+          grid: { color: '#1e2535', lineWidth: 1 },
+          border: { color: '#2a3349' },
+        },
+        y: {
+          ticks: {
+            color: '#6b7490',
+            font: { size: 11, family: 'Share Tech Mono' },
+            callback: v => fmtPt(v),
+          },
+          grid: {
+            color: ctx => ctx.tick.value === 0 ? '#5b8af055' : '#1e2535',
+            lineWidth: ctx => ctx.tick.value === 0 ? 2 : 1,
+          },
+          border: { color: '#2a3349', dash: [4, 4] },
+        }
+      },
+      animation: { duration: 300 }
+    }
+  });
+}
+
+function toggleGraphFilter(id) {
+  if (!graphFilterIds) return;
+  if (graphFilterIds.has(id)) { graphFilterIds.delete(id); }
+  else { graphFilterIds.add(id); }
+  applyGraphFilter();
+}
+
+function toggleGraphAll() {
+  const members = DB.getMembers();
+  if (!graphFilterIds) return;
+  const allActive = members.every(m => graphFilterIds.has(m.id));
+  if (allActive) {
+    graphFilterIds = new Set();
+  } else {
+    graphFilterIds = new Set(members.map(m => m.id));
+  }
+  applyGraphFilter();
+}
+
+function applyGraphFilter() {
+  if (!chartInstance) return;
+  const members = DB.getMembers();
+  const colors = ['#c9a84c','#5b8af0','#4caf7d','#d94f5c','#a06fdb','#e07030'];
+  const memberColors = {};
+  members.forEach((m, i) => { memberColors[m.id] = colors[i % colors.length]; });
+
+  // チャートの表示/非表示を更新
+  chartInstance.data.datasets.forEach((ds, i) => {
+    const m = members[i];
+    if (!m) return;
+    ds.hidden = !graphFilterIds.has(m.id);
+  });
+  chartInstance.update('none');
+
+  // フィルターボタンUIを更新
+  const allActive = members.every(m => graphFilterIds.has(m.id));
+  members.forEach((m, i) => {
+    const btn = document.querySelector(`.graph-filter-btn[data-id="${m.id}"]`);
+    if (!btn) return;
+    const color = memberColors[m.id];
+    const active = graphFilterIds.has(m.id);
+    btn.classList.toggle('active', active);
+    btn.style.borderColor = active ? color : 'transparent';
+    btn.style.background = active ? color + '22' : 'var(--surface)';
+    btn.style.color = active ? color : 'var(--text3)';
+  });
+  const allBtn = document.querySelector('.graph-all-toggle');
+  if (allBtn) allBtn.textContent = allActive ? '全解除' : '全員表示';
+}
+
+function renderStatsPersonal(el) {
+  const members = DB.getMembers();
+  if (!members.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">👤</div><div class="empty-text">メンバーがいません</div></div>`;
+    return;
+  }
+
+  const selectedId = window._personalSelectedId || members[0].id;
+  window._personalSelectedId = selectedId;
+
+  const memberTabs = members.map(m => {
+    const active = m.id === selectedId;
+    return `<button class="preset-btn ${active?'active':''}" onclick="selectPersonalMember('${m.id}')">${m.icon} ${esc(m.name)}</button>`;
+  }).join('');
+
+  const sessions = DB.getSessions();
+  const m = members.find(m => m.id === selectedId);
+
+  // 全半荘から対象メンバーの結果を収集
+  let count = 0, rankSum = 0, rank1 = 0, rank12 = 0, rank4 = 0;
+  let maxPt = null, minPt = null;
+  let topPtSum = 0, topPtCount = 0, lasPtSum = 0, lasPtCount = 0;
+
+  for (const s of sessions) {
+    for (const h of (s.hanchan || [])) {
+      const r = (h.results || []).find(r => r.player_id === selectedId);
+      if (!r) continue;
+      count++;
+      rankSum += r.rank;
+      if (r.rank === 1) { rank1++; topPtSum += r.point; topPtCount++; }
+      if (r.rank <= 2) rank12++;
+      if (r.rank === 4) { rank4++; lasPtSum += r.point; lasPtCount++; }
+      if (maxPt === null || r.point > maxPt) maxPt = r.point;
+      if (minPt === null || r.point < minPt) minPt = r.point;
+    }
+  }
+
+  if (!count) {
+    el.innerHTML = `
+      <div style="padding:0 16px 12px">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">${memberTabs}</div>
+      </div>
+      <div class="empty-state"><div class="empty-icon">📭</div><div class="empty-text">${m?.icon||'👤'} ${esc(m?.name||'')} の記録がありません</div></div>
+    `;
+    return;
+  }
+
+  const avgRank = rankSum / count;
+  const top1Rate = rank1 / count;
+  const rentaiRate = rank12 / count;
+  const lasAvoidRate = (count - rank4) / count;
+  const topAvgPt = topPtCount ? topPtSum / topPtCount : null;
+  const lasAvgPt = lasPtCount ? lasPtSum / lasPtCount : null;
+
+  const statItems = [
+    { label: '半荘数', val: `${count}`, unit: '回' },
+    { label: '平均順位', val: avgRank.toFixed(2), unit: '位' },
+    { label: '1位率', val: Math.round(top1Rate * 100) + '%', unit: '' },
+    { label: 'ラス回避率', val: Math.round(lasAvoidRate * 100) + '%', unit: '', note: '4位にならなかった率' },
+    { label: '連帯率', val: Math.round(rentaiRate * 100) + '%', unit: '', note: '1・2位の率' },
+    { label: '最高得点', val: maxPt !== null ? fmtPt(maxPt) : '−', unit: '', color: maxPt > 0 ? 'var(--green2)' : maxPt < 0 ? 'var(--red2)' : '' },
+    { label: '最低得点', val: minPt !== null ? fmtPt(minPt) : '−', unit: '', color: minPt > 0 ? 'var(--green2)' : minPt < 0 ? 'var(--red2)' : '' },
+    { label: 'トップ時平均', val: topAvgPt !== null ? fmtPt(Math.round(topAvgPt * 10) / 10) : '−', unit: '', note: '1位の時の平均得点', color: 'var(--green2)' },
+    { label: 'ラス時平均', val: lasAvgPt !== null ? fmtPt(Math.round(lasAvgPt * 10) / 10) : '−', unit: '', note: '4位の時の平均得点', color: 'var(--red2)' },
+  ];
+
+  const cards = statItems.map(item => `
+    <div class="stats-mini-card" style="padding:14px 10px;text-align:center">
+      <div class="stats-mini-label">${item.label}</div>
+      ${item.note ? `<div style="font-size:9px;color:var(--text3);margin-bottom:4px">${item.note}</div>` : ''}
+      <div class="stats-mini-val" style="font-size:18px;${item.color?'color:'+item.color:''}">${item.val}${item.unit}</div>
+    </div>
+  `).join('');
+
+  el.innerHTML = `
+    <div style="padding:0 16px 12px">
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">${memberTabs}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">${m?.icon||'👤'} ${esc(m?.name||'')} の成績</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">${cards}</div>
+    </div>
+  `;
+}
+
+function selectPersonalMember(id) {
+  window._personalSelectedId = id;
+  renderStatsBody();
+}
+
+function renderStatsPeriod(el) {
+  const today = todayISO();
+  const start = statsPeriodStart || today;
+  const end = statsPeriodEnd || today;
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="card-title">期間を指定</div>
+      <div class="period-presets">
+        <button class="preset-btn" onclick="setPeriodPreset('today')">今日</button>
+        <button class="preset-btn" onclick="setPeriodPreset('this-month')">今月</button>
+        <button class="preset-btn" onclick="setPeriodPreset('last-month')">先月</button>
+        <button class="preset-btn" onclick="setPeriodPreset('7days')">直近7日</button>
+        <button class="preset-btn" onclick="setPeriodPreset('30days')">直近30日</button>
+      </div>
+      <div class="date-range">
+        <input type="date" id="period-start" value="${start}" onchange="onPeriodChange()">
+        <span>〜</span>
+        <input type="date" id="period-end" value="${end}" onchange="onPeriodChange()">
+      </div>
+    </div>
+    <div id="period-result"></div>
+  `;
+  renderPeriodResult();
+}
+
+function setPeriodPreset(preset) {
+  const now = new Date();
+  let s, e;
+  if (preset === 'today') { s = e = todayISO(); }
+  else if (preset === 'this-month') {
+    s = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-01`;
+    e = todayISO();
+  } else if (preset === 'last-month') {
+    const lm = new Date(now.getFullYear(), now.getMonth()-1, 1);
+    const lme = new Date(now.getFullYear(), now.getMonth(), 0);
+    s = lm.toISOString().slice(0,10); e = lme.toISOString().slice(0,10);
+  } else if (preset === '7days') {
+    const d = new Date(now); d.setDate(d.getDate()-6);
+    s = d.toISOString().slice(0,10); e = todayISO();
+  } else if (preset === '30days') {
+    const d = new Date(now); d.setDate(d.getDate()-29);
+    s = d.toISOString().slice(0,10); e = todayISO();
+  }
+  statsPeriodStart = s; statsPeriodEnd = e;
+  document.getElementById('period-start').value = s;
+  document.getElementById('period-end').value = e;
+  renderPeriodResult();
+}
+
+function onPeriodChange() {
+  statsPeriodStart = document.getElementById('period-start')?.value;
+  statsPeriodEnd = document.getElementById('period-end')?.value;
+  renderPeriodResult();
+}
+
+function renderPeriodResult() {
+  const el = document.getElementById('period-result');
+  if (!el) return;
+  const s = statsPeriodStart || todayISO();
+  const e = statsPeriodEnd || todayISO();
+  const sDate = new Date(s + 'T00:00:00');
+  const eDate = new Date(e + 'T23:59:59');
+  const members = DB.getMembers();
+  const sessions = DB.getSessions();
+
+  // filter hanchan by played_at
+  const memberStats = {};
+  members.forEach(m => { memberStats[m.id] = { total: 0, count: 0, rank1: 0, rankSum: 0, ...m }; });
+  let totalHanchan = 0;
+
+  for (const sess of sessions) {
+    for (const h of (sess.hanchan||[])) {
+      const d = new Date(h.played_at);
+      if (d < sDate || d > eDate) continue;
+      totalHanchan++;
+      for (const r of (h.results||[])) {
+        if (!memberStats[r.player_id]) continue;
+        memberStats[r.player_id].total += r.point;
+        memberStats[r.player_id].count++;
+        if (r.rank === 1) memberStats[r.player_id].rank1++;
+        memberStats[r.player_id].rankSum += r.rank;
+      }
+    }
+  }
+
+  if (!totalHanchan) {
+    el.innerHTML = `<div class="card"><div style="text-align:center;padding:16px;color:var(--text3);font-size:14px">この期間の対局がありません</div></div>`;
+    return;
+  }
+
+  const sorted = Object.values(memberStats).filter(m=>m.count>0).sort((a,b)=>b.total-a.total);
+  const rows = sorted.map((m, i) => {
+    const ptCls = ptClass(m.total);
+    const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+    return `<div class="stats-rank-row">
+      <div class="rank-num ${rankClass}">${i+1}</div>
+      <div style="font-size:22px">${m.icon}</div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:600">${esc(m.name)}</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">${m.count}半荘 / 平均${(m.rankSum/m.count).toFixed(2)}位 / 1位率${Math.round(m.rank1/m.count*100)}%</div>
+      </div>
+      <div class="rank-pt ${ptCls}" style="font-size:18px">${fmtPt(m.total)}</div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="card-title">集計結果（${totalHanchan}半荘）</div>
+      <div style="display:flex;flex-direction:column;gap:8px">${rows}</div>
+    </div>
+  `;
+}
+
+// ==================== MEMBER PAGE ====================
+const EMOJIS = ['🀄','🎯','🎲','🎮','🌙','⭐','🔥','💎','🌊','🌸','🍀','🦋','🐉','🦅','🌈','⚡','🎸','🏆','🍺','🎴','👑','🦊','🐯','🌺','💫','🎪','🎭','🎨','🚀','🌟'];
+
+let editingMemberId = null;
+
+function renderMembers() {
+  const el = document.getElementById('members-content');
+  const members = DB.getMembers();
+  if (!members.length) {
+    el.innerHTML = `
+      <div class="empty-state"><div class="empty-icon">👥</div><div class="empty-text">メンバーを追加して<br>雀録を始めましょう</div></div>
+      <div style="padding:0 16px"><button class="btn btn-primary btn-full" onclick="openAddMember()">＋ メンバーを追加</button></div>
+    `;
+    return;
+  }
+  const cards = members.map(m => {
+    const stats = getMemberStats(m.id);
+    return `<div class="member-card" onclick="openEditMember('${m.id}')">
+      <div class="member-card-icon">${m.icon}</div>
+      <div class="member-card-name">${esc(m.name)}</div>
+      <div class="member-card-stats">${stats.count}半荘 / ${fmtPt(stats.total)}</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="member-grid">${cards}<div class="member-add-btn" onclick="openAddMember()"><div class="member-add-icon">＋</div><div>追加</div></div></div>`;
+}
+
+document.getElementById('add-member-btn').onclick = () => openAddMember();
+
+function openAddMember() {
+  editingMemberId = null;
+  openMemberModal(null);
+}
+function openEditMember(id) {
+  editingMemberId = id;
+  const m = DB.getMembers().find(m=>m.id===id);
+  openMemberModal(m);
+}
+
+function openMemberModal(m) {
+  const id = 'member-modal';
+  const emojiGrid = EMOJIS.map(e => `<div class="emoji-opt ${m?.icon===e?'selected':''}" data-emoji="${e}" onclick="selectEmoji(event,'${e}')">${e}</div>`).join('');
+  const body = `
+    <div class="form-group">
+      <label>名前</label>
+      <input type="text" id="member-name" placeholder="名前を入力" value="${m?esc(m.name):''}" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label>アイコン</label>
+      <div id="selected-emoji-display" style="font-size:32px;text-align:center;padding:8px;background:var(--bg3);border-radius:var(--radius2);margin-bottom:8px">${m?.icon||'🀄'}</div>
+      <div class="emoji-grid">${emojiGrid}</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
+      <button class="btn btn-primary" onclick="saveMember()">保存</button>
+      ${m ? `<button class="btn btn-danger" onclick="deleteMemberBtn('${m.id}')">削除</button>` : ''}
+    </div>
+  `;
+  createModal(id, m ? 'メンバー編集' : 'メンバー追加', body);
+  // Set first emoji as selected if new
+  if (!m) {
+    setTimeout(() => {
+      const opts = document.querySelectorAll('.emoji-opt');
+      if (opts.length) { opts[0].classList.add('selected'); document.getElementById('selected-emoji-display').textContent = '🀄'; }
+    }, 10);
+  }
+  openModal(id);
+}
+
+function selectEmoji(event, emoji) {
+  document.querySelectorAll('.emoji-opt').forEach(e=>e.classList.remove('selected'));
+  const el = event.currentTarget || event.target; el.classList.add('selected');
+  document.getElementById('selected-emoji-display').textContent = emoji;
+}
+
+async function saveMember() {
+  const name = document.getElementById('member-name')?.value.trim();
+  const icon = document.querySelector('.emoji-opt.selected')?.dataset.emoji || '🀄';
+  if (!name) { showToast('⚠️ 名前を入力してください'); return; }
+  const members = DB.getMembers();
+  if (editingMemberId) {
+    const idx = members.findIndex(m=>m.id===editingMemberId);
+    if (idx>=0) { members[idx].name = name; members[idx].icon = icon; }
+  } else {
+    members.push({ id: uid(), name, icon });
+  }
+  await DB.setMembers(members);
+  closeModal('member-modal');
+  showToast(editingMemberId ? '✅ 更新しました' : '✅ 追加しました');
+  renderMembers();
+}
+
+async function deleteMemberBtn(id) {
+  const sessions = DB.getSessions();
+  const m = DB.getMembers().find(m => m.id === id);
+  const inUse = sessions.some(s => (s.seats || []).includes(id));
+  const hanchanCount = sessions.reduce((sum, s) =>
+    sum + (s.hanchan || []).filter(h => (h.results || []).some(r => r.player_id === id)).length, 0);
+
+  const msg = inUse
+    ? `${m?.icon || '👤'} ${m?.name || 'このメンバー'} は ${hanchanCount}半荘の対局記録に使用されています。\n削除すると記録の表示に影響します。`
+    : `${m?.icon || '👤'} ${m?.name || 'このメンバー'} を削除しますか？\nこの操作は取り消せません。`;
+  const ok = await showDeleteConfirm('メンバー削除', msg, '削除する');
+  if (!ok) return;
+
+  await DB.setMembers(DB.getMembers().filter(m => m.id !== id));
+  closeModal('member-modal');
+  showToast('削除しました');
+  renderMembers();
+}
+
+// ==================== UTILS ====================
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// グローバル関数として公開（onclickから呼び出せるように）
+window.toggleGraphFilter = toggleGraphFilter;
+window.toggleGraphAll = toggleGraphAll;
+window.applyGraphFilter = applyGraphFilter;
+window.createSession = createSession;
+window.renderNewSession = renderNewSession;
+window.renderHanchanEntry = renderHanchanEntry;
+window.switchInputMode = switchInputMode;
+window.toggleSign = toggleSign;
+window.onScoreInput = onScoreInput;
+window.confirmHanchan = confirmHanchan;
+window.openEndSessionModal = openEndSessionModal;
+window.openChangeMemberModal = openChangeMemberModal;
+window.applyMemberChange = applyMemberChange;
+window.endSession = endSession;
+window.deleteHanchan = deleteHanchan;
+window.deleteSession = deleteSession;
+window.deleteAllSessions = deleteAllSessions;
+window.switchStatsTab = switchStatsTab;
+window.setPeriodPreset = setPeriodPreset;
+window.onPeriodChange = onPeriodChange;
+window.selectPersonalMember = selectPersonalMember;
+window.openAddMember = openAddMember;
+window.openEditMember = openEditMember;
+window.selectEmoji = selectEmoji;
+window.saveMember = saveMember;
+window.deleteMemberBtn = deleteMemberBtn;
+window.closeModal = closeModal;
+window.switchTab = switchTab;
+window.updateRankingStart = updateRankingStart;
+window.clearRankingStart = clearRankingStart;
+
+// ==================== INIT (GitHub から読み込み・定期的に同期) ====================
+document.getElementById('token-btn').addEventListener('click', () => askToken());
+
+// ローディング表示
+document.getElementById('home-content').innerHTML = '<div class="empty-state"><div class="empty-icon" style="animation:pulse 1s infinite">🀄</div><div class="empty-text">データを読み込んでいます...</div></div>';
+
+loadRemote(true).then(r => {
+  useRemote(r);
+  renderPage(currentTab);
+}).catch(e => {
+  document.getElementById('home-content').innerHTML = `<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">${esc(e.message)}<br>時間をおいて再読み込みしてください</div></div>`;
+});
+
+// ほかの端末の記録を取り込む（記録の入力中に画面が消えないよう、記録タブは対局が切り替わったときだけ描き直す）
+async function syncRemote() {
+  if (_busy || _remote === null || document.hidden) return;
+  try {
+    const r = await loadRemote();
+    if (!r || _busy) return;
+    const prevActive = _activeSession;
+    useRemote(r);
+    if (currentTab !== 'record' || _activeSession !== prevActive) renderPage(currentTab);
+  } catch (e) {
+    console.warn('同期に失敗しました', e);
+  }
+}
+setInterval(syncRemote, POLL_MS);
+document.addEventListener('visibilitychange', syncRemote);
+</script>
+</body>
+</html>
