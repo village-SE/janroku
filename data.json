@@ -8752,11 +8752,32 @@
     "mn14fr018ak4"
    ],
    "hanchan": []
+  },
+  {
+   "session_id": "mvd3y2x1encu",
+   "title": "2026-10-18 対局",
+   "created_at": "2026-10-18T00:49:11.749Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14flzgnzpr",
+    "mn14fcjkyhqg",
+    "mn14fr018ak4"
+   ],
+   "hanchan": []
   }
  ],
  "active_session": "mvd3y1e1v87b",
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-10-18T00:49:11.726Z"
+ "updated_at": "2026-10-18T00:49:13.569Z"
 }
