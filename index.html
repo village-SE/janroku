@@ -855,7 +855,7 @@ canvas { display: block; }
 // ==================== DATA LAYER (GitHub) ====================
 // データはこのリポジトリの data ブランチにある data.json に保存する。
 // 読み込みは誰でもできる。保存には GitHub のトークン（端末ごとに localStorage に保存）が必要。
-const GH = { owner: 'amatsumugishion', repo: 'janroku', branch: 'data', path: 'data.json' };
+const GH = { owner: 'village-SE', repo: 'janroku', branch: 'data', path: 'data.json' };
 const API_URL = `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.path}`;
 const RAW_URL = `https://raw.githubusercontent.com/${GH.owner}/${GH.repo}/${GH.branch}/${GH.path}`;
 const TOKEN_KEY = 'janroku_github_token';
