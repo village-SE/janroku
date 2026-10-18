@@ -859,7 +859,10 @@ const GH = { owner: 'village-SE', repo: 'janroku', branch: 'data', path: 'data.j
 const API_URL = `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.path}`;
 const RAW_URL = `https://raw.githubusercontent.com/${GH.owner}/${GH.repo}/${GH.branch}/${GH.path}`;
 const TOKEN_KEY = 'janroku_github_token';
-const POLL_MS = 30000; // ほかの端末の記録を取り込む間隔
+// ほかの端末の記録を取り込む間隔。トークンなしの API は回線（IP）ごとに 1時間60回までなので、
+// トークンなしの端末は回数制限のない raw から読む（GitHub 側のキャッシュで最大5分ほど遅れる）
+const POLL_MS = 30000;
+const POLL_MS_VIEW = 120000;
 
 // インメモリキャッシュ
 let _members = [];
@@ -871,14 +874,17 @@ let _sha = null;     // 最後に読み込んだ／保存した data.json の sh
 let _etag = null;    // 変化がないときの読み込みを 304 で済ませる
 let _remote = null;  // 最後に確定したデータ（保存できなかったときはこれに戻す）
 let _busy = 0;       // 保存待ち・保存中の件数（この間は定期読み込みの結果を反映しない）
+let _updatedAt = ''; // 最後に保存した日時（raw の古いキャッシュで表示が巻き戻らないようにする）
+let _apiBlockedUntil = 0; // API の回数制限が解ける時刻
 
 function getToken() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } }
 function setToken(t) { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch {} }
 
 function snapshot() {
-  return { members: _members, sessions: _sessions, active_session: _activeSession, settings: { ranking_start: _rankingStart } };
+  return { members: _members, sessions: _sessions, active_session: _activeSession, settings: { ranking_start: _rankingStart }, updated_at: _updatedAt };
 }
 function applyData(d) {
+  _updatedAt = d.updated_at || '';
   _members = d.members || [];
   _sessions = d.sessions || [];
   _activeSession = d.active_session || null;
@@ -908,8 +914,19 @@ function apiHeaders(extra = {}, useToken = true) {
   return h;
 }
 
+// raw から読む。手元より新しくなければ null
+async function loadRaw(force) {
+  const raw = await fetch(RAW_URL, { cache: 'no-store' });
+  if (!raw.ok) throw new Error(`読み込みに失敗しました (${raw.status})`);
+  const data = await raw.json();
+  if (!force && (data.updated_at || '') <= _updatedAt) return null;
+  return { data, sha: null, etag: null };
+}
+
 // data.json を読む。変化がなければ null、あれば { data, sha, etag }
-async function loadRemote(force = false) {
+async function loadRemote(force = false, preferRaw = false) {
+  // 回数制限はトークンなしの読み込みだけにかかる（トークンありは別枠）
+  if (preferRaw || (!getToken() && Date.now() < _apiBlockedUntil)) return loadRaw(force);
   const cond = (!force && _etag) ? { 'If-None-Match': _etag } : {};
   let res = await fetch(`${API_URL}?ref=${GH.branch}`, { headers: apiHeaders(cond), cache: 'no-store' });
   if (res.status === 401 && getToken()) {
@@ -919,9 +936,10 @@ async function loadRemote(force = false) {
   if (res.status === 304) return null;
   if (!res.ok) {
     // API の回数制限などで読めないときは raw から読む（数分遅れることがある。sha は分からない）
-    const raw = await fetch(RAW_URL, { cache: 'no-store' });
-    if (!raw.ok) throw new Error(`読み込みに失敗しました (${res.status})`);
-    return { data: await raw.json(), sha: null, etag: null };
+    if (res.headers.get('X-RateLimit-Remaining') === '0') {
+      _apiBlockedUntil = Number(res.headers.get('X-RateLimit-Reset')) * 1000 || Date.now() + 600000;
+    }
+    return loadRaw(force);
   }
   const j = await res.json();
   if (!force && j.sha === _sha) return null;
@@ -963,9 +981,11 @@ async function commitNow() {
   if (!_sha) {
     const r = await loadRemote(true).catch(() => null);
     if (!r?.sha) { revert(); failToast('保存先に接続できませんでした'); return; }
-    if (JSON.stringify(r.data) !== JSON.stringify(_remote)) { await onConflict(); return; }
+    const same = JSON.stringify({ ...r.data, updated_at: r.data.updated_at || '' }) === JSON.stringify(_remote);
+    if (!same) { await onConflict(); return; }
     _sha = r.sha;
   }
+  _updatedAt = new Date().toISOString();
   const text = JSON.stringify(snapshot(), null, 1) + '\n';
   let res;
   try {
@@ -2612,10 +2632,12 @@ loadRemote(true).then(r => {
 });
 
 // ほかの端末の記録を取り込む（記録の入力中に画面が消えないよう、記録タブは対局が切り替わったときだけ描き直す）
+let _lastSync = 0;
 async function syncRemote() {
   if (_busy || _remote === null || document.hidden) return;
+  _lastSync = Date.now();
   try {
-    const r = await loadRemote();
+    const r = await loadRemote(false, !getToken());
     if (!r || _busy) return;
     const prevActive = _activeSession;
     useRemote(r);
@@ -2624,8 +2646,13 @@ async function syncRemote() {
     console.warn('同期に失敗しました', e);
   }
 }
-setInterval(syncRemote, POLL_MS);
-document.addEventListener('visibilitychange', syncRemote);
+(function loop() {
+  setTimeout(async () => { await syncRemote(); loop(); }, getToken() ? POLL_MS : POLL_MS_VIEW);
+})();
+// アプリに戻ってきたときにも取り込む（直前に読んだばかりなら省く）
+document.addEventListener('visibilitychange', () => {
+  if (Date.now() - _lastSync > 10000) syncRemote();
+});
 </script>
 </body>
 </html>
