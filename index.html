@@ -468,32 +468,47 @@ label { font-size: 12px; color: var(--text2); margin-bottom: 6px; display: block
 .chart-wrap { position: relative; width: 100%; height: 360px; padding: 8px 0; }
 canvas { display: block; }
 
-/* graph member filter */
-.graph-filter {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  margin-bottom: 12px;
+/* 推移グラフ */
+.graph-controls { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px; margin-bottom: 12px; }
+.seg {
+  display: flex; gap: 2px; padding: 3px;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
 }
-.graph-filter-btn {
-  display: flex; align-items: center; gap: 5px;
-  padding: 5px 10px; border-radius: 20px;
-  border: 2px solid transparent;
-  font-size: 12px; font-weight: 600; cursor: pointer;
-  transition: all 0.18s; font-family: 'Zen Kaku Gothic New', sans-serif;
-  opacity: 0.38;
+.seg-btn {
+  border: none; background: transparent; color: var(--text3);
+  font-size: 12px; font-weight: 600; padding: 0 10px; min-height: 32px;
+  border-radius: 7px; cursor: pointer; white-space: nowrap;
+  font-family: 'Zen Kaku Gothic New', sans-serif; transition: all 0.15s;
 }
-.graph-filter-btn.active { opacity: 1; }
-.graph-filter-btn:active { transform: scale(0.92); }
-.graph-filter-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+.seg-btn.active { background: var(--surface2); color: var(--gold2); }
+.graph-card { padding: 14px 12px; }
+.graph-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 28px; font-size: 13px; font-weight: 600; color: var(--text);
 }
-.graph-all-toggle {
-  padding: 5px 12px; border-radius: 20px;
-  border: 1px solid var(--border2); background: var(--surface2);
-  color: var(--text2); font-size: 11px; font-weight: 600;
-  cursor: pointer; transition: all 0.18s;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+.graph-head-sub { font-size: 11px; font-weight: 400; color: var(--text3); }
+.graph-reset {
+  flex-shrink: 0; padding: 4px 10px; border-radius: 14px;
+  border: 1px solid var(--border2); background: var(--surface2); color: var(--text2);
+  font-size: 11px; font-weight: 600; cursor: pointer; font-family: 'Zen Kaku Gothic New', sans-serif;
 }
-.graph-all-toggle:active { transform: scale(0.92); }
+.graph-chart { position: relative; width: 100%; height: 240px; touch-action: pan-y; }
+@media (min-width: 600px) { .graph-chart { height: 340px; } }
+.graph-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text3); font-size: 14px; }
+.graph-hint { min-height: 26px; margin: 6px 0 8px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text3); text-align: center; }
+.graph-list { display: flex; flex-direction: column; gap: 2px; }
+.graph-row {
+  display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 8px;
+  border-radius: 8px; cursor: pointer; transition: background 0.15s, opacity 0.15s;
+}
+.graph-row:active { background: var(--surface2); }
+.graph-row.focused { background: rgba(255,255,255,0.05); }
+.graph-row.dim { opacity: 0.45; }
+.graph-rank { width: 16px; text-align: center; font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--text3); }
+.graph-key { width: 16px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.graph-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; color: var(--text); }
+.graph-delta { font-size: 11px; color: var(--text3); white-space: nowrap; font-family: 'Share Tech Mono', monospace; }
+.graph-val { min-width: 64px; text-align: right; font-family: 'Share Tech Mono', monospace; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* period selector */
 .period-presets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -2013,7 +2028,6 @@ function renderStats() {
 function switchStatsTab(tab) {
   statsTab = tab;
   if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
-  if (tab !== 'graph') graphFilterIds = null;
   document.querySelectorAll('.inner-tab').forEach((t,i) => t.classList.toggle('active', ['ranking','graph','period','personal'][i]===tab));
   renderStatsBody();
 }
@@ -2053,219 +2067,277 @@ function renderStatsRanking(el) {
   el.innerHTML = `<div style="padding:0 16px;display:flex;flex-direction:column;gap:10px">${rows}</div>`;
 }
 
-// グラフ用メンバーフィルター状態
-let graphFilterIds = null; // null = 全員表示
+/// ==================== 推移グラフ ====================
+// メンバーの色は登録順で固定（並び順は色覚の違いがあっても隣同士を見分けやすいように検証済み）
+const GRAPH_COLORS = ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#9085e9', '#e66767', '#008300'];
+const GRAPH_DIM = '#3a4560';
+let graphPeriod = 'all';     // all | ranking | 30d
+let graphUnit = 'day';       // day | hanchan
+let graphFocus = new Set();  // 強調するメンバー（空なら全員を色付き）
+let graphSel = null;         // 選んでいる点（null なら最新）
+let graphData = null;
+let graphTouched = false;
+let graphPinned = false;     // クリックで時点を固定中
+
+function memberColor(id) {
+  const i = DB.getMembers().findIndex(m => m.id === id);
+  return GRAPH_COLORS[(i < 0 ? 0 : i) % GRAPH_COLORS.length];
+}
+function round1(n) { return Math.round(n * 10) / 10; }
+function fmtAxisPt(v) { return v > 0 ? `+${v}` : `${v}`; }
+
+function buildGraphData() {
+  const members = DB.getMembers();
+  let hs = [];
+  for (const s of DB.getSessions()) for (const h of (s.hanchan || [])) hs.push(h);
+  hs.sort((a, b) => new Date(a.played_at) - new Date(b.played_at));
+  const rs = DB.getRankingStart();
+  if (graphPeriod === 'ranking' && rs) {
+    const from = new Date(rs + 'T00:00:00');
+    hs = hs.filter(h => new Date(h.played_at) >= from);
+  } else if (graphPeriod === '30d') {
+    const from = new Date(); from.setHours(0, 0, 0, 0); from.setDate(from.getDate() - 29);
+    hs = hs.filter(h => new Date(h.played_at) >= from);
+  }
+
+  // 日ごと：同じ日の半荘をまとめる／半荘ごと：1半荘ずつ
+  const buckets = [];
+  for (const h of hs) {
+    const d = new Date(h.played_at);
+    if (graphUnit === 'day') {
+      const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+      let b = buckets.at(-1);
+      if (!b || b.key !== key) {
+        b = { key, label: `${d.getMonth() + 1}/${d.getDate()}`, title: `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`, hs: [] };
+        buckets.push(b);
+      }
+      b.hs.push(h);
+    } else {
+      const no = buckets.length + 1;
+      buckets.push({ key: h.hanchan_id, label: `${no}`, title: `第${no}半荘　${fmtDate(h.played_at)}`, hs: [h] });
+    }
+  }
+  if (graphUnit === 'day') buckets.forEach(b => { b.title += `（${b.hs.length}半荘）`; });
+
+  // 期間内に対局したメンバーだけ線を引く
+  const active = members.filter(m => hs.some(h => (h.results || []).some(r => r.player_id === m.id)));
+  const series = active.map(m => {
+    let cum = 0;
+    const values = [0], deltas = [null];
+    for (const b of buckets) {
+      let d = 0, played = false;
+      for (const h of b.hs) {
+        const r = (h.results || []).find(r => r.player_id === m.id);
+        if (r) { d += r.point; played = true; }
+      }
+      cum += d;
+      values.push(round1(cum));
+      deltas.push(played ? round1(d) : null);
+    }
+    return { m, color: memberColor(m.id), values, deltas };
+  });
+  return {
+    labels: ['開始', ...buckets.map(b => b.label)],
+    titles: ['開始時点', ...buckets.map(b => b.title)],
+    series,
+    count: hs.length,
+  };
+}
+
+function graphStyle(s) {
+  const on = graphFocus.size === 0 || graphFocus.has(s.m.id);
+  return {
+    borderColor: on ? s.color : GRAPH_DIM,
+    pointBackgroundColor: on ? s.color : GRAPH_DIM,
+    borderWidth: on && graphFocus.size ? 3 : 2,
+    order: on ? 0 : 1, // 強調している線を手前に描く
+  };
+}
+
+// 選んでいる点の縦線と、各線の上の丸
+const graphCrosshair = {
+  id: 'graphCrosshair',
+  afterDatasetsDraw(chart) {
+    if (!graphData) return;
+    const idx = graphSel ?? graphData.labels.length - 1;
+    const x = chart.scales.x.getPixelForValue(idx);
+    const { top, bottom } = chart.chartArea;
+    const ctx = chart.ctx;
+    ctx.save();
+    if (graphSel !== null) {
+      ctx.strokeStyle = 'rgba(232,234,240,0.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke();
+    }
+    const list = [...graphData.series].sort((a, b) => graphStyle(b).order - graphStyle(a).order);
+    for (const s of list) {
+      const y = chart.scales.y.getPixelForValue(s.values[idx]);
+      ctx.beginPath(); ctx.arc(x, y, 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = graphStyle(s).borderColor;
+      ctx.strokeStyle = '#1e2535'; ctx.lineWidth = 2;
+      ctx.fill(); ctx.stroke();
+    }
+    ctx.restore();
+  },
+};
 
 function renderStatsGraph(el) {
   const members = DB.getMembers();
-  const sessions = DB.getSessions();
-  if (!members.length || !sessions.length) {
+  if (!members.length || !DB.getSessions().length) {
     el.innerHTML = `<div class="empty-state"><div class="empty-icon">📈</div><div class="empty-text">データがありません</div></div>`;
     return;
   }
-
-  // 初期化：全員ON
-  if (graphFilterIds === null) {
-    graphFilterIds = new Set(members.map(m => m.id));
-  }
-
-  // build cumulative data per member
-  const allHanchan = [];
-  for (const s of sessions) for (const h of (s.hanchan||[])) allHanchan.push({ ...h, sessionTitle: s.title });
-  allHanchan.sort((a,b) => new Date(a.played_at) - new Date(b.played_at));
-
-  const cumulative = {};
-  members.forEach(m => cumulative[m.id] = [0]); // 開始点0を追加
-  const labels = ['開始'];
-  const tooltipDates = [''];
-  allHanchan.forEach((h, i) => {
-    labels.push(`${i+1}局`);
-    tooltipDates.push(fmtDate(h.played_at));
-    const prev = {};
-    members.forEach(m => { prev[m.id] = cumulative[m.id].at(-1) || 0; });
-    members.forEach(m => {
-      const r = (h.results||[]).find(r=>r.player_id===m.id);
-      cumulative[m.id].push((prev[m.id]||0) + (r ? r.point : 0));
-    });
-  });
-
-  const colors = ['#c9a84c','#5b8af0','#4caf7d','#d94f5c','#a06fdb','#e07030'];
-  const memberColors = {};
-  members.forEach((m, i) => { memberColors[m.id] = colors[i % colors.length]; });
-
-  // フィルターボタンHTML
-  const filterBtns = members.map((m, i) => {
-    const color = memberColors[m.id];
-    const active = graphFilterIds.has(m.id);
-    return `<button class="graph-filter-btn ${active?'active':''}"
-      style="border-color:${active?color:'transparent'};background:${active?color+'22':'var(--surface)'};color:${active?color:'var(--text3)'}"
-      data-id="${m.id}" onclick="toggleGraphFilter('${m.id}')">
-      <span class="graph-filter-dot" style="background:${color}"></span>
-      ${m.icon} ${esc(m.name)}
-    </button>`;
-  }).join('');
-
-  const allActive = members.every(m => graphFilterIds.has(m.id));
-  const noneActive = graphFilterIds.size === 0;
+  const rs = DB.getRankingStart();
+  if (graphPeriod === 'ranking' && !rs) graphPeriod = 'all';
+  const periods = [['all', '全期間']];
+  if (rs) { const [, mo, d] = rs.split('-'); periods.push(['ranking', `${+mo}/${+d}〜`]); }
+  periods.push(['30d', '直近30日']);
+  const seg = (fn, items, cur) => `<div class="seg">${items.map(([v, l]) =>
+    `<button class="seg-btn ${v === cur ? 'active' : ''}" onclick="${fn}('${v}')">${l}</button>`).join('')}</div>`;
 
   el.innerHTML = `
-    <div class="card">
+    <div class="graph-controls">
+      ${seg('setGraphPeriod', periods, graphPeriod)}
+      ${seg('setGraphUnit', [['day', '日ごと'], ['hanchan', '半荘ごと']], graphUnit)}
+    </div>
+    <div class="card graph-card">
       <div class="card-title">累計ポイント推移</div>
-      <div class="graph-filter" id="graph-filter-wrap">
-        <button class="graph-all-toggle" onclick="toggleGraphAll()">${allActive ? '全解除' : noneActive ? '全員表示' : '全員表示'}</button>
-        ${filterBtns}
-      </div>
-      <div class="chart-wrap"><canvas id="stats-chart"></canvas></div>
+      <div class="graph-head" id="graph-head"></div>
+      <div class="graph-chart"><canvas id="stats-chart"></canvas></div>
+      <div class="graph-hint" id="graph-hint"></div>
+      <div class="graph-list" id="graph-list"></div>
     </div>
   `;
 
-  if (!allHanchan.length) {
-    document.querySelector('.chart-wrap').innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text3);font-size:14px">半荘を記録すると推移グラフが表示されます</div>`;
+  graphData = buildGraphData();
+  graphSel = null;
+  graphPinned = false;
+  if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+  if (!graphData.count) {
+    document.querySelector('.graph-chart').innerHTML = `<div class="graph-empty">この期間の対局はありません</div>`;
     return;
   }
 
-  const datasets = members.map((m, i) => {
-    const color = memberColors[m.id];
-    const hidden = !graphFilterIds.has(m.id);
-    return {
-      label: `${m.icon} ${m.name}`,
-      data: cumulative[m.id],
-      borderColor: color,
-      backgroundColor: color + '18',
-      borderWidth: 2.5,
-      pointRadius: allHanchan.length <= 30 ? 4 : 2,
-      pointHoverRadius: 6,
-      pointBackgroundColor: color,
-      pointBorderColor: '#0e1117',
-      pointBorderWidth: 2,
-      tension: 0.35,
-      fill: false,
-      hidden,
-    };
-  });
+  const n = graphData.labels.length;
+  const narrow = window.innerWidth < 600;
+  const datasets = graphData.series.map(s => ({
+    label: s.m.name,
+    data: s.values,
+    pointRadius: n <= 25 ? 2.5 : 0,
+    pointHoverRadius: 0,
+    pointBorderWidth: 0,
+    tension: 0,
+    fill: false,
+    ...graphStyle(s),
+  }));
 
-  const ctx = document.getElementById('stats-chart').getContext('2d');
-  if (chartInstance) chartInstance.destroy();
-  chartInstance = new Chart(ctx, {
+  const pick = (e, chart) => {
+    const i = Math.round(chart.scales.x.getValueForPixel(e.x));
+    setGraphSel(Math.max(0, Math.min(n - 1, i)));
+  };
+  chartInstance = new Chart(document.getElementById('stats-chart').getContext('2d'), {
     type: 'line',
-    data: { labels, datasets },
+    data: { labels: graphData.labels, datasets },
+    plugins: [graphCrosshair],
     options: {
       responsive: true, maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { display: false }, // フィルターボタンで代替
-        tooltip: {
-          backgroundColor: '#1c2130',
-          borderColor: '#3a4560',
-          borderWidth: 1,
-          titleColor: '#e8eaf0',
-          bodyColor: '#9ba3bb',
-          padding: 12,
-          titleFont: { size: 12 },
-          bodyFont: { size: 12, family: 'Share Tech Mono' },
-          callbacks: {
-            title: items => {
-              const i = items[0].dataIndex;
-              return i === 0 ? '開始' : `第${i}局  ${tooltipDates[i]}`;
-            },
-            label: ctx => {
-              if (ctx.dataset.hidden) return null;
-              const v = ctx.parsed.y;
-              return `  ${ctx.dataset.label}  ${fmtPt(v)}`;
-            },
-            afterBody: items => {
-              const i = items[0].dataIndex;
-              if (i === 0) return [];
-              // このラウンドの差分を表示
-              const diffs = items.map(item => {
-                if (item.dataset.hidden) return null;
-                const cur = item.parsed.y;
-                const prev = item.dataset.data[i-1];
-                const diff = cur - prev;
-                return diff !== 0 ? `  └ 今局 ${diff > 0 ? '+' : ''}${diff.toFixed(1)}` : null;
-              }).filter(Boolean);
-              return diffs.length ? ['', ...diffs] : [];
-            }
-          }
-        }
+      layout: { padding: { top: 8, right: 8 } },
+      events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+      onHover: (e, _els, chart) => {
+        // 指：触った点を選ぶ。マウス：クリックで固定するまではカーソルに合わせ、外れたら最新に戻す
+        // （スマホはタップ後にマウスの合図も届くので、指で触ったら mouseout で戻さない）
+        if (e.type === 'touchstart' || e.type === 'touchmove') { graphTouched = true; pick(e, chart); return; }
+        if (graphPinned) return;
+        if (e.type === 'mouseout') { if (!graphTouched) setGraphSel(null); return; }
+        pick(e, chart);
       },
+      onClick: (e, _els, chart) => { pick(e, chart); graphPinned = true; },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
       scales: {
         x: {
           ticks: {
-            color: '#6b7490', font: { size: 10 },
-            maxTicksLimit: 15,
-            callback: (v, i) => i === 0 ? '' : `${i}局`,
+            color: '#6b7490', font: { size: 10 }, maxRotation: 0, autoSkip: true,
+            maxTicksLimit: narrow ? 5 : 10,
+            callback: (v, i) => i === 0 ? '' : graphData.labels[i],
           },
-          grid: { color: '#1e2535', lineWidth: 1 },
+          grid: { display: false },
           border: { color: '#2a3349' },
         },
         y: {
           ticks: {
-            color: '#6b7490',
-            font: { size: 11, family: 'Share Tech Mono' },
-            callback: v => fmtPt(v),
+            color: '#6b7490', font: { size: 10, family: 'Share Tech Mono' },
+            maxTicksLimit: 8, callback: fmtAxisPt,
           },
           grid: {
-            color: ctx => ctx.tick.value === 0 ? '#5b8af055' : '#1e2535',
-            lineWidth: ctx => ctx.tick.value === 0 ? 2 : 1,
+            color: ctx => ctx.tick.value === 0 ? '#6b7490' : '#262e42',
+            lineWidth: 1,
           },
-          border: { color: '#2a3349', dash: [4, 4] },
-        }
+          border: { display: false },
+        },
       },
-      animation: { duration: 300 }
-    }
+      animation: { duration: 250 },
+    },
   });
+  renderGraphReadout();
 }
 
-function toggleGraphFilter(id) {
-  if (!graphFilterIds) return;
-  if (graphFilterIds.has(id)) { graphFilterIds.delete(id); }
-  else { graphFilterIds.add(id); }
-  applyGraphFilter();
+function setGraphSel(i) {
+  if (i === null) graphPinned = false;
+  if (i === graphSel) return;
+  graphSel = i;
+  chartInstance?.draw();
+  renderGraphReadout();
 }
 
-function toggleGraphAll() {
-  const members = DB.getMembers();
-  if (!graphFilterIds) return;
-  const allActive = members.every(m => graphFilterIds.has(m.id));
-  if (allActive) {
-    graphFilterIds = new Set();
-  } else {
-    graphFilterIds = new Set(members.map(m => m.id));
+// グラフの下の順位表（選んでいる時点の累計と、その日／その半荘の増減）
+function renderGraphReadout() {
+  if (!graphData) return;
+  const idx = graphSel ?? graphData.labels.length - 1;
+  const head = document.getElementById('graph-head');
+  const list = document.getElementById('graph-list');
+  const hint = document.getElementById('graph-hint');
+  if (!head || !list) return;
+
+  head.innerHTML = graphSel === null
+    ? `<span>${esc(graphData.titles[idx])}<span class="graph-head-sub">　最新</span></span>`
+    : `<span>${esc(graphData.titles[idx])}</span><button class="graph-reset" onclick="setGraphSel(null)">最新に戻す</button>`;
+  hint.innerHTML = graphFocus.size
+    ? `<button class="graph-reset" onclick="clearGraphFocus()">強調をやめる</button>`
+    : 'グラフをタップ・なぞるとその時点の成績／名前をタップで強調';
+
+  const deltaLabel = graphUnit === 'day' ? 'この日' : 'この半荘';
+  const rows = [...graphData.series].sort((a, b) => b.values[idx] - a.values[idx]);
+  list.innerHTML = rows.map((s, i) => {
+    const v = s.values[idx], d = s.deltas[idx];
+    const cls = graphFocus.size ? (graphFocus.has(s.m.id) ? 'focused' : 'dim') : '';
+    const delta = (idx > 0 && d !== null) ? `<span class="graph-delta">${deltaLabel} <span class="${ptClass(d)}">${fmtPt(d)}</span></span>` : '';
+    return `<div class="graph-row ${cls}" onclick="toggleGraphFocus('${s.m.id}')">
+      <span class="graph-rank">${i + 1}</span>
+      <span class="graph-key" style="background:${graphStyle(s).borderColor}"></span>
+      <span class="graph-name">${s.m.icon} ${esc(s.m.name)}</span>
+      ${delta}
+      <span class="graph-val ${ptClass(v)}">${fmtPt(v)}</span>
+    </div>`;
+  }).join('');
+}
+
+function restyleGraph() {
+  if (chartInstance && graphData) {
+    chartInstance.data.datasets.forEach((ds, i) => Object.assign(ds, graphStyle(graphData.series[i])));
+    chartInstance.update('none');
   }
-  applyGraphFilter();
+  renderGraphReadout();
 }
-
-function applyGraphFilter() {
-  if (!chartInstance) return;
-  const members = DB.getMembers();
-  const colors = ['#c9a84c','#5b8af0','#4caf7d','#d94f5c','#a06fdb','#e07030'];
-  const memberColors = {};
-  members.forEach((m, i) => { memberColors[m.id] = colors[i % colors.length]; });
-
-  // チャートの表示/非表示を更新
-  chartInstance.data.datasets.forEach((ds, i) => {
-    const m = members[i];
-    if (!m) return;
-    ds.hidden = !graphFilterIds.has(m.id);
-  });
-  chartInstance.update('none');
-
-  // フィルターボタンUIを更新
-  const allActive = members.every(m => graphFilterIds.has(m.id));
-  members.forEach((m, i) => {
-    const btn = document.querySelector(`.graph-filter-btn[data-id="${m.id}"]`);
-    if (!btn) return;
-    const color = memberColors[m.id];
-    const active = graphFilterIds.has(m.id);
-    btn.classList.toggle('active', active);
-    btn.style.borderColor = active ? color : 'transparent';
-    btn.style.background = active ? color + '22' : 'var(--surface)';
-    btn.style.color = active ? color : 'var(--text3)';
-  });
-  const allBtn = document.querySelector('.graph-all-toggle');
-  if (allBtn) allBtn.textContent = allActive ? '全解除' : '全員表示';
+function toggleGraphFocus(id) {
+  graphFocus.has(id) ? graphFocus.delete(id) : graphFocus.add(id);
+  restyleGraph();
 }
+function clearGraphFocus() {
+  graphFocus.clear();
+  restyleGraph();
+}
+function setGraphPeriod(p) { graphPeriod = p; renderStatsBody(); }
+function setGraphUnit(u) { graphUnit = u; renderStatsBody(); }
 
 function renderStatsPersonal(el) {
   const members = DB.getMembers();
@@ -2587,9 +2659,11 @@ function esc(s) {
 }
 
 // グローバル関数として公開（onclickから呼び出せるように）
-window.toggleGraphFilter = toggleGraphFilter;
-window.toggleGraphAll = toggleGraphAll;
-window.applyGraphFilter = applyGraphFilter;
+window.setGraphPeriod = setGraphPeriod;
+window.setGraphUnit = setGraphUnit;
+window.setGraphSel = setGraphSel;
+window.toggleGraphFocus = toggleGraphFocus;
+window.clearGraphFocus = clearGraphFocus;
 window.createSession = createSession;
 window.renderNewSession = renderNewSession;
 window.renderHanchanEntry = renderHanchanEntry;
