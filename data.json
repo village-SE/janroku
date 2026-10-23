@@ -8855,6 +8855,47 @@
        "rank": 4
       }
      ]
+    },
+    {
+     "hanchan_id": "mvl1jcw8gf76",
+     "played_at": "2026-10-23T14:03:00.000Z",
+     "created_at": "2026-10-23T14:03:55.019Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14g3xua5px",
+      "mn14fr018ak4"
+     ],
+     "results": [
+      {
+       "player_id": "mn14fr018ak4",
+       "point": 48,
+       "final_score": 0,
+       "seat": 3,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 13,
+       "final_score": 0,
+       "seat": 2,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -9,
+       "final_score": 0,
+       "seat": 0,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -52,
+       "final_score": 0,
+       "seat": 1,
+       "rank": 4
+      }
+     ]
     }
    ]
   }
@@ -8863,5 +8904,5 @@
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-10-23T14:03:25.175Z"
+ "updated_at": "2026-10-23T14:03:55.019Z"
 }
