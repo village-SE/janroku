@@ -8898,11 +8898,32 @@
      ]
     }
    ]
+  },
+  {
+   "session_id": "mwf1b5g5fnx5",
+   "title": "2026-11-13 対局",
+   "created_at": "2026-11-13T13:50:37.398Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14exzfwtni",
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4"
+   ],
+   "hanchan": []
   }
  ],
  "active_session": null,
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-11-13T13:50:26.822Z"
+ "updated_at": "2026-11-13T13:50:37.398Z"
 }
