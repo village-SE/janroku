@@ -8976,7 +8976,7 @@
     ]
    },
    "seats": [
-    "mn14exzfwtni",
+    "mn14g3xua5px",
     "mn14fcjkyhqg",
     "mn14flzgnzpr",
     "mn14fr018ak4"
@@ -8987,7 +8987,7 @@
      "played_at": "2026-11-13T13:50:00.000Z",
      "created_at": "2026-11-13T13:51:03.066Z",
      "seats": [
-      "mn14exzfwtni",
+      "mn14g3xua5px",
       "mn14fcjkyhqg",
       "mn14flzgnzpr",
       "mn14fr018ak4"
@@ -9030,5 +9030,5 @@
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-11-13T13:51:03.066Z"
+ "updated_at": "2026-11-13T13:51:54.662Z"
 }
