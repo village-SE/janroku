@@ -9127,12 +9127,54 @@
     "mn14flzgnzpr",
     "mn14g3xua5px"
    ],
-   "hanchan": []
+   "hanchan": [
+    {
+     "hanchan_id": "mwpn8g87bhs7",
+     "played_at": "2026-11-21T00:01:00.000Z",
+     "created_at": "2026-11-21T00:02:04.711Z",
+     "seats": [
+      "mn14exzfwtni",
+      "mn14fcjkyhqg",
+      "mn14flzgnzpr",
+      "mn14g3xua5px"
+     ],
+     "results": [
+      {
+       "player_id": "mn14flzgnzpr",
+       "point": 43,
+       "final_score": 0,
+       "seat": 2,
+       "rank": 1
+      },
+      {
+       "player_id": "mn14g3xua5px",
+       "point": 12,
+       "final_score": 0,
+       "seat": 3,
+       "rank": 2
+      },
+      {
+       "player_id": "mn14fcjkyhqg",
+       "point": -22,
+       "final_score": 0,
+       "seat": 1,
+       "rank": 3
+      },
+      {
+       "player_id": "mn14exzfwtni",
+       "point": -33,
+       "final_score": 0,
+       "seat": 0,
+       "rank": 4
+      }
+     ]
+    }
+   ]
   }
  ],
  "active_session": "mwpn7xthjman",
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-11-21T00:01:43.127Z"
+ "updated_at": "2026-11-21T00:02:04.711Z"
 }
