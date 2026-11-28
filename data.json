@@ -9336,11 +9336,32 @@
     "mn14g3xua5px"
    ],
    "hanchan": []
+  },
+  {
+   "session_id": "mx0j6nno7obu",
+   "title": "2026-11-28 対局",
+   "created_at": "2026-11-28T14:54:10.500Z",
+   "rule": {
+    "initial_score": 25000,
+    "uma": [
+     20,
+     10,
+     -10,
+     -20
+    ]
+   },
+   "seats": [
+    "mn14fcjkyhqg",
+    "mn14flzgnzpr",
+    "mn14fr018ak4",
+    "mn14g3xua5px"
+   ],
+   "hanchan": []
   }
  ],
  "active_session": "mx0j6jz62w96",
  "settings": {
   "ranking_start": "2026-07-01"
  },
- "updated_at": "2026-11-28T14:54:07.689Z"
+ "updated_at": "2026-11-28T14:54:10.617Z"
 }
